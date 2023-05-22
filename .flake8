@@ -1,0 +1,15 @@
+[flake8]
+# https://flake8.pycqa.org/en/latest/user/configuration.html
+max-line-length = 99
+show-source = False
+statistics = False
+max-complexity = 6
+exclude =
+    .git
+    __pycache__
+    .venv
+    .eggs
+    *.egg
+    .mypy_cache
+    .vscode
+extend-ignore = C901

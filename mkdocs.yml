@@ -1,0 +1,24 @@
+site_name: Documentación
+site_description: Documentación del proyecto
+site_author: Autor...
+
+repo_url: 
+
+theme:
+    name: material
+    palette:
+      accent: cyan
+    language: es
+    features:
+      - search.suggest
+      - search.highlight
+
+copyright: Copyright &copy; 2023.
+
+plugins:
+  - search:
+      lang: en
+  - autorefs
+
+extra:
+  generator: false
