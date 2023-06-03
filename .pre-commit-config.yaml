@@ -15,13 +15,6 @@ repos:
         entry: poetry lock
         always_run: true
         pass_filenames: false
-      - id: flake8
-        name: flake8 => linting
-        stages: [commit]
-        language: system
-        entry: poetry run flake8
-        always_run: true
-        pass_filenames: false
       - id: mypy
         name: mypy => type checking
         stages: [commit]
@@ -34,6 +27,13 @@ repos:
         stages: [commit]
         language: system
         entry: poetry run black . --check
+        always_run: true
+        pass_filenames: false
+      - id: ruff
+        name: ruff => linting
+        stages: [commit]
+        language: system
+        entry: poetry run ruff check .
         always_run: true
         pass_filenames: false
       - id: pytest

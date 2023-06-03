@@ -9,7 +9,7 @@ Plantilla para organizar proyectos que usan Python e incluye las mejores prácti
 - _Imports sorting_: [isort](https://pycqa.github.io/isort/)
 - _Code formatting_: [Black](https://github.com/psf/black)
 - _Pre-Commit hooks_: [pre-commit](https://pre-commit.com/)
-- _Documentation_: [MkDocs](https://www.mkdocs.org/)
+- _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
 
 ## Uso
