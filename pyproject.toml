@@ -61,7 +61,7 @@ warn_unused_configs = true
 warn_unreachable = true
 
 [tool.isort]
-py_version=39
+py_version=311
 profile = "black"
 src_paths = ["src/**", "tests/**"]
 
