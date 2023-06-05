@@ -54,6 +54,9 @@ Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener i
 
     Y para deplegar la documentación en el [GitHub Pages](https://pages.github.com/), estando en la **master**/**main** _branch_, ejecute:
 
+    !!! warning
+        Para que esta instrucción funcione y la página quede publicada, el repositorio debe ser público o el usuario debe estar suscrito a [GitHub Teams](https://github.com/team)
+
     ```shell
     mkdocs gh-deploy
     ```
@@ -67,9 +70,19 @@ Eso es todo, puede empezar con su nuevo proyecto.
 ## Librarías útiles para los proyectos
 
 - [Pandas](https://pandas.pydata.org/)
+- [Polars](https://www.pola.rs/)
 - [Pydantic](https://docs.pydantic.dev/latest/)
+- [Scikit-learn](https://scikit-learn.org/stable/)
+- [Keras](https://keras.io/)
+
+- [Streamlit](https://streamlit.io/)
+- [DearPyGUI](https://github.com/hoffstadt/DearPyGui)
+- [Gradio](https://github.com/gradio-app/gradio)
+
 - [FastAPI](https://fastapi.tiangolo.com/lo/)
+
 - [Power tools for AWS Lambda](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
+
 - [Nox](https://nox.thea.codes/en/stable/index.html)
 
 Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de **Poetry**, se debe ejecutar, por ejemplo:

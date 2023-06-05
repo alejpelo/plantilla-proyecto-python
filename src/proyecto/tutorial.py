@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tutorial.
+"""Tutorial para _configuration files_ y _log_.
 
 Este módulo muestra como usar:
 

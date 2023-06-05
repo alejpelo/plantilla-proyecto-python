@@ -2,12 +2,14 @@ site_name: Documentación
 site_description: Documentación del proyecto
 site_author: Autor...
 
-repo_url:
+repo_url: https://github.com/alejpelo/plantilla-proyecto-python
 
 nav:
     - Home: index.md
     - Tutorial: tutorial.md
-    - Logger: logger.md
+    - código:
+      - Logger: codigo/logger.md
+      - Tutorial: codigo/tutorial.md
 
 theme:
     name: material
@@ -17,6 +19,12 @@ theme:
     features:
       - search.suggest
       - search.highlight
+      - navigation.tracking
+      - navigation.tabs
+      - navigation.tabs.sticky
+      - navigation.sections
+      - navigation.expand
+      - navigation.top
       - content.code.annotate
       - content.code.copy
       - content.tabs.link
