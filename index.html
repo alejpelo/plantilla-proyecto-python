@@ -1,0 +1,600 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación del proyecto">
+      
+      
+        <meta name="author" content="Autor...">
+      
+      
+      
+      
+        <link rel="next" href="tutorial/">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Documentación</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bienvenido-a-la-plantilla" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Documentación" class="md-header__button md-logo" aria-label="Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Documentación" class="md-nav__button md-logo" aria-label="Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Documentación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    Uso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#librarias-utiles-para-los-proyectos" class="md-nav__link">
+    Librarías útiles para los proyectos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lineamientos-para-contribuir-al-proyecto" class="md-nav__link">
+    Lineamientos para Contribuir al Proyecto
+  </a>
+  
+    <nav class="md-nav" aria-label="Lineamientos para Contribuir al Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits" class="md-nav__link">
+    Commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamiento-tags" class="md-nav__link">
+    Versionamiento (tags)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="logger/" class="md-nav__link">
+        Logger
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    Uso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#librarias-utiles-para-los-proyectos" class="md-nav__link">
+    Librarías útiles para los proyectos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lineamientos-para-contribuir-al-proyecto" class="md-nav__link">
+    Lineamientos para Contribuir al Proyecto
+  </a>
+  
+    <nav class="md-nav" aria-label="Lineamientos para Contribuir al Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits" class="md-nav__link">
+    Commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamiento-tags" class="md-nav__link">
+    Versionamiento (tags)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="bienvenido-a-la-plantilla">Bienvenido a la plantilla</h1>
+<!-- BEGIN INCLUDE ../README.md '&lt;!--docs-start--&gt;' '&lt;!--docs-end--&gt;' -->
+
+<p>Plantilla para organizar proyectos que usan Python e incluye las mejores prácticas relacionadas con:</p>
+<ul>
+<li><em>Version control</em>: <a href="https://git-scm.com/">Git</a></li>
+<li><em>Virtual environments</em> y <em>Dependency management</em>: <a href="https://python-poetry.org/">Poetry</a></li>
+<li><em>Static typing</em>: <a href="https://mypy-lang.org/">Mypy</a></li>
+<li><em>Code formatting</em>: <a href="https://github.com/psf/black">Black</a></li>
+<li><em>Linting</em> and <em>Style enforcement</em>: <a href="https://beta.ruff.rs/docs/">Ruff</a></li>
+<li><em>Package vulnerability analysis</em>: <a href="https://pypi.org/project/pip-audit/">Pip-audit</a></li>
+<li><em>Pre-Commit hooks</em>: <a href="https://pre-commit.com/">Pre-commit</a></li>
+<li><em>Documentation</em>: <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>, <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google docstrings</a></li>
+<li>Configuration files: <a href="https://hydra.cc/">Hydra</a></li>
+<li><em>Logging</em>: <a href="https://github.com/Delgan/loguru">Loguru</a></li>
+</ul>
+<h2 id="uso">Uso</h2>
+<p>Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, <a href="https://git-scm.com/"><strong>Git</strong></a>, <a href="https://www.python.org/"><strong>Python</strong></a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> (versión 3.11) y <a href="https://python-poetry.org/"><strong>Poetry</strong></a> (versión &gt;=1.5).</p>
+<ol>
+<li>Cree un <em>fork</em> de este repositorio. Si ya tenía el <em>fork</em>, realice un <em>sync fork</em> para traer la versión más reciente. Otra opción es crear un nuevo repositorio a partir de este, para el nuevo proyecto.</li>
+<li>Clone el nuevo repositorio.</li>
+<li>
+<p>Asegúrese que <em>Poetry</em> está usando la versión de <em>Python</em> adecuada para crear el ambiente virtual<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> (i.e. 3.11) y ejecute:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>install
+</span></code></pre></div>
+</li>
+<li>
+<p>En el proyecto se usa <a href="https://pre-commit.com/">pre-commit</a> para automatizar la verificación del código antes de los <em>commits</em> y de los <em>pushs</em>. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pre-commit<span class="w"> </span>install
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-push
+</span></code></pre></div>
+</li>
+<li>
+<p>Consulte el archivo <code>src/proyecto/tutorial.py</code> para conocer cómo usar los archivos de configuración y el log.</p>
+</li>
+<li>
+<p>Consulte el archivo <code>docs/tutorial.md</code> para conocer las capacidades instaladas de la documentación. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs<span class="w"> </span>serve
+</span></code></pre></div>
+<p>Esto hará que la documentación en se actualice en la medida que realice cambios.</p>
+<p>Al final para construir el sitio, ejecute:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs<span class="w"> </span>build
+</span></code></pre></div>
+<p>Y para deplegar la documentación en el <a href="https://pages.github.com/">GitHub Pages</a>, estando en la <strong>master</strong>/<strong>main</strong> <em>branch</em>, ejecute:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>gh-deploy
+</span></code></pre></div>
+</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>El proyecto tiene un makefile y un archivo shell que no corren en Windows por defecto. En Linux y MacOS funciona correctamente. En Windows, por el momento, es necesario remover el pre-commit que exporta los archivos de librarías requeridas de <code>.pre-commit-config.yaml</code>. y no usar el <code>Makefile</code>.
+Próximamente se incluirán las instrucciones para que todo funcione adecuadamente en Windows.</p>
+</div>
+<p>Eso es todo, puede empezar con su nuevo proyecto.</p>
+<h2 id="librarias-utiles-para-los-proyectos">Librarías útiles para los proyectos</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/">Pandas</a></li>
+<li><a href="https://docs.pydantic.dev/latest/">Pydantic</a></li>
+<li><a href="https://fastapi.tiangolo.com/lo/">FastAPI</a></li>
+<li><a href="https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/">Power tools for AWS Lambda</a></li>
+<li><a href="https://nox.thea.codes/en/stable/index.html">Nox</a></li>
+</ul>
+<p>Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de <strong>Poetry</strong>, se debe ejecutar, por ejemplo:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
+</span></code></pre></div>
+<p>Si la va a instalar solo para desarrollo, o en cualquier otro grupo de librerías, ejecutar:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
+</span></code></pre></div>
+<h2 id="lineamientos-para-contribuir-al-proyecto">Lineamientos para Contribuir al Proyecto</h2>
+<p>Se deben seguir los siguientes lineamientos para para contribuir al desarrollo del proyecto. Esto garantiza que la trazabilidad y el versionamiento sea robusto.</p>
+<h3 id="workflow"><em>Workflow</em></h3>
+<p>Se utiliza <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a> con la siguiente estructura de <em>branches</em>:</p>
+<ul>
+<li>
+<p><strong>master</strong>/<strong>main</strong> <em>branch</em>: solo guarda los <em>releases</em> oficiales. Cada <em>release</em> debe estar identificado con su respectivo <em>tag</em> que hace alusión a la versión del código (ver Versionamiento (<em>tags</em>)).</p>
+</li>
+<li>
+<p><strong>develop</strong> <em>branch</em>: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (<em>bug fixes</em> o <em>features</em>) que se están desarrollando. Este es el <em>branch</em> del que se deben crear los <em>forks</em> para desarrollar correcciones, mejoras o adiciones en el código.</p>
+</li>
+<li>
+<p><strong>bugfix/</strong> <em>branches</em>: Cada corrección debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong> <em>branch</em>.</p>
+</li>
+<li>
+<p><strong>feature/</strong> <em>branches</em>: Cada nuevo cambio, mejora o adición debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong> <em>branch</em>.</p>
+</li>
+<li>
+<p><strong>release/</strong> <em>branches</em>: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un <em>branch</em> de este tipo desde el <strong>develop</strong> <em>branch</em>. Esto inicia el ciclo de <em>release</em> y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este <em>branch</em>, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de <em>release</em>.</p>
+</li>
+<li>
+<p><strong>hotfix/</strong> <em>branches</em>: Usadas para reparar rápidamente errores en la versión de producción (<strong>master</strong> <em>branch</em>). Este es el único <em>branch</em> que se puede (y debe) crear a partir del <strong>master</strong> <em>branch</em>. Una vez terminada la corrección se fusiona nuevamente con el <strong>master</strong> <em>branch</em>, con el <strong>release-</strong> <em>branch</em> actual y con el <strong>develop</strong> <em>branch</em>. La fusión con el <strong>master</strong> <em>branch</em> debe llevar su respectiva <strong>tag</strong> con el número de versión actualizado.</p>
+</li>
+</ul>
+<h3 id="commits"><em>Commits</em></h3>
+<p>Es obligatorio incluir un mensaje en cada <em>commit</em>. El mensaje debe utilizar la siguiente plantilla:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;tipo&gt;: &lt;asunto&gt; (Si se aplica, este commit...)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>|&lt;----  Usar máximo 50 caracteres  ----&gt;|
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Explique por qué se realiza el cambio.
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>|&lt;----  Trate de limitar cada línea a máximo 72 caracteres  ----&gt;|
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Provea links o claves a cualquier ticket, artículo u otro recurso relevante para el commit
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Ejemplo: Issue #23
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>---- FIN DEL COMMIT ----
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Type can be: 
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    feat     nueva característica
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    fix      corrección de error
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    style    formato (e.g. agregar comas que faltaban); no se cambia el código
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    docs     cambios a la documentación
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    test     añadir o ajustar tests; no se cambia el código de producción
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    chore    cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>---------------
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>Recuerde...
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    Empezar con mayúscula la línea del asunto
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    Usar el modo imperativo en la línea del asunto
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    No terminar la línea del asunto con punto
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    Usar el cuerpo del commit para explicar el qué y el por qué, no el cómo
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    Puede usar múltiple líneas con &quot;-&quot; para viñetas en el cuerpo del commit
+</span></code></pre></div>
+<h3 id="versionamiento-tags">Versionamiento (<em>tags</em>)</h3>
+<p>Se usa <a href="http://semver.org/">SemVer</a> como lineamiento para el versionamiento. Para nombrar las <strong><em>tags</em></strong> se debe usar la forma <code>v0.0.0</code>.</p>
+<p>Para ver las versiones disponibles, consulte las <a href="https://github.com/alejpelo/plantilla-proyecto-python/tags"><em>tags</em> en este repositorio</a>.</p>
+<hr />
+<!-- END INCLUDE -->
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Para instalar Python se recomienda usar <a href="https://github.com/pyenv/pyenv">pyenv</a> para Linux o MacOS. En Windows la recomendación es instalar Python con el instalador que se encuentra en la página oficial.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://python-poetry.org/docs/managing-environments/">Poetry Managing Environments</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
