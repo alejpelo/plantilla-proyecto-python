@@ -23,22 +23,36 @@ Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener i
 
 1. Cree un nuevo repositorio a partir de este. Esto es posible ya que está definido como una plantilla. Otra opción es crear un _fork_ de este repositorio. Si ya tenía el _fork_, realice un _sync fork_ para traer la versión más reciente.
 2. Clone el nuevo repositorio en su equipo.
-3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^2] (i.e. 3.11) y ejecute:
+3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^2] (i.e. 3.11)
+
+    === "Windows"
+
+        ```shell
+        poetry env use "C:/Users/<USUARIO>/AppData/Local/Programs/Python/Python<##>/python.exe"
+        ```
+
+    === "MacOS/Linux"
+
+        ```shell
+        pyenv local 3.11
+        ```
+
+4. Instale el proyecto, ejecute:
 
     ```shell
     poetry install
     ```
 
-4. En el proyecto se usa [pre-commit](https://pre-commit.com/) para automatizar la verificación del código antes de los _commits_ y de los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
+5. En el proyecto se usa [pre-commit](https://pre-commit.com/) para automatizar la verificación del código antes de los _commits_ y de los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
 
     ```shell
     pre-commit install
     pre-commit install --hook-type pre-push
     ```
 
-5. Consulte el archivo `src/proyecto/tutorial.py` para conocer cómo usar los archivos de configuración y el log.
+6. Consulte el archivo `src/proyecto/tutorial.py` para conocer cómo usar los archivos de configuración y el log.
 
-6. Consulte el archivo `docs/tutorial.md` para conocer las capacidades instaladas de la documentación. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:
+7. Consulte el archivo `docs/tutorial.md` para conocer las capacidades instaladas de la documentación. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:
 
     ```shell
     mkdocs serve
