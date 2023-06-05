@@ -1,5 +1,7 @@
 # Plantilla para proyectos: Python
 
+Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para ver la documentación en línea
+
 <!--docs-start-->
 
 Plantilla para organizar proyectos que usan Python e incluye las mejores prácticas relacionadas con:
