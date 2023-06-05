@@ -21,8 +21,8 @@ Plantilla para organizar proyectos que usan Python e incluye las mejores prácti
 
 Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), [**Python**](https://www.python.org/)[^1] (versión 3.11) y [**Poetry**](https://python-poetry.org/) (versión >=1.5).
 
-1. Cree un _fork_ de este repositorio. Si ya tenía el _fork_, realice un _sync fork_ para traer la versión más reciente. Otra opción es crear un nuevo repositorio a partir de este, para el nuevo proyecto.
-2. Clone el nuevo repositorio.
+1. Cree un nuevo repositorio a partir de este. Esto es posible ya que está definido como una plantilla. Otra opción es crear un _fork_ de este repositorio. Si ya tenía el _fork_, realice un _sync fork_ para traer la versión más reciente.
+2. Clone el nuevo repositorio en su equipo.
 3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^2] (i.e. 3.11) y ejecute:
 
     ```shell
