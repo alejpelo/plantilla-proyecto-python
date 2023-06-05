@@ -1,0 +1,22 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  run:
+    dir: .hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+# Modificar a partir de aquí...
+
+data:
+  raw: data/raw/winequality-red.csv
+  intermediate: data/intermediate
+
+model: models
+
+processs:
+  cols_to_drop:
+  - free sulfur dioxide
+  feature: quality
+  test_size: 0.2

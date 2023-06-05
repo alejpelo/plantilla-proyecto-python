@@ -10,7 +10,7 @@ repos:
         pass_filenames: false
       - id: poetry-lock
         name: poetry => make sure the lock file is up-to-date
-        stages: [commit]
+        stages: [push]
         language: system
         entry: poetry lock
         always_run: true
@@ -34,6 +34,13 @@ repos:
         stages: [commit]
         language: system
         entry: poetry run ruff check .
+        always_run: true
+        pass_filenames: false
+      - id: pip-audit
+        name: pip-audit => vulnerability checking
+        stages: [push]
+        language: system
+        entry: poetry run pip-audit
         always_run: true
         pass_filenames: false
       - id: pytest

@@ -1,4 +1,6 @@
-# Tutorial
+# Tutorial documentación
+
+A continuación se incluyen algunos ejemplos para que funcionen como tutorial de las capacidades que están activas en la documentación.
 
 ## [Formato](https://squidfunk.github.io/mkdocs-material/reference/formatting/)
 
@@ -16,10 +18,7 @@ El texto puede ser {--borrado--} y se puede reemplazar con texto {++agregado++}.
 ## [_Call outs_](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
 !!! note
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctormassa, nec semper lorem quam in massa.
 
 ## [Botones](https://squidfunk.github.io/mkdocs-material/reference/buttons/)
 
@@ -27,27 +26,25 @@ El texto puede ser {--borrado--} y se puede reemplazar con texto {++agregado++}.
 
 ## [Código](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
 
-``` py title="Importar TensorFlow"
+```py title="Importar TensorFlow"
 # (1)
 import tensorflow as tf # (2)!
 ```
 
-1.  Para bloques sin título, remover `title="..."`
+1. Para bloques sin título, remover `title="..."`
 
-2.  :man_raising_hand: Soy una anotación! Puedo contener `codigo`, __texto con
-    formato__, imagenes, ... báscicamente cualqueir cosa que se pueda escribir
+2. :man_raising_hand: Soy una anotación! Puedo contener `código`, __texto con
+    formato__, imágenes, ... básicamente cualquier cosa que se pueda escribir
     con Markdown.
 
 ## [Pestañas](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/)
 
 === "Unordered list"
-
-    * Sed sagittis eleifend rutrum
-    * Donec vitae suscipit est
-    * Nulla tempor lobortis orci
+    - Sed sagittis eleifend rutrum
+    - Donec vitae suscipit est
+    - Nulla tempor lobortis orci
 
 === "Ordered list"
-
     1. Sed sagittis eleifend rutrum
     2. Donec vitae suscipit est
     3. Nulla tempor lobortis orci
@@ -62,7 +59,7 @@ import tensorflow as tf # (2)!
 
 ## [Diagramas](https://squidfunk.github.io/mkdocs-material/reference/diagrams/)
 
-``` mermaid
+```mermaid
 graph LR
   A[Start] --> B{Error?};
   B -->|Yes| C[Hmm...];
@@ -91,9 +88,7 @@ $$
 \operatorname{ker} f=\{g\in G:f(g)=e_{H}\}
 $$
 
-The homomorphism $f$ is injective if and only if its kernel is only the 
-singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such 
-that $f(a)=f(b)$.
+The homomorphism $f$ is injective if and only if its kernel is only the singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.
 
 ## [_Tooltips_](https://squidfunk.github.io/mkdocs-material/reference/tooltips/)
 

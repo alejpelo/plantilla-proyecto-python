@@ -1,11 +1,11 @@
-.PHONY: all check_environment code_linting code_type_cheking code_library_sorting code_formatting code_testing code_update_requirements
+.PHONY: all check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 all: pre_build
 
-pre_build: check_environment code_type_cheking code_formatting code_linting code_testing code_update_requirements
+pre_build: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 check_environment:
-	@printf "checking environtment => poetry...\n"
+	@printf "checking and updating the environment => poetry...\n"
 	poetry check
 	poetry lock
 
@@ -21,6 +21,10 @@ code_linting:
 	@printf "linting code => ruff...\n"
 	poetry run ruff check .
 
+code_vulnerability:
+	@printf "checking vulnerabilities => pip-audit...\n"
+	poetry run pip-audit
+
 code_testing:
 	@printf "testing code => pytest...\n"
 	poetry run pytest --cov
@@ -28,3 +32,15 @@ code_testing:
 code_update_requirements:
 	@printf "updating requirements...\n"
 	sh write_requirements.sh
+
+build: build_docs
+
+build_docs:
+	@printf "building docs => mkdocs...\n"
+	poetry run mkdocs build
+
+deploy: deploy_docs
+
+deploy_docs:
+	@printf "deploy docs => mkdocs...\n"
+	poetry run mkdocs gh-deploy
