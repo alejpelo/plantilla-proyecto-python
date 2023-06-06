@@ -558,14 +558,29 @@
 <li>Cree un nuevo repositorio a partir de este. Esto es posible ya que está definido como una plantilla. Otra opción es crear un <em>fork</em> de este repositorio. Si ya tenía el <em>fork</em>, realice un <em>sync fork</em> para traer la versión más reciente.</li>
 <li>Clone el nuevo repositorio en su equipo.</li>
 <li>
-<p>Asegúrese que <em>Poetry</em> está usando la versión de <em>Python</em> adecuada para crear el ambiente virtual<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> (i.e. 3.11) y ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>install
+<p>Asegúrese que <em>Poetry</em> está usando la versión de <em>Python</em> adecuada para crear el ambiente virtual<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> (i.e. 3.11)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">MacOS/Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>env<span class="w"> </span>use<span class="w"> </span><span class="s2">&quot;C:/Users/&lt;USUARIO&gt;/AppData/Local/Programs/Python/Python&lt;##&gt;/python.exe&quot;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span><span class="m">3</span>.11
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Instale el proyecto, ejecute:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>install
 </span></code></pre></div>
 </li>
 <li>
 <p>En el proyecto se usa <a href="https://pre-commit.com/">pre-commit</a> para automatizar la verificación del código antes de los <em>commits</em> y de los <em>pushs</em>. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pre-commit<span class="w"> </span>install
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-push
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pre-commit<span class="w"> </span>install
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-push
 </span></code></pre></div>
 </li>
 <li>
@@ -573,18 +588,18 @@
 </li>
 <li>
 <p>Consulte el archivo <code>docs/tutorial.md</code> para conocer las capacidades instaladas de la documentación. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs<span class="w"> </span>serve
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>serve
 </span></code></pre></div>
 <p>Esto hará que la documentación en se actualice en la medida que realice cambios.</p>
 <p>Al final para construir el sitio, ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs<span class="w"> </span>build
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdocs<span class="w"> </span>build
 </span></code></pre></div>
 <p>Y para deplegar la documentación en el <a href="https://pages.github.com/">GitHub Pages</a>, estando en la <strong>master</strong>/<strong>main</strong> <em>branch</em>, ejecute:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Para que esta instrucción funcione y la página quede publicada, el repositorio debe ser público o el usuario debe estar suscrito a <a href="https://github.com/team">GitHub Teams</a></p>
 </div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>gh-deploy
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs<span class="w"> </span>gh-deploy
 </span></code></pre></div>
 </li>
 </ol>
@@ -621,10 +636,10 @@ Próximamente se incluirán las instrucciones para que todo funcione adecuadamen
 </li>
 </ul>
 <p>Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de <strong>Poetry</strong>, se debe ejecutar, por ejemplo:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
 </span></code></pre></div>
 <p>Si la va a instalar solo para desarrollo, o en cualquier otro grupo de librerías, ejecutar:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
 </span></code></pre></div>
 <h2 id="lineamientos-para-contribuir-al-proyecto">Lineamientos para Contribuir al Proyecto</h2>
 <p>Se deben seguir los siguientes lineamientos para para contribuir al desarrollo del proyecto. Esto garantiza que la trazabilidad y el versionamiento sea robusto.</p>
@@ -652,34 +667,34 @@ Próximamente se incluirán las instrucciones para que todo funcione adecuadamen
 </ul>
 <h3 id="commits"><em>Commits</em></h3>
 <p>Es obligatorio incluir un mensaje en cada <em>commit</em>. El mensaje debe utilizar la siguiente plantilla:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;tipo&gt;: &lt;asunto&gt; (Si se aplica, este commit...)
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>|&lt;----  Usar máximo 50 caracteres  ----&gt;|
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Explique por qué se realiza el cambio.
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>|&lt;----  Trate de limitar cada línea a máximo 72 caracteres  ----&gt;|
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Provea links o claves a cualquier ticket, artículo u otro recurso relevante para el commit
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Ejemplo: Issue #23
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>---- FIN DEL COMMIT ----
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Type can be: 
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    feat     nueva característica
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    fix      corrección de error
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    style    formato (e.g. agregar comas que faltaban); no se cambia el código
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    docs     cambios a la documentación
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    test     añadir o ajustar tests; no se cambia el código de producción
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    chore    cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>---------------
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>Recuerde...
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    Empezar con mayúscula la línea del asunto
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    Usar el modo imperativo en la línea del asunto
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    No terminar la línea del asunto con punto
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    Usar el cuerpo del commit para explicar el qué y el por qué, no el cómo
-</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    Puede usar múltiple líneas con &quot;-&quot; para viñetas en el cuerpo del commit
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;tipo&gt;: &lt;asunto&gt; (Si se aplica, este commit...)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>|&lt;----  Usar máximo 50 caracteres  ----&gt;|
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Explique por qué se realiza el cambio.
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>|&lt;----  Trate de limitar cada línea a máximo 72 caracteres  ----&gt;|
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Provea links o claves a cualquier ticket, artículo u otro recurso relevante para el commit
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Ejemplo: Issue #23
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>---- FIN DEL COMMIT ----
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Type can be: 
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    feat     nueva característica
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    fix      corrección de error
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    style    formato (e.g. agregar comas que faltaban); no se cambia el código
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    docs     cambios a la documentación
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    test     añadir o ajustar tests; no se cambia el código de producción
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    chore    cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>---------------
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>Recuerde...
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    Empezar con mayúscula la línea del asunto
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    Usar el modo imperativo en la línea del asunto
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    No terminar la línea del asunto con punto
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    Usar el cuerpo del commit para explicar el qué y el por qué, no el cómo
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    Puede usar múltiple líneas con &quot;-&quot; para viñetas en el cuerpo del commit
 </span></code></pre></div>
 <h3 id="versionamiento-tags">Versionamiento (<em>tags</em>)</h3>
 <p>Se usa <a href="http://semver.org/">SemVer</a> como lineamiento para el versionamiento. Para nombrar las <strong><em>tags</em></strong> se debe usar la forma <code>v0.0.0</code>.</p>
