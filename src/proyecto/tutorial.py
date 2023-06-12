@@ -3,6 +3,7 @@
 
 Este módulo muestra como usar:
 
+- El archivo con variables de entorno.
 - El archivo de configuración desde cualquier parte del proyecto.
 - El log desde cualquier módulo del proyecto.
 
@@ -12,8 +13,10 @@ configuración de prueba una vez esté familiarizado con lo que aquí se muestra
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
 import hydra
-from logger import log
 from omegaconf import DictConfig, OmegaConf
+
+from configuracion import config
+from logger import log
 
 
 # ¿Cómo usar los archivos de configuración?
@@ -23,14 +26,18 @@ from omegaconf import DictConfig, OmegaConf
     version_base=None,
 )
 def my_app(cfg: DictConfig) -> None:
-    """Muestra el uso de archivos de configuración para toda la aplicación.
+    """Usa archivos de configuración y variables de entorno en la aplicación.
 
-    Imprime el archivo de configuración de prueba que está en conf/main.yaml
+    - Lleva al log todas las variables del archivo de configuración de prueba
+        que está en conf/main.yaml
+    - Lleva al log todas las variables de los archivos .env.shared y
+        .env.secrets
 
     Args:
         cfg (DictConfig): Diccionario con toda la configuración
     """
     log.debug("Configuración: {}", OmegaConf.to_object(cfg))
+    log.debug("Entorno: {}", config)
 
     # ¿Cómo usar "logear" algo en cualquier módulo?
     log.debug(
