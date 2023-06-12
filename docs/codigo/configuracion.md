@@ -1,6 +1,6 @@
-# Tutorial
+# Configuración
 
-::: proyecto.tutorial
+::: proyecto.configuracion
     handler: python
     options:
       show_root_heading: false

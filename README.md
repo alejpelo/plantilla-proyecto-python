@@ -6,7 +6,7 @@ Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para ver la
 
 Plantilla para organizar proyectos que usan Python e incluye las mejores prácticas relacionadas con:
 
-- _Version control_: [Git](https://git-scm.com/)
+- _Version control_: [Git](https://git-scm.com/), (libro: [Pro Git](https://git-scm.com/book/en/v2), tutorial: [Getting Git Right: Learn Git with Tutorials, News and Tips](https://www.atlassian.com/git))
 - _Virtual environments_ y _Dependency management_: [Poetry](https://python-poetry.org/)
 - _Static typing_: [Mypy](https://mypy-lang.org/)
 - _Code formatting_: [Black](https://github.com/psf/black)
@@ -14,26 +14,41 @@ Plantilla para organizar proyectos que usan Python e incluye las mejores prácti
 - _Package vulnerability analysis_: [Pip-audit](https://pypi.org/project/pip-audit/)
 - _Pre-Commit hooks_: [Pre-commit](https://pre-commit.com/)
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
-- Configuration files: [Hydra](https://hydra.cc/)
+- _`.env` files_: [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- _Configuration files_: [Hydra](https://hydra.cc/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), [**Python**](https://www.python.org/)[^1] (versión 3.11) y [**Poetry**](https://python-poetry.org/) (versión >=1.5).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), [**Python**](https://www.python.org/)[^1] (versión 3.11) y [**Poetry**](https://python-poetry.org/docs/#installation) (versión >=1.5).
 
-1. Cree un nuevo repositorio a partir de este. Esto es posible ya que está definido como una plantilla. Otra opción es crear un _fork_ de este repositorio. Si ya tenía el _fork_, realice un _sync fork_ para traer la versión más reciente.
+=== "WindowsOS"
+
+    Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de Python.
+
+    En Windows es necesario instalar, adicionalmente, [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69))
+
+=== "MacOS / Linux"
+
+    Para instalar Python se recomienda usar [Homebrew](https://brew.sh/) y [pyenv](https://github.com/pyenv/pyenv).
+
+Posteriormente, siga los pasos descritos a continuación:
+
+1. Cree un nuevo repositorio a partir de esta [plantilla](https://github.com/alejpelo/plantilla-proyecto-python) (_template_) con el nombre de su nuevo proyecto en el que quiere implementar las mejores prácticas.
+
 2. Clone el nuevo repositorio en su equipo.
+
 3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^2] (i.e. 3.11)
 
-    === "Windows"
+    === "WindowsOS"
 
         ```shell
         poetry env use "C:/Users/<USUARIO>/AppData/Local/Programs/Python/Python<##>/python.exe"
         ```
 
-    === "MacOS/Linux"
+    === "MacOS / Linux"
 
-        ```shell
+        ```
         pyenv local 3.11
         ```
 
@@ -68,32 +83,34 @@ Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener i
 
     Y para deplegar la documentación en el [GitHub Pages](https://pages.github.com/), estando en la **master**/**main** _branch_, ejecute:
 
-    !!! warning
+    !!! tip "Tener presente..."
         Para que esta instrucción funcione y la página quede publicada, el repositorio debe ser público o el usuario debe estar suscrito a [GitHub Teams](https://github.com/team)
 
     ```shell
     mkdocs gh-deploy
     ```
 
-!!! danger
-    El proyecto tiene un makefile y un archivo shell que no corren en Windows por defecto. En Linux y MacOS funciona correctamente. En Windows, por el momento, es necesario remover el pre-commit que exporta los archivos de librarías requeridas de `.pre-commit-config.yaml`. y no usar el `Makefile`.
-    Próximamente se incluirán las instrucciones para que todo funcione adecuadamente en Windows.
+!!! danger "¡Atención!"
+    El proyecto tiene un `Makefile` y un archivo _shell_ (`write_requirements.sh`) que no corren en WindowsOS por defecto. Si siguió todas las instrucciones descritas anteriormente, todas las funcionalidades de la plantilla debe funcionar adecuadamente tanto en WindowsOS como en MacOS y LinuxOS. Si se le presentan errores:
 
-Eso es todo, puede empezar con su nuevo proyecto.
+    1. Es necesario remover el pre-commit que exporta los archivos de librarías requeridas de `.pre-commit-config.yaml`. y no usar el `Makefile`.
+    2. Agradecemos lo reporte para buscar una solución.
+
+**Eso es todo, puede empezar con su nuevo proyecto.**
 
 ## Librarías útiles para los proyectos
 
-- [Pandas](https://pandas.pydata.org/)
-- [Polars](https://www.pola.rs/)
-- [Pydantic](https://docs.pydantic.dev/latest/)
-- [Scikit-learn](https://scikit-learn.org/stable/)
-- [Keras](https://keras.io/)
+- _Dataframes_: [Pandas](https://pandas.pydata.org/) (tutorial: [Pandas Illustrated: The Definitive Visual Guide to Pandas](https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43)), [Polars](https://www.pola.rs/)
+- _Graphics_ / _plots_: [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
+- _Data validation_: [Pydantic](https://docs.pydantic.dev/latest/)
+- _Machine Learning_ / _deep learning_: [Scikit-learn](https://scikit-learn.org/stable/), [Keras](https://keras.io/)
+- _In memory DB_: [Duck DB](https://duckdb.org)
+- _Data workflow orchestration_: [Prefect](https://www.prefect.io/opensource)
+- _Web scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
 
-- [Streamlit](https://streamlit.io/)
-- [DearPyGUI](https://github.com/hoffstadt/DearPyGui)
-- [Gradio](https://github.com/gradio-app/gradio)
+- Interfaz gráfica / web: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio)
 
-- [FastAPI](https://fastapi.tiangolo.com/lo/)
+- APIs: [FastAPI](https://fastapi.tiangolo.com/lo/)
 
 - [Power tools for AWS Lambda](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
 

@@ -1,4 +1,4 @@
-# Logger
+# Log
 
 ::: proyecto.logger
     handler: python

@@ -7,8 +7,9 @@ repo_url: https://github.com/alejpelo/plantilla-proyecto-python
 nav:
     - Home: index.md
     - Tutorial: tutorial.md
-    - código:
-      - Logger: codigo/logger.md
+    - Código:
+      - Configuración: codigo/configuracion.md
+      - Log: codigo/logger.md
       - Tutorial: codigo/tutorial.md
 
 theme:
