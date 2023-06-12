@@ -13,15 +13,17 @@
       
       
       
-        <link rel="prev" href="../logger/">
+        <link rel="prev" href="../../tutorial/">
       
+      
+        <link rel="next" href="../logger/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Tutorial - Documentación</title>
+        <title>Configuración - Documentación</title>
       
     
     
@@ -73,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial" class="md-skip">
+        <a href="#configuracion" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorial
+              Configuración
             
           </span>
         </div>
@@ -210,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../configuracion/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Código
       </a>
     </li>
@@ -332,11 +334,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../configuracion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuración
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Configuración
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#proyecto.configuracion" class="md-nav__link">
+    proyecto.configuracion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -360,59 +403,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
         Tutorial
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#proyecto.tutorial" class="md-nav__link">
-    proyecto.tutorial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proyecto.tutorial.my_app" class="md-nav__link">
-    my_app()
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -451,15 +446,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#proyecto.tutorial" class="md-nav__link">
-    proyecto.tutorial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proyecto.tutorial.my_app" class="md-nav__link">
-    my_app()
+  <a href="#proyecto.configuracion" class="md-nav__link">
+    proyecto.configuracion
   </a>
   
 </li>
@@ -482,24 +470,36 @@
   
 
 
-<h1 id="tutorial">Tutorial</h1>
+<h1 id="configuracion">Configuración</h1>
 
 
 <div class="doc doc-object doc-module">
 
 
-<a id="proyecto.tutorial"></a>
+<a id="proyecto.configuracion"></a>
   <div class="doc doc-contents first">
   
-      <p>Tutorial para <em>configuration files</em> y <em>log</em>.</p>
-<p>Este módulo muestra como usar:</p>
+      <p>Variables de Configuración y Variables de Entorno.</p>
+<p>Este módulo contiene las funciones que permiten leer los archivos .env con las
+variables de configuración tanto públicas (que se comparten con el proyecto),
+como aquellas privadas (<em>secrets</em>) que no se comparten y cada usuario del
+proyecto debe alimentar.</p>
+<p>Esta forma de trabajar permite tener adecuados controles de seguridad para no
+compartir información sensible como por ejemplo: contraseñas, nombres de
+usuario, entre otros.</p>
+<p>En la raíz del proyecto debe haber dos archivos:</p>
 <ul>
-<li>El archivo con variables de entorno.</li>
-<li>El archivo de configuración desde cualquier parte del proyecto.</li>
-<li>El log desde cualquier módulo del proyecto.</li>
+<li>
+<p><code>.env.shared</code>: archivo con variables de configuración públicas. Este archivo
+    <strong>SI</strong> se agrega al versionamiento y <strong>SI</strong> va al repositorio.</p>
+</li>
+<li>
+<p><code>.env.secrets</code>: archivo con variables de configuración privadas. Este
+    archivo <strong>NO</strong> se agrega al versionamiento y <strong>NO</strong> va al repositorio.</p>
+</li>
 </ul>
-<p>La idea es que el usuario borre este archivo y ajuste el archivo de
-configuración de prueba una vez esté familiarizado con lo que aquí se muestra.</p>
+<p>Se usa <a href="https://github.com/theskumar/python-dotenv">Python-dotenv</a> como
+libraría leer los archivos de configuración.</p>
 <p>Author: <a href="mailto:perezl.alejandro@gmail.com">Alejandro Perez Londoño</a></p>
 
   
@@ -513,121 +513,6 @@ configuración de prueba una vez esté familiarizado con lo que aquí se muestra
 
 
 
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="proyecto.tutorial.my_app" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">my_app</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Usa archivos de configuración y variables de entorno en la aplicación.</p>
-<ul>
-<li>Lleva al log todas las variables del archivo de configuración de prueba
-    que está en conf/main.yaml</li>
-<li>Lleva al log todas las variables de los archivos .env.shared y
-    .env.secrets</li>
-</ul>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>cfg</code></td>
-          <td>
-                <code><span title="omegaconf.DictConfig">DictConfig</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Diccionario con toda la configuración</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-      <details class="quote">
-        <summary>Source code in <code>src/proyecto/tutorial.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="nd">@hydra</span><span class="o">.</span><span class="n">main</span><span class="p">(</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">config_path</span><span class="o">=</span><span class="s2">&quot;../../conf&quot;</span><span class="p">,</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">config_name</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="n">version_base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="p">)</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="k">def</span> <span class="nf">my_app</span><span class="p">(</span><span class="n">cfg</span><span class="p">:</span> <span class="n">DictConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Usa archivos de configuración y variables de entorno en la aplicación.</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">    - Lleva al log todas las variables del archivo de configuración de prueba</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">        que está en conf/main.yaml</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">    - Lleva al log todas las variables de los archivos .env.shared y</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">        .env.secrets</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">    Args:</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">        cfg (DictConfig): Diccionario con toda la configuración</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Configuración: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">cfg</span><span class="p">))</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Entorno: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="c1"># ¿Cómo usar &quot;logear&quot; algo en cualquier módulo?</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="s2">&quot;Si está usando Python </span><span class="si">{}</span><span class="s2">, es, por supuesto, preferible </span><span class="si">{feature}</span><span class="s2">!&quot;</span><span class="p">,</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>        <span class="s2">&quot;&gt;=3.6&quot;</span><span class="p">,</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>        <span class="n">feature</span><span class="o">=</span><span class="s2">&quot;f-strings&quot;</span><span class="p">,</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="p">)</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Eso es todo, log fácil!&quot;</span><span class="p">)</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="c1"># ¿Cómo agregar más información al log (agregar contexto)?</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">log_contextualizado</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">cliente_id</span><span class="o">=</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="n">producto_id</span><span class="o">=</span><span class="s2">&quot;123&quot;</span><span class="p">)</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">log_contextualizado</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fácil, log con la información adicional&quot;</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
 
 
 
