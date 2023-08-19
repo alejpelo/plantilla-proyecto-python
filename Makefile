@@ -5,7 +5,7 @@ all: pre_build
 pre_build: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 check_environment:
-	@printf "checking and updating the environment => poetry...\n"
+	@printf "checking and verifying the virtual environment => poetry...\n"
 	poetry check
 	poetry lock
 
