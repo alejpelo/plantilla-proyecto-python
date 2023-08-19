@@ -20,11 +20,11 @@ Plantilla para organizar proyectos que usan Python e incluye las mejores prácti
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), [**Python**](https://www.python.org/)[^1] (versión 3.11) y [**Poetry**](https://python-poetry.org/docs/#installation) (versión >=1.5).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), **Python** (versión 3.11) y [**Poetry**](https://python-poetry.org/docs/#installation) (versión >= 1.5).
 
 === "WindowsOS"
 
-    Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de Python.
+    Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de [Python](https://www.python.org/).
 
     En Windows es necesario instalar, adicionalmente, [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69))
 
@@ -38,7 +38,7 @@ Posteriormente, siga los pasos descritos a continuación:
 
 2. Clone el nuevo repositorio en su equipo.
 
-3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^2] (i.e. 3.11)
+3. Asegúrese que _Poetry_ está usando la versión de _Python_ adecuada para crear el ambiente virtual[^1] (i.e. 3.11)
 
     === "WindowsOS"
 
@@ -73,7 +73,7 @@ Posteriormente, siga los pasos descritos a continuación:
     mkdocs serve
     ```
 
-    Esto hará que la documentación en se actualice en la medida que realice cambios.
+    Esto hará que la documentación se actualice en línea en la medida que realice cambios.
 
     Al final para construir el sitio, ejecute:
 
@@ -105,7 +105,7 @@ Posteriormente, siga los pasos descritos a continuación:
 - _Data validation_: [Pydantic](https://docs.pydantic.dev/latest/)
 - _Machine Learning_ / _deep learning_: [Scikit-learn](https://scikit-learn.org/stable/), [Keras](https://keras.io/)
 - _In memory DB_: [Duck DB](https://duckdb.org)
-- _Data workflow orchestration_: [Prefect](https://www.prefect.io/opensource)
+- _Data workflow orchestration_: [Kestra](https://kestra.io/), [Prefect](https://www.prefect.io/opensource)
 - _Web scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
 
 - Interfaz gráfica / web: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio)
@@ -191,8 +191,6 @@ Para ver las versiones disponibles, consulte las [_tags_ en este repositorio](ht
 
 ---
 
-[^1]: Para instalar Python se recomienda usar [pyenv](https://github.com/pyenv/pyenv) para Linux o MacOS. En Windows la recomendación es instalar Python con el instalador que se encuentra en la página oficial.
-
-[^2]: [Poetry Managing Environments](https://python-poetry.org/docs/managing-environments/).
+[^1]: [Poetry Managing Environments](https://python-poetry.org/docs/managing-environments/).
 
 <!--docs-end-->
