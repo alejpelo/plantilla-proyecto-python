@@ -101,19 +101,16 @@ Posteriormente, siga los pasos descritos a continuación:
 ## Librarías útiles para los proyectos
 
 - _Dataframes_: [Pandas](https://pandas.pydata.org/) (tutorial: [Pandas Illustrated: The Definitive Visual Guide to Pandas](https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43)), [Polars](https://www.pola.rs/)
-- _Graphics_ / _plots_: [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
-- _Data validation_: [Pydantic](https://docs.pydantic.dev/latest/)
-- _Machine Learning_ / _deep learning_: [Scikit-learn](https://scikit-learn.org/stable/), [Keras](https://keras.io/)
-- _In memory DB_: [Duck DB](https://duckdb.org)
-- _Data workflow orchestration_: [Kestra](https://kestra.io/), [Prefect](https://www.prefect.io/opensource)
-- _Web scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
-
-- Interfaz gráfica / web: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio)
-
-- APIs: [FastAPI](https://fastapi.tiangolo.com/lo/)
-
-- [Power tools for AWS Lambda](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
-
+- _Graphics_ / _Plots_: [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
+- _Data Validation_: [Pydantic](https://docs.pydantic.dev/latest/)
+- _Machine Learning_ / _Deep Learning_: [Scikit-learn](https://scikit-learn.org/stable/), [Keras](https://keras.io/)
+- _In Memory DB_: [Duck DB](https://duckdb.org)
+- _Data Workflow Orchestration_: [Kestra](https://kestra.io/), [Prefect](https://www.prefect.io/opensource)
+- _Web Scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
+- _Data Version Control_: [DVC](https://dvc.org/)
+- Interfaz gráficas / _Web Clients_: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio)
+- _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/)
+- [_Power tools for AWS Lambda_](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
 - [Nox](https://nox.thea.codes/en/stable/index.html)
 
 Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de **Poetry**, se debe ejecutar, por ejemplo:
