@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
@@ -26,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.d451bc0e.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.a5377069.min.css">
       
       
 
@@ -423,9 +423,13 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    
       
-        
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
         
         
         
@@ -433,7 +437,8 @@
         
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -713,15 +718,15 @@
 <li><em>Data Workflow Orchestration</em>: <a href="https://kestra.io/">Kestra</a>, <a href="https://www.prefect.io/opensource">Prefect</a></li>
 <li><em>Web Scrapping</em>: <a href="https://beautiful-soup-4.readthedocs.io/en/latest/">Beautiful Soup</a>, <a href="https://www.selenium.dev/..">Selenium</a></li>
 <li><em>Data Version Control</em>: <a href="https://dvc.org/">DVC</a></li>
-<li>Interfaz gráficas / <em>Web Clients</em>: <a href="https://streamlit.io/">Streamlit</a>, <a href="https://github.com/hoffstadt/DearPyGui">DearPyGUI</a>, <a href="https://github.com/gradio-app/gradio">Gradio</a></li>
-<li><em>APIs</em>: <a href="https://fastapi.tiangolo.com/lo/">FastAPI</a></li>
+<li>Interfaz gráficas / <em>Web Clients</em>: <a href="https://streamlit.io/">Streamlit</a>, <a href="https://github.com/hoffstadt/DearPyGui">DearPyGUI</a>, <a href="https://github.com/gradio-app/gradio">Gradio</a>, <a href="https://www.djangoproject.com/">Django</a></li>
+<li><em>APIs</em>: <a href="https://fastapi.tiangolo.com/lo/">FastAPI</a>, <a href="https://www.djangoproject.com/">Django</a></li>
 <li><a href="https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/"><em>Power tools for AWS Lambda</em></a></li>
 <li><a href="https://nox.thea.codes/en/stable/index.html">Nox</a></li>
 </ul>
 <p>Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de <strong>Poetry</strong>, se debe ejecutar, por ejemplo:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
 </span></code></pre></div>
-<p>Si la va a instalar solo para desarrollo, o en cualquier otro grupo de librerías, ejecutar:</p>
+<p>Si la va a instalar solo para desarrollo (<em>dev</em>), o en cualquier otro grupo de librerías (i.e. <em>tests</em>, <em>docs</em>, <em>kernels</em>), ejecutar:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
 </span></code></pre></div>
 <h2 id="lineamientos-para-contribuir-al-proyecto">Lineamientos para Contribuir al Proyecto</h2>
@@ -733,19 +738,19 @@
 <p><strong>master</strong>/<strong>main</strong> <em>branch</em>: solo guarda los <em>releases</em> oficiales. Cada <em>release</em> debe estar identificado con su respectivo <em>tag</em> que hace alusión a la versión del código (ver Versionamiento (<em>tags</em>)).</p>
 </li>
 <li>
-<p><strong>develop</strong> <em>branch</em>: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (<em>bug fixes</em> o <em>features</em>) que se están desarrollando. Este es el <em>branch</em> del que se deben crear los <em>forks</em> para desarrollar correcciones, mejoras o adiciones en el código.</p>
+<p><strong>develop</strong>/<strong>dev</strong> <em>branch</em>: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (<em>bug fixes</em> o <em>features</em>) que se están desarrollando. Este es el <em>branch</em> del que se deben crear los <em>forks</em> para desarrollar correcciones, mejoras o adiciones en el código.</p>
 </li>
 <li>
-<p><strong>bugfix/</strong> <em>branches</em>: Cada corrección debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong> <em>branch</em>.</p>
+<p><strong>bugfix/</strong> <em>branches</em>: Cada corrección debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong>/<strong>dev</strong> <em>branch</em>.</p>
 </li>
 <li>
-<p><strong>feature/</strong> <em>branches</em>: Cada nuevo cambio, mejora o adición debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong> <em>branch</em>.</p>
+<p><strong>feature/</strong> <em>branches</em>: Cada nuevo cambio, mejora o adición debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong>/<strong>dev</strong> <em>branch</em>.</p>
 </li>
 <li>
-<p><strong>release/</strong> <em>branches</em>: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un <em>branch</em> de este tipo desde el <strong>develop</strong> <em>branch</em>. Esto inicia el ciclo de <em>release</em> y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este <em>branch</em>, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de <em>release</em>.</p>
+<p><strong>release/</strong> <em>branches</em>: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un <em>branch</em> de este tipo desde el <strong>develop</strong>/<strong>dev</strong> <em>branch</em>. Esto inicia el ciclo de <em>release</em> y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este <em>branch</em>, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de <em>release</em>.</p>
 </li>
 <li>
-<p><strong>hotfix/</strong> <em>branches</em>: Usadas para reparar rápidamente errores en la versión de producción (<strong>master</strong> <em>branch</em>). Este es el único <em>branch</em> que se puede (y debe) crear a partir del <strong>master</strong> <em>branch</em>. Una vez terminada la corrección se fusiona nuevamente con el <strong>master</strong> <em>branch</em>, con el <strong>release-</strong> <em>branch</em> actual y con el <strong>develop</strong> <em>branch</em>. La fusión con el <strong>master</strong> <em>branch</em> debe llevar su respectiva <strong>tag</strong> con el número de versión actualizado.</p>
+<p><strong>hotfix/</strong> <em>branches</em>: Usadas para reparar rápidamente errores en la versión de producción (<strong>master</strong>/<strong>main</strong> <em>branch</em>). Este es el único <em>branch</em> que se puede (y debe) crear a partir del <strong>master</strong>/<strong>main</strong> <em>branch</em>. Una vez terminada la corrección se fusiona nuevamente con el <strong>master</strong>/<strong>main</strong> <em>branch</em>, con el <strong>release-</strong> <em>branch</em> actual y con el <strong>develop</strong>/<strong>dev</strong> <em>branch</em>. La fusión con el <strong>master</strong>/<strong>main</strong> <em>branch</em> debe llevar su respectiva <strong>tag</strong> con el número de versión actualizado.</p>
 </li>
 </ul>
 <h3 id="commits"><em>Commits</em></h3>
@@ -789,7 +794,7 @@
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://python-poetry.org/docs/managing-environments/">Poetry Managing Environments</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://python-poetry.org/docs/managing-environments/">Poetry, Managing Environments</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -837,10 +842,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="assets/javascripts/bundle.726fbb30.min.js"></script>
       
         <script src="javascripts/katex.js"></script>
       
