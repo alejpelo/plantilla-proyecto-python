@@ -44,31 +44,31 @@ else
     FAILED=true
 fi
 
-# test requirements
-NEW_REQUIREMENTS_TEST=$(poetry export --format requirements.txt --without-hashes --with test)
+# tests requirements
+NEW_REQUIREMENTS_TESTS=$(poetry export --format requirements.txt --without-hashes --with tests)
 
-if [ -f requirements-dev.txt ]; then
-    echo "requirements-test.txt existe!"
+if [ -f requirements-tests.txt ]; then
+    echo "requirements-tests.txt existe!"
 else
-    echo "Falló: requirements-test.txt no existía!"
-    poetry export --format requirements.txt --output requirements-test.txt --without-hashes --with test
+    echo "Falló: requirements-tests.txt no existía!"
+    poetry export --format requirements.txt --output requirements-tests.txt --without-hashes --with tests
     FAILED=True
 fi
 
-REQUIREMENTS_TEST=$(cat requirements-test.txt)
+REQUIREMENTS_TESTS=$(cat requirements-tests.txt)
 
-if [ "$NEW_REQUIREMENTS_TEST" = "$REQUIREMENTS_TEST" ]; then
-    echo "requirements-test.txt está actualizado!"
+if [ "$NEW_REQUIREMENTS_TESTS" = "$REQUIREMENTS_TESTS" ]; then
+    echo "requirements-tests.txt está actualizado!"
 else
-    echo "Falló: requirements-test.txt no estaba actualizado!"
-    poetry export --format requirements.txt --output requirements-test.txt --without-hashes --with test
+    echo "Falló: requirements-tests.txt no estaba actualizado!"
+    poetry export --format requirements.txt --output requirements-tests.txt --without-hashes --with test
     FAILED=true
 fi
 
 # docs requirements
 NEW_REQUIREMENTS_DOCS=$(poetry export --format requirements.txt --without-hashes --with docs)
 
-if [ -f requirements-dev.txt ]; then
+if [ -f requirements-docs.txt ]; then
     echo "requirements-docs.txt existe!"
 else
     echo "Falló: requirements-docs.txt no existía!"

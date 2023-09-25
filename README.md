@@ -108,8 +108,8 @@ Posteriormente, siga los pasos descritos a continuación:
 - _Data Workflow Orchestration_: [Kestra](https://kestra.io/), [Prefect](https://www.prefect.io/opensource)
 - _Web Scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
 - _Data Version Control_: [DVC](https://dvc.org/)
-- Interfaz gráficas / _Web Clients_: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio)
-- _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/)
+- Interfaz gráficas / _Web Clients_: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Django](https://www.djangoproject.com/)
+- _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Django](https://www.djangoproject.com/)
 - [_Power tools for AWS Lambda_](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
 - [Nox](https://nox.thea.codes/en/stable/index.html)
 
@@ -119,7 +119,7 @@ Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, hac
 poetry add pandas
 ```
 
-Si la va a instalar solo para desarrollo, o en cualquier otro grupo de librerías, ejecutar:
+Si la va a instalar solo para desarrollo (_dev_), o en cualquier otro grupo de librerías (i.e. _tests_, _docs_, _kernels_), ejecutar:
 
 ```shell
 poetry add nox --group dev
@@ -135,15 +135,15 @@ Se utiliza [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows
 
 - **master**/**main** _branch_: solo guarda los _releases_ oficiales. Cada _release_ debe estar identificado con su respectivo _tag_ que hace alusión a la versión del código (ver Versionamiento (_tags_)).
 
-- **develop** _branch_: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (_bug fixes_ o _features_) que se están desarrollando. Este es el _branch_ del que se deben crear los _forks_ para desarrollar correcciones, mejoras o adiciones en el código.
+- **develop**/**dev** _branch_: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (_bug fixes_ o _features_) que se están desarrollando. Este es el _branch_ del que se deben crear los _forks_ para desarrollar correcciones, mejoras o adiciones en el código.
 
-- **bugfix/** _branches_: Cada corrección debe residir en su propio _branch_. Siempre se deben crear a partir del **develop** _branch_.
+- **bugfix/** _branches_: Cada corrección debe residir en su propio _branch_. Siempre se deben crear a partir del **develop**/**dev** _branch_.
 
-- **feature/** _branches_: Cada nuevo cambio, mejora o adición debe residir en su propio _branch_. Siempre se deben crear a partir del **develop** _branch_.
+- **feature/** _branches_: Cada nuevo cambio, mejora o adición debe residir en su propio _branch_. Siempre se deben crear a partir del **develop**/**dev** _branch_.
 
-- **release/** _branches_: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un _branch_ de este tipo desde el **develop** _branch_. Esto inicia el ciclo de _release_ y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este _branch_, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de _release_.
+- **release/** _branches_: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un _branch_ de este tipo desde el **develop**/**dev** _branch_. Esto inicia el ciclo de _release_ y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este _branch_, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de _release_.
 
-- **hotfix/** _branches_: Usadas para reparar rápidamente errores en la versión de producción (**master** _branch_). Este es el único _branch_ que se puede (y debe) crear a partir del **master** _branch_. Una vez terminada la corrección se fusiona nuevamente con el **master** _branch_, con el **release-** _branch_ actual y con el **develop** _branch_. La fusión con el **master** _branch_ debe llevar su respectiva **tag** con el número de versión actualizado.
+- **hotfix/** _branches_: Usadas para reparar rápidamente errores en la versión de producción (**master**/**main** _branch_). Este es el único _branch_ que se puede (y debe) crear a partir del **master**/**main** _branch_. Una vez terminada la corrección se fusiona nuevamente con el **master**/**main** _branch_, con el **release-** _branch_ actual y con el **develop**/**dev** _branch_. La fusión con el **master**/**main** _branch_ debe llevar su respectiva **tag** con el número de versión actualizado.
 
 ### _Commits_
 
@@ -188,6 +188,6 @@ Para ver las versiones disponibles, consulte las [_tags_ en este repositorio](ht
 
 ---
 
-[^1]: [Poetry Managing Environments](https://python-poetry.org/docs/managing-environments/).
+[^1]: [Poetry, Managing Environments](https://python-poetry.org/docs/managing-environments/).
 
 <!--docs-end-->

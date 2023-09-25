@@ -19,7 +19,7 @@ ruff = "^0.0.270"
 pip-audit = "^2.5.6"
 pre-commit = "^3.3.2"
 
-[tool.poetry.group.test.dependencies]
+[tool.poetry.group.tests.dependencies]
 pytest = "^7.3.1"
 pytest-cov = "^4.0.0"
 
