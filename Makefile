@@ -2,6 +2,10 @@
 
 all: pre_build
 
+update_environment:
+	@printf "updating the virtual environment => poetry...\n"
+	poetry update
+
 pre_build: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 check_environment:
