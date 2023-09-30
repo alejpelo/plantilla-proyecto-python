@@ -1,16 +1,16 @@
 # Plantilla para proyectos: Python
 
-Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para ver la documentación en línea
+Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para acceder a la documentación en línea
 
 <!--docs-start-->
 
-Plantilla para organizar proyectos que usan Python e incluye las mejores prácticas relacionadas con:
+Plantilla para organizar proyectos que usan **Python** e incorpora mejores prácticas relacionadas con:
 
 - _Version control_: [Git](https://git-scm.com/), (libro: [Pro Git](https://git-scm.com/book/en/v2), tutorial: [Getting Git Right: Learn Git with Tutorials, News and Tips](https://www.atlassian.com/git))
 - _Virtual environments_ y _Dependency management_: [Poetry](https://python-poetry.org/)
 - _Static typing_: [Mypy](https://mypy-lang.org/)
 - _Code formatting_: [Black](https://github.com/psf/black)
-- _Linting_ and _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
+- _Linting_ y _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
 - _Package vulnerability analysis_: [Pip-audit](https://pypi.org/project/pip-audit/)
 - _Pre-Commit hooks_: [Pre-commit](https://pre-commit.com/)
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
@@ -24,13 +24,13 @@ Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener i
 
 === "WindowsOS"
 
-    Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de [Python](https://www.python.org/).
+    Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de [Python](https://www.python.org/). Con el instalador es posible administrar múltiples versiones de Python.
 
     En Windows es necesario instalar, adicionalmente, [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69))
 
 === "MacOS / Linux"
 
-    Para instalar Python se recomienda usar [Homebrew](https://brew.sh/) y [pyenv](https://github.com/pyenv/pyenv).
+    Para instalar Python se recomienda usar [Homebrew](https://brew.sh/) y primero instalar [pyenv](https://github.com/pyenv/pyenv). Con esta última herramienta es posible administrar múltiples versiones de Python simultáneamente de Python muy fácilmente.
 
 Posteriormente, siga los pasos descritos a continuación:
 
@@ -100,18 +100,20 @@ Posteriormente, siga los pasos descritos a continuación:
 
 ## Librarías útiles para los proyectos
 
+- _Scientific and numerical computing_: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/)
 - _Dataframes_: [Pandas](https://pandas.pydata.org/) (tutorial: [Pandas Illustrated: The Definitive Visual Guide to Pandas](https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43)), [Polars](https://www.pola.rs/)
-- _Graphics_ / _Plots_: [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
+- _Graphics_ / _Plots_: [matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
 - _Data Validation_: [Pydantic](https://docs.pydantic.dev/latest/)
-- _Machine Learning_ / _Deep Learning_: [Scikit-learn](https://scikit-learn.org/stable/), [Keras](https://keras.io/)
+- _Machine Learning_ / _Deep Learning_: [Scikit-learn](https://scikit-learn.org/stable/), [PyTorch](https://pytorch.org/), [Keras](https://keras.io/)
 - _In Memory DB_: [Duck DB](https://duckdb.org)
 - _Data Workflow Orchestration_: [Kestra](https://kestra.io/), [Prefect](https://www.prefect.io/opensource)
 - _Web Scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
 - _Data Version Control_: [DVC](https://dvc.org/)
-- Interfaz gráficas / _Web Clients_: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Django](https://www.djangoproject.com/)
+- _Graphical User Interfaces_ (_GUIs_) / _Web Clients_: [Tkinker](https://docs.python.org/3/library/tkinter.html#module-tkinter), [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Django](https://www.djangoproject.com/)
 - _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Litestar](https://litestar.dev/), [Django](https://www.djangoproject.com/)
-- [_Power tools for AWS Lambda_](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
-- [Nox](https://nox.thea.codes/en/stable/index.html)
+- _Dates_:[Arrow](https://arrow.readthedocs.io/en/latest/)
+- _Cloud Developer Toolkits_: [_Power tools for AWS Lambda_](https://docs.powertools.aws.dev/lambda/python/latest/)
+- _Automate testing_: [Nox](https://nox.thea.codes/en/stable/index.html)
 
 Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de **Poetry**, se debe ejecutar, por ejemplo:
 

@@ -1,4 +1,4 @@
-# Bienvenido a la plantilla
+# Documentación de la plantilla
 
 {%
    include-markdown "../README.md"
