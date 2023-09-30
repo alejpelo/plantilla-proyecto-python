@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bienvenido-a-la-plantilla" class="md-skip">
+        <a href="#documentacion-de-la-plantilla" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -615,16 +615,16 @@
   
 
 
-<h1 id="bienvenido-a-la-plantilla">Bienvenido a la plantilla</h1>
+<h1 id="documentacion-de-la-plantilla">Documentación de la plantilla</h1>
 <!-- BEGIN INCLUDE ../README.md '&lt;!--docs-start--&gt;' '&lt;!--docs-end--&gt;' -->
 
-<p>Plantilla para organizar proyectos que usan Python e incluye las mejores prácticas relacionadas con:</p>
+<p>Plantilla para organizar proyectos que usan <strong>Python</strong> e incorpora mejores prácticas relacionadas con:</p>
 <ul>
 <li><em>Version control</em>: <a href="https://git-scm.com/">Git</a>, (libro: <a href="https://git-scm.com/book/en/v2">Pro Git</a>, tutorial: <a href="https://www.atlassian.com/git">Getting Git Right: Learn Git with Tutorials, News and Tips</a>)</li>
 <li><em>Virtual environments</em> y <em>Dependency management</em>: <a href="https://python-poetry.org/">Poetry</a></li>
 <li><em>Static typing</em>: <a href="https://mypy-lang.org/">Mypy</a></li>
 <li><em>Code formatting</em>: <a href="https://github.com/psf/black">Black</a></li>
-<li><em>Linting</em> and <em>Style enforcement</em>: <a href="https://beta.ruff.rs/docs/">Ruff</a></li>
+<li><em>Linting</em> y <em>Style enforcement</em>: <a href="https://beta.ruff.rs/docs/">Ruff</a></li>
 <li><em>Package vulnerability analysis</em>: <a href="https://pypi.org/project/pip-audit/">Pip-audit</a></li>
 <li><em>Pre-Commit hooks</em>: <a href="https://pre-commit.com/">Pre-commit</a></li>
 <li><em>Documentation</em>: <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>, <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google docstrings</a></li>
@@ -637,11 +637,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">WindowsOS</label><label for="__tabbed_1_2">MacOS / Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de <a href="https://www.python.org/">Python</a>.</p>
+<p>Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de <a href="https://www.python.org/">Python</a>. Con el instalador es posible administrar múltiples versiones de Python.</p>
 <p>En Windows es necesario instalar, adicionalmente, <a href="https://gnuwin32.sourceforge.net/packages/make.htm">Make</a>. (Tutorial: <a href="https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69">How to setup/install GNU make on Windows</a>)</p>
 </div>
 <div class="tabbed-block">
-<p>Para instalar Python se recomienda usar <a href="https://brew.sh/">Homebrew</a> y <a href="https://github.com/pyenv/pyenv">pyenv</a>.</p>
+<p>Para instalar Python se recomienda usar <a href="https://brew.sh/">Homebrew</a> y primero instalar <a href="https://github.com/pyenv/pyenv">pyenv</a>. Con esta última herramienta es posible administrar múltiples versiones de Python simultáneamente de Python muy fácilmente.</p>
 </div>
 </div>
 </div>
@@ -710,18 +710,20 @@
 <p><strong>Eso es todo, puede empezar con su nuevo proyecto.</strong></p>
 <h2 id="librarias-utiles-para-los-proyectos">Librarías útiles para los proyectos</h2>
 <ul>
+<li><em>Scientific and numerical computing</em>: <a href="https://numpy.org/">NumPy</a>, <a href="https://scipy.org/">SciPy</a></li>
 <li><em>Dataframes</em>: <a href="https://pandas.pydata.org/">Pandas</a> (tutorial: <a href="https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43">Pandas Illustrated: The Definitive Visual Guide to Pandas</a>), <a href="https://www.pola.rs/">Polars</a></li>
-<li><em>Graphics</em> / <em>Plots</em>: <a href="https://seaborn.pydata.org/">Seaborn</a>, <a href="https://plotnine.readthedocs.io/en/stable/">Plotnine</a>, <a href="https://plotly.com/python/">Plotly</a>, <a href="http://bokeh.org/">Bokeh</a></li>
+<li><em>Graphics</em> / <em>Plots</em>: <a href="https://matplotlib.org/">matplotlib</a>, <a href="https://seaborn.pydata.org/">Seaborn</a>, <a href="https://plotnine.readthedocs.io/en/stable/">Plotnine</a>, <a href="https://plotly.com/python/">Plotly</a>, <a href="http://bokeh.org/">Bokeh</a></li>
 <li><em>Data Validation</em>: <a href="https://docs.pydantic.dev/latest/">Pydantic</a></li>
-<li><em>Machine Learning</em> / <em>Deep Learning</em>: <a href="https://scikit-learn.org/stable/">Scikit-learn</a>, <a href="https://keras.io/">Keras</a></li>
+<li><em>Machine Learning</em> / <em>Deep Learning</em>: <a href="https://scikit-learn.org/stable/">Scikit-learn</a>, <a href="https://pytorch.org/">PyTorch</a>, <a href="https://keras.io/">Keras</a></li>
 <li><em>In Memory DB</em>: <a href="https://duckdb.org/..">Duck DB</a></li>
 <li><em>Data Workflow Orchestration</em>: <a href="https://kestra.io/">Kestra</a>, <a href="https://www.prefect.io/opensource">Prefect</a></li>
 <li><em>Web Scrapping</em>: <a href="https://beautiful-soup-4.readthedocs.io/en/latest/">Beautiful Soup</a>, <a href="https://www.selenium.dev/..">Selenium</a></li>
 <li><em>Data Version Control</em>: <a href="https://dvc.org/">DVC</a></li>
-<li>Interfaz gráficas / <em>Web Clients</em>: <a href="https://streamlit.io/">Streamlit</a>, <a href="https://github.com/hoffstadt/DearPyGui">DearPyGUI</a>, <a href="https://github.com/gradio-app/gradio">Gradio</a>, <a href="https://www.djangoproject.com/">Django</a></li>
+<li><em>Graphical User Interfaces</em> (<em>GUIs</em>) / <em>Web Clients</em>: <a href="https://docs.python.org/3/library/tkinter.html#module-tkinter">Tkinker</a>, <a href="https://streamlit.io/">Streamlit</a>, <a href="https://github.com/hoffstadt/DearPyGui">DearPyGUI</a>, <a href="https://github.com/gradio-app/gradio">Gradio</a>, <a href="https://www.djangoproject.com/">Django</a></li>
 <li><em>APIs</em>: <a href="https://fastapi.tiangolo.com/lo/">FastAPI</a>, <a href="https://litestar.dev/">Litestar</a>, <a href="https://www.djangoproject.com/">Django</a></li>
-<li><a href="https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/"><em>Power tools for AWS Lambda</em></a></li>
-<li><a href="https://nox.thea.codes/en/stable/index.html">Nox</a></li>
+<li><em>Dates</em>:<a href="https://arrow.readthedocs.io/en/latest/">Arrow</a></li>
+<li><em>Cloud Developer Toolkits</em>: <a href="https://docs.powertools.aws.dev/lambda/python/latest/"><em>Power tools for AWS Lambda</em></a></li>
+<li><em>Automate testing</em>: <a href="https://nox.thea.codes/en/stable/index.html">Nox</a></li>
 </ul>
 <p>Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de <strong>Poetry</strong>, se debe ejecutar, por ejemplo:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
