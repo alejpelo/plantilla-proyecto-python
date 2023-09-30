@@ -100,7 +100,7 @@ Posteriormente, siga los pasos descritos a continuación:
 
 ## Librarías útiles para los proyectos
 
-- _Scientific and numerical computing_: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/)
+- _Scientific and Numerical Computing_: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/)
 - _Dataframes_: [Pandas](https://pandas.pydata.org/) (tutorial: [Pandas Illustrated: The Definitive Visual Guide to Pandas](https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43)), [Polars](https://www.pola.rs/)
 - _Graphics_ / _Plots_: [matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [Plotnine](https://plotnine.readthedocs.io/en/stable/), [Plotly](https://plotly.com/python/), [Bokeh](http://bokeh.org/)
 - _Data Validation_: [Pydantic](https://docs.pydantic.dev/latest/)
@@ -111,7 +111,7 @@ Posteriormente, siga los pasos descritos a continuación:
 - _Data Version Control_: [DVC](https://dvc.org/)
 - _Graphical User Interfaces_ (_GUIs_) / _Web Clients_: [Tkinker](https://docs.python.org/3/library/tkinter.html#module-tkinter), [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Django](https://www.djangoproject.com/)
 - _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Litestar](https://litestar.dev/), [Django](https://www.djangoproject.com/)
-- _Dates_:[Arrow](https://arrow.readthedocs.io/en/latest/)
+- _Dates_: [Arrow](https://arrow.readthedocs.io/en/latest/)
 - _Cloud Developer Toolkits_: [_Power tools for AWS Lambda_](https://docs.powertools.aws.dev/lambda/python/latest/)
 - _Automate testing_: [Nox](https://nox.thea.codes/en/stable/index.html)
 
