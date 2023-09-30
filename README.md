@@ -109,7 +109,7 @@ Posteriormente, siga los pasos descritos a continuación:
 - _Web Scrapping_: [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/), [Selenium](https://www.selenium.dev)
 - _Data Version Control_: [DVC](https://dvc.org/)
 - Interfaz gráficas / _Web Clients_: [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Django](https://www.djangoproject.com/)
-- _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Django](https://www.djangoproject.com/)
+- _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Litestar](https://litestar.dev/), [Django](https://www.djangoproject.com/)
 - [_Power tools for AWS Lambda_](https://awslabs.github.io/aws-lambda-powertools-python/2.16.1/)
 - [Nox](https://nox.thea.codes/en/stable/index.html)
 
