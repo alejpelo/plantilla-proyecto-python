@@ -8,6 +8,9 @@ hydra:
     dir: .hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}
 
 # Modificar a partir de aquí...
+# Estas son variables de ejemplo que cad proyecto define según su necesidad
+# La estructura de las variables es libre y se ajusta a las necesidades de cada
+# proyecto.
 
 data:
   raw: data/raw/winequality-red.csv
