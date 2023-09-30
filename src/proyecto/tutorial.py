@@ -15,7 +15,7 @@ Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 import hydra
 from omegaconf import DictConfig, OmegaConf
 
-from configuracion import config
+from configuracion import CONFIG
 from logger import log
 
 
@@ -37,7 +37,7 @@ def my_app(cfg: DictConfig) -> None:
         cfg (DictConfig): Diccionario con toda la configuración
     """
     log.debug("Configuración: {}", OmegaConf.to_object(cfg))
-    log.debug("Entorno: {}", config)
+    log.debug("Entorno: {}", CONFIG)
 
     # ¿Cómo usar "logear" algo en cualquier módulo?
     log.debug(
@@ -49,7 +49,7 @@ def my_app(cfg: DictConfig) -> None:
 
     # ¿Cómo agregar más información al log (agregar contexto)?
     log_contextualizado = log.bind(cliente_id="001", producto_id="123")
-    log_contextualizado.info("Fácil, log con la información adicional")
+    log_contextualizado.info("Fácil, log con información adicional")
 
 
 if __name__ == "__main__":
