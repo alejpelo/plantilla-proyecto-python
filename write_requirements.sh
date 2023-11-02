@@ -61,7 +61,7 @@ if [ "$NEW_REQUIREMENTS_TESTS" = "$REQUIREMENTS_TESTS" ]; then
     echo "requirements-tests.txt está actualizado!"
 else
     echo "Falló: requirements-tests.txt no estaba actualizado!"
-    poetry export --format requirements.txt --output requirements-tests.txt --without-hashes --with test
+    poetry export --format requirements.txt --output requirements-tests.txt --without-hashes --with tests
     FAILED=true
 fi
 
