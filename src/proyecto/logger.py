@@ -40,7 +40,7 @@ def serialize(record: loguru.Record) -> str:
 def patching(record: loguru.Record):
     """Parcha el record del log.
 
-    Ajusta la información que va en record[extra][serialized]
+    Ajusta la información que va en el log
 
     Args:
         record (dict): record del log definido por loguru
