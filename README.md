@@ -62,6 +62,7 @@ Posteriormente, siga los pasos descritos a continuación:
 
     ```shell
     pre-commit install
+    pre-commit install --hook-type pre-commit
     pre-commit install --hook-type pre-push
     ```
 
