@@ -9,14 +9,13 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 - _Version control_: [Git](https://git-scm.com/), (libro: [Pro Git](https://git-scm.com/book/en/v2), tutorial: [Getting Git Right: Learn Git with Tutorials, News and Tips](https://www.atlassian.com/git))
 - _Virtual environments_ y _Dependency management_: [Poetry](https://python-poetry.org/)
 - _Static typing_: [Mypy](https://mypy-lang.org/)
-- _Code formatting_: [Black](https://github.com/psf/black)
-- _Linting_ y _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
+- _Code formatting_, _Linting_ y _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
 - _Package vulnerability analysis_: [Pip-audit](https://pypi.org/project/pip-audit/)
 - _Pre-Commit hooks_: [Pre-commit](https://pre-commit.com/)
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
-- _`.env` files_: [Python-dotenv](https://github.com/theskumar/python-dotenv)
-- _Configuration files_: [Hydra](https://hydra.cc/)
+- _Environmental variables_ y _`.env` files_: [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
+- _Model Configuration files_: [Hydra](https://hydra.cc/)
 
 ## Uso
 

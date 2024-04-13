@@ -18,8 +18,8 @@ code_type_cheking:
 	poetry run mypy
 
 code_formatting:
-	@printf "formatting code => black...\n"
-	poetry run black .
+	@printf "formatting code => ruff...\n"
+	poetry run ruff format
 
 code_linting:
 	@printf "linting code => ruff...\n"

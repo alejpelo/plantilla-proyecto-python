@@ -22,14 +22,14 @@ repos:
         entry: poetry run mypy
         always_run: true
         pass_filenames: false
-      - id: black
-        name: black => code formatting
+      - id: ruff-formatting
+        name: ruff => code formatting
         stages: [commit]
         language: system
-        entry: poetry run black . --check
+        entry: poetry run ruff format
         always_run: true
         pass_filenames: false
-      - id: ruff
+      - id: ruff-linting
         name: ruff => linting
         stages: [commit]
         language: system

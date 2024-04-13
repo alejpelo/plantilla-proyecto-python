@@ -9,6 +9,7 @@ el log.
 
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
+
 from __future__ import annotations
 
 import json

@@ -18,14 +18,30 @@ En la raíz del proyecto debe haber dos archivos:
 - `.env.private`: archivo con variables de configuración privadas. Este
     archivo **NO** se agrega al versionamiento y **NO** va al repositorio.
 
-Se usa [Python-dotenv](https://github.com/theskumar/python-dotenv) como
-libraría leer los archivos de configuración.
+Se usa [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+como libraría para leer los archivos con las variables de entorno.
 
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
-from dotenv import dotenv_values
 
-CONFIG = {
-    **dotenv_values(".env.public"),  # variables de configuración compartidas
-    **dotenv_values(".env.private"),  # variables de configuración PRIVADAS
-}
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Configuracion(BaseSettings):
+    """Lee y valida las variables de configuración de los archivos .env."""
+
+    model_config = SettingsConfigDict(
+        env_file=(".env.public", ".env.private"),
+    )
+
+    # Las variables de configuración que aparecen de aquí para abajo se deben
+    # ajustar dependiendo de las variables que estén incluidas en los archivos
+    # .env (.env.public y .env.private)
+
+    domain: str = Field(alias="DOMAIN")
+    admin_email: str = Field(alias="ADMIN_EMAIL")
+    root_url: str = Field(alias="ROOT_URL")
+
+    password: str = Field(alias="PASSWORD", min_length=8)
+    secret_access_key: str = Field(alias="SECRET_ACCESS_KEY", min_length=20)

@@ -12,10 +12,11 @@ configuración de prueba una vez esté familiarizado con lo que aquí se muestra
 
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
+
 import hydra
 from omegaconf import DictConfig, OmegaConf
 
-from configuracion import CONFIG
+from configuracion import Configuracion
 from logger import log
 
 
@@ -28,18 +29,19 @@ from logger import log
 def my_app(cfg: DictConfig) -> None:
     """Usa archivos de configuración y variables de entorno en la aplicación.
 
+    - Lleva al log todas las variables de los archivos .env.public y
+        .env.private
     - Lleva al log todas las variables del archivo de configuración de prueba
         que está en conf/main.yaml
-    - Lleva al log todas las variables de los archivos .env.shared y
-        .env.secrets
+
 
     Args:
         cfg (DictConfig): Diccionario con toda la configuración
     """
-    log.debug("Configuración: {}", OmegaConf.to_object(cfg))
-    log.debug("Entorno: {}", CONFIG)
+    log.debug("Variables de Entorno: {}", Configuracion().model_dump())
+    log.debug("Configuración Modelos: {}", OmegaConf.to_object(cfg))
 
-    # ¿Cómo usar "logear" algo en cualquier módulo?
+    # ¿Cómo "logear" algo en cualquier módulo?
     log.debug(
         "Si está usando Python {}, es, por supuesto, preferible {feature}!",
         ">=3.6",
