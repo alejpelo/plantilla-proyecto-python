@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "plantilla-proyecto-python"
-version = "0.1.0"
+version = "0.3.6"
 description = "Plantilla para organizar proyectos incluyendo las mejores prácticas"
 authors = ["Alejandro Perez Londoño <perezl.alejandro@gmail.com>"]
 readme = "README.md"
