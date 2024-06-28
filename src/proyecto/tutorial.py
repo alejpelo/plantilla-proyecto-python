@@ -14,6 +14,7 @@ Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
 
 import hydra
+from icecream import ic
 from omegaconf import DictConfig, OmegaConf
 
 from configuracion import Configuracion
@@ -38,6 +39,8 @@ def my_app(cfg: DictConfig) -> None:
     Args:
         cfg (DictConfig): Diccionario con toda la configuración
     """
+    ic.configureOutput(prefix="debug | ")
+
     log.debug("Variables de Entorno: {}", Configuracion().model_dump())
     log.debug("Configuración Modelos: {}", OmegaConf.to_object(cfg))
 
@@ -52,6 +55,15 @@ def my_app(cfg: DictConfig) -> None:
     # ¿Cómo agregar más información al log (agregar contexto)?
     log_contextualizado = log.bind(cliente_id="001", producto_id="123")
     log_contextualizado.info("Fácil, log con información adicional")
+
+    # ¿Cómo hacer debugging (imprimir información durante la ejecución)?
+    x = 1
+    y = 2
+
+    z = x + y
+
+    ic(x)
+    ic(z)
 
 
 if __name__ == "__main__":

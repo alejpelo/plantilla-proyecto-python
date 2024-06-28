@@ -15,6 +15,7 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 - _Environmental variables_ y _`.env` files_: [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
+- _Debugging (print)_: [IceCream](https://github.com/gruns/icecream)
 - _Model Configuration files_: [Hydra](https://hydra.cc/)
 
 ## Uso

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "plantilla-proyecto-python"
-version = "0.4.1"
+version = "0.5.0"
 description = "Plantilla para organizar proyectos incluyendo las mejores prácticas"
 authors = ["Alejandro Perez Londoño <perezl.alejandro@gmail.com>"]
 readme = "README.md"
@@ -10,6 +10,7 @@ packages = [{include = "src"}]
 python = ">=3.11,<3.12"
 pydantic-settings = "^2.2.1"
 loguru = "^0.7.0"
+icecream = "^2.1.3"
 hydra-core = "^1.3.2"
 
 [tool.poetry.group.dev.dependencies]
