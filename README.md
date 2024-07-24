@@ -113,6 +113,8 @@ Posteriormente, siga los pasos descritos a continuación:
 - _Graphical User Interfaces_ (_GUIs_) / _Web Clients_: [Tkinker](https://docs.python.org/3/library/tkinter.html#module-tkinter), [Streamlit](https://streamlit.io/), [DearPyGUI](https://github.com/hoffstadt/DearPyGui), [Gradio](https://github.com/gradio-app/gradio), [Vizro](https://vizro.readthedocs.io/en/stable/), [Django](https://www.djangoproject.com/)
 - _APIs_: [FastAPI](https://fastapi.tiangolo.com/lo/), [Litestar](https://litestar.dev/), [Django](https://www.djangoproject.com/)
 - _Dates_: [Arrow](https://arrow.readthedocs.io/en/latest/)
+- _Tests_: [Hypothesis](https://hypothesis.readthedocs.io/en/latest/)
+- _Code Security_: [Bandit](https://bandit.readthedocs.io/en/latest/)
 - _Cloud Developer Toolkits_: [_Power tools for AWS Lambda_](https://docs.powertools.aws.dev/lambda/python/latest/)
 - _Automate testing_: [Nox](https://nox.thea.codes/en/stable/index.html)
 
