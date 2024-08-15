@@ -351,9 +351,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#librarias-utiles-para-los-proyectos" class="md-nav__link">
+  <a href="#algunas-librarias-utiles-para-los-proyectos" class="md-nav__link">
     <span class="md-ellipsis">
-      Librarías útiles para los proyectos
+      Algunas librarías útiles para los proyectos
     </span>
   </a>
   
@@ -577,9 +577,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#librarias-utiles-para-los-proyectos" class="md-nav__link">
+  <a href="#algunas-librarias-utiles-para-los-proyectos" class="md-nav__link">
     <span class="md-ellipsis">
-      Librarías útiles para los proyectos
+      Algunas librarías útiles para los proyectos
     </span>
   </a>
   
@@ -664,69 +664,75 @@
 </ul>
 <h2 id="uso">Uso</h2>
 <p>Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, <a href="https://git-scm.com/"><strong>Git</strong></a>, <strong>Python</strong> (versión 3.11) y <a href="https://python-poetry.org/docs/#installation"><strong>Poetry</strong></a> (versión &gt;= 1.8).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">WindowsOS</label><label for="__tabbed_1_2">MacOS / Linux</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">WindowsOS</label><label for="__tabbed_1_2">MacOS / LinuxOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Para instalar Python se recomienda seguir las instrucciones que están en la página oficial de <a href="https://www.python.org/">Python</a>. Con el instalador es posible administrar múltiples versiones de Python.</p>
 <p>En Windows es necesario instalar, adicionalmente, <a href="https://gnuwin32.sourceforge.net/packages/make.htm">Make</a>. (Tutorial: <a href="https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69">How to setup/install GNU make on Windows</a>)</p>
 </div>
 <div class="tabbed-block">
-<p>Para instalar Python se recomienda usar <a href="https://brew.sh/">Homebrew</a> y primero instalar <a href="https://github.com/pyenv/pyenv">pyenv</a>. Con esta última herramienta es posible administrar múltiples versiones de Python simultáneamente de Python muy fácilmente.</p>
+<p>Para instalar Python se recomienda usar <a href="https://brew.sh/">Homebrew</a> y primero instalar <a href="https://github.com/pyenv/pyenv">pyenv</a>. Con esta última herramienta es posible administrar múltiples versiones de Python de forma simultánea y fácil.</p>
 </div>
 </div>
 </div>
 <p>Posteriormente, siga los pasos descritos a continuación:</p>
 <ol>
 <li>
-<p>Cree un nuevo repositorio a partir de esta <a href="https://github.com/alejpelo/plantilla-proyecto-python">plantilla</a> (<em>template</em>) con el nombre de su nuevo proyecto en el que quiere implementar las mejores prácticas.</p>
+<p>Cree un nuevo repositorio a partir de esta <a href="https://github.com/alejpelo/plantilla-proyecto-python">plantilla</a> (<em>template</em>) con el nombre de su nuevo proyecto.</p>
 </li>
 <li>
-<p>Clone el nuevo repositorio en su equipo.</p>
+<p>Clone el nuevo repositorio en su equipo local.</p>
 </li>
 <li>
-<p>Asegúrese que <em>Poetry</em> está usando la versión de <em>Python</em> adecuada para crear el ambiente virtual<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> (i.e. 3.11)</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">WindowsOS</label><label for="__tabbed_2_2">MacOS / Linux</label></div>
+<p>Asegúrese que <em>Poetry</em> está usando la versión de <em>Python</em> adecuada para crear el ambiente virtual<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> (i.e. 3.11):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">WindowsOS</label><label for="__tabbed_2_2">MacOS / LinuxOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>env<span class="w"> </span>use<span class="w"> </span><span class="s2">&quot;C:/Users/&lt;USUARIO&gt;/AppData/Local/Programs/Python/Python&lt;##&gt;/python.exe&quot;</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>env<span class="w"> </span>use<span class="w"> </span><span class="s2">&quot;C:/Users/&lt;USUARIO&gt;/AppData/Local/Programs/Python/Python&lt;&gt;/python.exe&quot;</span><span class="w"> </span><span class="c1"># (1)!</span>
 </span></code></pre></div>
+<ol>
+<li>Debe remplazar <code>&lt;&gt;</code> con la versión de <em>Python</em> adecuada. Por ejemplo: <code>../Python/Python3.11/python.exe</code></li>
+</ol>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pyenv local 3.11
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;&gt;<span class="w"> </span><span class="c1"># (1)!</span>
 </span></code></pre></div>
+<ol>
+<li>Debe remplazar <code>&lt;&gt;</code> con la versión de <em>Python</em> adecuada. Por ejemplo: <code>pyenv local 3.11</code></li>
+</ol>
 </div>
 </div>
 </div>
 </li>
 <li>
-<p>Instale el proyecto, ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>install
+<p>Instale el proyecto, ejecutando:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>install
 </span></code></pre></div>
 </li>
 <li>
 <p>En el proyecto se usa <a href="https://pre-commit.com/">pre-commit</a> para automatizar la verificación del código antes de los <em>commits</em> y de los <em>pushs</em>. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pre-commit<span class="w"> </span>install
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pre-commit<span class="w"> </span>install
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-commit
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-push
 </span></code></pre></div>
 </li>
 <li>
-<p>Consulte el archivo <code>src/proyecto/tutorial.py</code> para conocer cómo usar los archivos de configuración y el log.</p>
+<p>Consulte el archivo <code>src/proyecto/tutorial.py</code> para conocer cómo usar los archivos de configuración, el log y cómo hacer <em>debugging</em> fácilmente.</p>
 </li>
 <li>
-<p>Consulte el archivo <code>docs/tutorial.md</code> para conocer las capacidades instaladas de la documentación. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>serve
+<p>Consulte el archivo <code>docs/tutorial.md</code> para conocer las capacidades instaladas para la documentación del proyecto. Para trabajar en la documentación, con el ambiente virtual activado, ejecute:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>serve
 </span></code></pre></div>
 <p>Esto hará que la documentación se actualice en línea en la medida que realice cambios.</p>
 <p>Al final para construir el sitio, ejecute:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdocs<span class="w"> </span>build
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdocs<span class="w"> </span>build
 </span></code></pre></div>
-<p>Y para deplegar la documentación en el <a href="https://pages.github.com/">GitHub Pages</a>, estando en la <strong>master</strong>/<strong>main</strong> <em>branch</em>, ejecute:</p>
+<p>Y para desplegar la documentación en el <a href="https://pages.github.com/">GitHub Pages</a>, estando en la <strong>main</strong>/<strong>master</strong> <em>branch</em>, ejecute:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tener presente...</p>
 <p>Para que esta instrucción funcione y la página quede publicada, el repositorio debe ser público o el usuario debe estar suscrito a <a href="https://github.com/team">GitHub Teams</a></p>
 </div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs<span class="w"> </span>gh-deploy
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdocs<span class="w"> </span>gh-deploy
 </span></code></pre></div>
 </li>
 </ol>
@@ -738,8 +744,8 @@
 <li>Agradecemos lo reporte para buscar una solución.</li>
 </ol>
 </div>
-<p><strong>Eso es todo, puede empezar con su nuevo proyecto.</strong></p>
-<h2 id="librarias-utiles-para-los-proyectos">Librarías útiles para los proyectos</h2>
+<p><strong>¡Eso es todo!, puede empezar con su nuevo proyecto.</strong></p>
+<h2 id="algunas-librarias-utiles-para-los-proyectos">Algunas librarías útiles para los proyectos</h2>
 <ul>
 <li><em>Scientific and Numerical Computing</em>: <a href="https://numpy.org/">NumPy</a>, <a href="https://scipy.org/">SciPy</a></li>
 <li><em>Dataframes</em>: <a href="https://pandas.pydata.org/">Pandas</a> (tutorial: <a href="https://betterprogramming.pub/pandas-illustrated-the-definitive-visual-guide-to-pandas-c31fa921a43">Pandas Illustrated: The Definitive Visual Guide to Pandas</a>), <a href="https://www.pola.rs/">Polars</a></li>
@@ -759,10 +765,10 @@
 <li><em>Automate testing</em>: <a href="https://nox.thea.codes/en/stable/index.html">Nox</a></li>
 </ul>
 <p>Para instalar una de estas librerías, o cualquier otra que vaya a utilizar, haciendo uso de <strong>Poetry</strong>, se debe ejecutar, por ejemplo:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>pandas
 </span></code></pre></div>
 <p>Si la va a instalar solo para desarrollo (<em>dev</em>), o en cualquier otro grupo de librerías (i.e. <em>tests</em>, <em>docs</em>, <em>kernels</em>), ejecutar:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry<span class="w"> </span>add<span class="w"> </span>nox<span class="w"> </span>--group<span class="w"> </span>dev
 </span></code></pre></div>
 <h2 id="lineamientos-para-contribuir-al-proyecto">Lineamientos para Contribuir al Proyecto</h2>
 <p>Se deben seguir los siguientes lineamientos para para contribuir al desarrollo del proyecto. Esto garantiza que la trazabilidad y el versionamiento sea robusto.</p>
@@ -770,22 +776,22 @@
 <p>Se utiliza <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a> con la siguiente estructura de <em>branches</em>:</p>
 <ul>
 <li>
-<p><strong>master</strong>/<strong>main</strong> <em>branch</em>: solo guarda los <em>releases</em> oficiales. Cada <em>release</em> debe estar identificado con su respectivo <em>tag</em> que hace alusión a la versión del código (ver Versionamiento (<em>tags</em>)).</p>
+<p><strong>main</strong>/<strong>master</strong> <em>branch</em>: solo guarda los <em>releases</em> oficiales. Cada <em>release</em> debe estar identificado con su respectivo <em>tag</em> que hace alusión a la versión del código (ver Versionamiento (<em>tags</em>)).</p>
 </li>
 <li>
-<p><strong>develop</strong>/<strong>dev</strong> <em>branch</em>: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (<em>bug fixes</em> o <em>features</em>) que se están desarrollando. Este es el <em>branch</em> del que se deben crear los <em>forks</em> para desarrollar correcciones, mejoras o adiciones en el código.</p>
+<p><strong>dev</strong>/<strong>develop</strong> <em>branch</em>: funciona como integrador de los distintos ajustes, cambios, correcciones, mejoras o adiciones (<em>bug fixes</em> o <em>features</em>) que se están desarrollando. Este es el <em>branch</em> del que se deben crear los <em>forks</em> para desarrollar correcciones, mejoras o adiciones en el código.</p>
 </li>
 <li>
-<p><strong>bugfix/</strong> <em>branches</em>: Cada corrección debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong>/<strong>dev</strong> <em>branch</em>.</p>
+<p><strong>bugfix/</strong> <em>branches</em>: Cada corrección debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>dev</strong>/<strong>develop</strong> <em>branch</em>.</p>
 </li>
 <li>
-<p><strong>feature/</strong> <em>branches</em>: Cada nuevo cambio, mejora o adición debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>develop</strong>/<strong>dev</strong> <em>branch</em>.</p>
+<p><strong>feature/</strong> <em>branches</em>: Cada nuevo cambio, mejora o adición debe residir en su propio <em>branch</em>. Siempre se deben crear a partir del <strong>dev</strong>/<strong>develop</strong> <em>branch</em>.</p>
 </li>
 <li>
-<p><strong>release/</strong> <em>branches</em>: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un <em>branch</em> de este tipo desde el <strong>develop</strong>/<strong>dev</strong> <em>branch</em>. Esto inicia el ciclo de <em>release</em> y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este <em>branch</em>, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de <em>release</em>.</p>
+<p><strong>release/</strong> <em>branches</em>: Cuando se tienen acumulados varios cambios, mejoras, correcciones y/o adiciones, se crea un <em>branch</em> de este tipo desde el <strong>dev</strong>/<strong>develop</strong> <em>branch</em>. Esto inicia el ciclo de <em>release</em> y a partir de este momento no se pueden añadir nuevas mejoras o cambios al código, en este <em>branch</em>, que no estén relacionadas con la corrección de errores, la documentación o tareas específicas orientadas al proceso de <em>release</em>.</p>
 </li>
 <li>
-<p><strong>hotfix/</strong> <em>branches</em>: Usadas para reparar rápidamente errores en la versión de producción (<strong>master</strong>/<strong>main</strong> <em>branch</em>). Este es el único <em>branch</em> que se puede (y debe) crear a partir del <strong>master</strong>/<strong>main</strong> <em>branch</em>. Una vez terminada la corrección se fusiona nuevamente con el <strong>master</strong>/<strong>main</strong> <em>branch</em>, con el <strong>release-</strong> <em>branch</em> actual y con el <strong>develop</strong>/<strong>dev</strong> <em>branch</em>. La fusión con el <strong>master</strong>/<strong>main</strong> <em>branch</em> debe llevar su respectiva <strong>tag</strong> con el número de versión actualizado.</p>
+<p><strong>hotfix/</strong> <em>branches</em>: Usadas para reparar rápidamente errores en la versión de producción (<strong>main</strong>/<strong>master</strong> <em>branch</em>). Este es el único <em>branch</em> que se puede (y debe) crear a partir del <strong>main</strong>/<strong>master</strong> <em>branch</em>. Una vez terminada la corrección se fusiona nuevamente con el <strong>main</strong>/<strong>master</strong> <em>branch</em>, con el <strong>release</strong> <em>branch</em> actual y con el <strong>dev</strong>/<strong>develop</strong> <em>branch</em>. La fusión con el <strong>main</strong>/<strong>master</strong> <em>branch</em> debe llevar su respectiva <strong>tag</strong> con el número de versión actualizado.</p>
 </li>
 </ul>
 <h3 id="commits"><em>Commits</em></h3>
