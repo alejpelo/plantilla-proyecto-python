@@ -6,7 +6,7 @@ Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para accede
 
 Plantilla para organizar proyectos que usan **Python** e incorpora mejores prácticas relacionadas con:
 
-- _Version control_: [Git](https://git-scm.com/), (libro: [Pro Git](https://git-scm.com/book/en/v2), tutorial: [Getting Git Right: Learn Git with Tutorials, News and Tips](https://www.atlassian.com/git))
+- _Version control_: [Git](https://git-scm.com/), (libro: [_Pro Git_](https://git-scm.com/book/en/v2), tutorial: [_Getting Git Right: Learn Git with Tutorials, News and Tips_](https://www.atlassian.com/git))
 - _Virtual environments_ y _Dependency management_: [Poetry](https://python-poetry.org/)
 - _Static typing_: [Mypy](https://mypy-lang.org/)
 - _Code formatting_, _Linting_ y _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
@@ -15,12 +15,12 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 - _Environmental variables_ y _`.env` files_: [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
-- _Debugging (print)_: [IceCream](https://github.com/gruns/icecream)
+- _Debugging (print)_: ([_The Python Debugger_](https://docs.python.org/3/library/pdb.html), tutorial: [_Python Debugging With Pdb_](https://arc.net/l/quote/ggofsxtp)), [IceCream](https://github.com/gruns/icecream)
 - _Model Configuration files_: [Hydra](https://hydra.cc/)
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), **Python** (versión 3.11) y [**Poetry**](https://python-poetry.org/docs/#installation) (versión >= 1.5).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/), **Python** (versión 3.11) y [**Poetry**](https://python-poetry.org/docs/#installation) (versión >= 1.8).
 
 === "WindowsOS"
 
