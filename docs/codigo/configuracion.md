@@ -1,6 +1,6 @@
 # Configuración
 
-::: proyecto.configuracion
+::: configuracion
     handler: python
     options:
       show_root_heading: false

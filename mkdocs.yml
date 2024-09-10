@@ -5,7 +5,10 @@ site_author: Autor...
 repo_url: https://github.com/alejpelo/plantilla-proyecto-python
 
 nav:
-    - Home: index.md
+    - Home:
+      - Introducción: index.md
+      - Librerías adicionales: otros/librerias.md
+      - Lineamientos: otros/lineamientos.md
     - Tutorial: tutorial.md
     - Código:
       - Configuración: codigo/configuracion.md
@@ -31,7 +34,7 @@ theme:
       - content.tabs.link
       - content.tooltips
 
-copyright: Copyright &copy; 2023.
+copyright: Copyright &copy; 2024.
 
 plugins:
   - search:
@@ -47,6 +50,7 @@ markdown_extensions:
   - abbr
   - admonition
   - attr_list
+  - def_list
   - footnotes
   - md_in_html
   - pymdownx.critic
@@ -75,11 +79,11 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/katex.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
 
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 extra:
   generator: false
