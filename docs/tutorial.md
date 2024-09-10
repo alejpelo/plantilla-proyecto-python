@@ -1,6 +1,6 @@
 # Tutorial documentación
 
-A continuación se incluyen algunos ejemplos para que funcionen como tutorial de las capacidades que están activas en la documentación.
+A continuación se incluyen algunos ejemplos para que funcionen como tutorial de las capacidades que están activas en la documentación. Para conocer más vaya a [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 
 ## [Formato](https://squidfunk.github.io/mkdocs-material/reference/formatting/)
 

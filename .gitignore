@@ -154,3 +154,7 @@ debug.log
 # IDEs settings
 .idea
 .vscode
+
+# Data y Outputs
+data/*
+outputs/*

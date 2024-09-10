@@ -13,36 +13,24 @@ configuración de prueba una vez esté familiarizado con lo que aquí se muestra
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
 
-import hydra
 from icecream import ic
-from omegaconf import DictConfig, OmegaConf
 
 from configuracion import Configuracion
 from logger import log
 
 
 # ¿Cómo usar los archivos de configuración?
-@hydra.main(
-    config_path="../../conf",
-    config_name="main",
-    version_base=None,
-)
-def my_app(cfg: DictConfig) -> None:
+def my_app() -> None:
     """Usa archivos de configuración y variables de entorno en la aplicación.
 
     - Lleva al log todas las variables de los archivos .env.public y
         .env.private
     - Lleva al log todas las variables del archivo de configuración de prueba
         que está en conf/main.yaml
-
-
-    Args:
-        cfg (DictConfig): Diccionario con toda la configuración
     """
     ic.configureOutput(prefix="debug | ")
 
     log.debug("Variables de Entorno: {}", Configuracion().model_dump())
-    log.debug("Configuración Modelos: {}", OmegaConf.to_object(cfg))
 
     # ¿Cómo "logear" algo en cualquier módulo?
     log.debug(

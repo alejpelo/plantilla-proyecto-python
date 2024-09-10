@@ -3,48 +3,35 @@
 all: pre_build
 
 update_environment:
-	@printf "updating the virtual environment => poetry...\n"
-	poetry update
+	@printf "\033[34;1mUpdating the virtual environment => uv...\033[0m\n"
+	@uv sync --upgrade
 
-pre_build: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
+pre_commit: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 check_environment:
-	@printf "checking and verifying the virtual environment => poetry...\n"
-	poetry check
-	poetry lock
+	@printf "\033[34;1mChecking and verifying the virtual environment => uv...\033[0m\n"
+	@uv lock --locked
 
 code_type_cheking:
-	@printf "type cheking code => mypy..."
-	poetry run mypy
+	@printf "\033[34;1mType-cheking code => mypy...\033[0m\n"
+	@uv run mypy
 
 code_formatting:
-	@printf "formatting code => ruff...\n"
-	poetry run ruff format
+	@printf "\033[34;1mFormatting code => ruff...\033[0m\n"
+	@uv run ruff format
 
 code_linting:
-	@printf "linting code => ruff...\n"
-	poetry run ruff check .
+	@printf "\033[34;1mLinting code => ruff...\033[0m\n"
+	@uv run ruff check .
 
 code_vulnerability:
-	@printf "checking vulnerabilities => pip-audit...\n"
-	poetry run pip-audit
+	@printf "\033[34;1mChecking vulnerabilities => pip-audit...\033[0m\n"
+	@uv run pip-audit
 
 code_testing:
-	@printf "testing code => pytest...\n"
-	poetry run pytest --cov
+	@printf "\033[34;1mTesting code => pytest...\033[0m\n"
+	@uv run pytest --cov
 
 code_update_requirements:
-	@printf "updating requirements...\n"
-	sh write_requirements.sh
-
-build: build_docs
-
-build_docs:
-	@printf "building docs => mkdocs...\n"
-	poetry run mkdocs build
-
-deploy: deploy_docs
-
-deploy_docs:
-	@printf "deploy docs => mkdocs...\n"
-	poetry run mkdocs gh-deploy
+	@printf "\033[34;1mUpdating requirements...\033[0m\n"
+	@sh write-requirements.sh

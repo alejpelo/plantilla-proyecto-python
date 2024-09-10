@@ -50,16 +50,24 @@ def patching(record: loguru.Record):
 
 
 log = logger
-
 log.remove(0)
-
 log = logger.patch(patching)
+
+# Los niveles permitidos para el log, por defecto, son:
+#       Level name  Severity value  Logger method
+#       TRACE       5               logger.trace()
+#       DEBUG       10              logger.debug()
+#       INFO        20              logger.info()
+#       SUCCESS     25              logger.success()
+#       WARNING     30              logger.warning()
+#       ERROR       40              logger.error()
+#       CRITICAL    50              logger.critical()
 
 log.add(
     "debug.log",
-    level="DEBUG",
+    level="DEBUG",  # Ajustar según nivel que se quiera imprimir (ver arriba)
     format="{time:YYYY-MM-DD HH:mm:ss.SSS} tz {time:Z} | "
-    "{level} | {file} | {line} | {message} || {extra}",
+    "{level} | {file} | linea: {line} | {message} || {extra}",
     rotation="1 week",
     retention="15 days",
     backtrace=True,

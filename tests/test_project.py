@@ -4,9 +4,9 @@
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
 
-from src.proyecto import __version__
+from src import __version__
 
 
 def test_version_proyecto():
     """Prueba la versión del proyecto."""
-    assert __version__ == "0.4.0"
+    assert __version__ == "0.7.0"

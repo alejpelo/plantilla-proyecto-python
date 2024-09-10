@@ -1,6 +1,6 @@
 # Tutorial
 
-::: proyecto.tutorial
+::: tutorial
     handler: python
     options:
       show_root_heading: false

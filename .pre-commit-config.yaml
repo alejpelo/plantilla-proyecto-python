@@ -1,66 +1,59 @@
 repos:
   - repo: local
     hooks:
-      - id: poetry-check
-        name: poetry => check poetry configuration does not get committed in a broken state
+      - id: uv-lock-check
+        name: uv => make sure the lock file is up-to-date
         stages: [commit]
         language: system
-        entry: poetry check
-        always_run: true
-        pass_filenames: false
-      - id: poetry-lock
-        name: poetry => make sure the lock file is up-to-date
-        stages: [push]
-        language: system
-        entry: poetry lock
+        entry: uv lock --locked
         always_run: true
         pass_filenames: false
       - id: mypy
         name: mypy => type checking
         stages: [commit]
         language: system
-        entry: poetry run mypy
+        entry: uv run mypy
         always_run: true
         pass_filenames: false
       - id: ruff-formatting
         name: ruff => code formatting
         stages: [commit]
         language: system
-        entry: poetry run ruff format
+        entry: uv run ruff format
         always_run: true
         pass_filenames: false
       - id: ruff-linting
         name: ruff => linting
         stages: [commit]
         language: system
-        entry: poetry run ruff check .
+        entry: uv run ruff check .
         always_run: true
         pass_filenames: false
       - id: pip-audit
         name: pip-audit => vulnerability checking
         stages: [push]
         language: system
-        entry: poetry run pip-audit
+        entry: uv run pip-audit
         always_run: true
         pass_filenames: false
       - id: pytest
         name: pytest => testing
         stages: [push]
         language: system
-        entry: poetry run pytest --cov
+        entry: uv run pytest --cov
         always_run: true
         pass_filenames: false
       - id: coverage
         name: coverage => testing coverage
         stages: [push]
         language: system
-        entry: poetry run coverage report
+        entry: uv run coverage report
         always_run: true
         pass_filenames: false
       - id: create requirements
         name: update requirements' files
         stages: [push]
         language: system
-        entry: sh write_requirements.sh
+        entry: sh write-requirements.sh
         always_run: true
         pass_filenames: false
