@@ -156,5 +156,5 @@ debug.log
 .vscode
 
 # Data y Outputs
-#data/*
-#outputs/*
+data/*
+outputs/*
