@@ -1,12 +1,17 @@
-name: CI
+name: CI - Check, Test and Deploy Docs
 
 on:
   pull_request:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build:
+  check-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
