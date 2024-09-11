@@ -20,7 +20,7 @@ license-expression==30.3.1
 loguru==0.7.2
 markdown-it-py==3.0.0
 mdurl==0.1.2
-msgpack==1.0.8
+msgpack==1.1.0
 mypy==1.11.2
 mypy-extensions==1.0.0
 nodeenv==1.9.1
@@ -35,13 +35,13 @@ pre-commit==3.8.0
 py-serializable==1.1.0
 pydantic==2.9.1
 pydantic-core==2.23.3
-pydantic-settings==2.4.0
+pydantic-settings==2.5.0
 pygments==2.18.0
 pyparsing==3.1.4
 python-dotenv==1.0.1
 pyyaml==6.0.2
 requests==2.32.3
-rich==13.8.0
+rich==13.8.1
 ruff==0.6.4
 six==1.16.0
 sortedcontainers==2.4.0
