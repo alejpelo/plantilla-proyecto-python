@@ -9,6 +9,7 @@ nav:
       - Introducción: index.md
       - Librerías adicionales: otros/librerias.md
       - Lineamientos: otros/lineamientos.md
+      - Data version control: otros/dvc.md
     - Tutorial: tutorial.md
     - Código:
       - Configuración: codigo/configuracion.md
