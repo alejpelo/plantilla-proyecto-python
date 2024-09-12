@@ -1,17 +1,12 @@
-name: CI - Check, Test and Deploy Docs
+name: CI - Check and Test
 
 on:
   pull_request:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  check-test-deploy:
+  check-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +23,7 @@ jobs:
           python-version-file: "pyproject.toml"
 
       - name: Install the project
-        run: uv sync --dev --extra tests --extra docs
+        run: uv sync --dev --extra tests
 
       - name: Run mypy
         run: uv run mypy
@@ -44,6 +39,3 @@ jobs:
 
       - name: Update requirements' files
         run: sh write-requirements.sh
-
-      - name: Deploy docs
-        run: uv run mkdocs gh-deploy

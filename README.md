@@ -22,7 +22,7 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 
 Opcionalmente:
 
-- `dvc`: _Data version control_: [DVC](https://dvc.org/)
+- `dvc`: _Data version control_: [DVC](https://dvc.org/), (ver página [_Data version control_](docs/otros/dvc.md) para más detalles)
 - `notebooks`: _Jupyter notebooks_: [Jupyter kernels for Spyder and VS Code](https://github.com/spyder-ide/spyder-kernels?tab=readme-ov-file)
 
 ## Estructura
@@ -38,7 +38,13 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :material-folder: `data/`
 
-:   Carpeta para almacenar los archivos de datos (e.g. archivos `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...). Esta carpeta **NO** se debe estar versionada con Git y por defecto está incluida en el `.gitignore`.  Para hacer versionamiento de los datos, se debe hacer uso lo explicado en la mejor práctica relacionada con _Data version control_.
+:   Carpeta para almacenar los archivos de datos (e.g. archivos `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...).
+
+    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el `.gitignore`. 
+    
+    Se incluye una sub-carpeta especial (`querys/`) destinada a almacenar los _querys_ (archivos `.sql`) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.
+    
+    Para hacer versionamiento de los datos y/o modelos, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](otros/dvc.md).
 
 :material-folder: `docs/`
 
@@ -50,7 +56,13 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :material-folder: `outputs/`
 
-:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...). Esta carpeta **NO** se debe estar versionada con Git y por defecto está incluida en el `.gitignore`. Para hacer versionamiento de los datos que hagan parte de los resultados dentro de esta carpeta, se debe hacer uso lo explicado en la mejor práctica relacionada con _Data version control_.
+:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).
+
+    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el `.gitignore`.
+    
+    Para hacer versionamiento de los datos que hagan parte de los resultados, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](otros/dvc.md).
+
+    Si genera informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlo. De esta manera, en cualquier otro momento es posible recrear los datos, modelos y código que permite llegar a los mismos resultados.
 
 :material-folder: `src/`
 

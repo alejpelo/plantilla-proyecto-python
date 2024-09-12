@@ -157,4 +157,5 @@ debug.log
 
 # Data y Outputs
 data/*
+!data/querys/
 outputs/*
