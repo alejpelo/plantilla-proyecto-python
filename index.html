@@ -716,7 +716,7 @@
 </ul>
 <p>Opcionalmente:</p>
 <ul>
-<li><code>dvc</code>: <em>Data version control</em>: <a href="https://dvc.org/">DVC</a></li>
+<li><code>dvc</code>: <em>Data version control</em>: <a href="https://dvc.org/">DVC</a>, (ver página <a href="otros/dvc/"><em>Data version control</em></a> para más detalles)</li>
 <li><code>notebooks</code>: <em>Jupyter notebooks</em>: <a href="https://github.com/spyder-ide/spyder-kernels?tab=readme-ov-file">Jupyter kernels for Spyder and VS Code</a></li>
 </ul>
 <h2 id="estructura">Estructura</h2>
@@ -730,7 +730,10 @@
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>data/</code></dt>
 <dd>
-<p>Carpeta para almacenar los archivos de datos (e.g. archivos <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (<em>raw</em>), pre-procesados, procesados, ...). Esta carpeta <strong>NO</strong> se debe estar versionada con Git y por defecto está incluida en el <code>.gitignore</code>.  Para hacer versionamiento de los datos, se debe hacer uso lo explicado en la mejor práctica relacionada con <em>Data version control</em>.</p>
+<p>Carpeta para almacenar los archivos de datos (e.g. archivos <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (<em>raw</em>), pre-procesados, procesados, ...).</p>
+<p>Esta carpeta <strong>NO</strong> debe estar versionada con Git, y por defecto, está incluida en el <code>.gitignore</code>. </p>
+<p>Se incluye una sub-carpeta especial (<code>querys/</code>) destinada a almacenar los <em>querys</em> (archivos <code>.sql</code>) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.</p>
+<p>Para hacer versionamiento de los datos y/o modelos, se debe hacer uso lo explicado en la práctica relacionada con <a href="otros/dvc/"><em>Data version control</em></a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>docs/</code></dt>
 <dd>
@@ -742,7 +745,10 @@
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>outputs/</code></dt>
 <dd>
-<p>Carpeta para almacenar los archivos de resultados (e.g. archivos <code>.pdf</code>, <code>.png</code>, <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...). Esta carpeta <strong>NO</strong> se debe estar versionada con Git y por defecto está incluida en el <code>.gitignore</code>. Para hacer versionamiento de los datos que hagan parte de los resultados dentro de esta carpeta, se debe hacer uso lo explicado en la mejor práctica relacionada con <em>Data version control</em>.</p>
+<p>Carpeta para almacenar los archivos de resultados (e.g. archivos <code>.pdf</code>, <code>.png</code>, <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).</p>
+<p>Esta carpeta <strong>NO</strong> debe estar versionada con Git, y por defecto, está incluida en el <code>.gitignore</code>.</p>
+<p>Para hacer versionamiento de los datos que hagan parte de los resultados, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con <a href="otros/dvc/"><em>Data version control</em></a>.</p>
+<p>Si genera informes, se recomienda que en ellos incluya el <em>tag</em> que identifica la versión del proyecto que permite reproducirlo. De esta manera, en cualquier otro momento es posible recrear los datos, modelos y código que permite llegar a los mismos resultados.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>src/</code></dt>
 <dd>
