@@ -45,3 +45,6 @@ class Configuracion(BaseSettings):
 
     password: str = Field(alias="PASSWORD", min_length=8)
     secret_access_key: str = Field(alias="SECRET_ACCESS_KEY", min_length=20)
+
+
+configuracion = Configuracion()

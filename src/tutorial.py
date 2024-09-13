@@ -15,7 +15,7 @@ Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 
 from icecream import ic
 
-from configuracion import Configuracion
+from configuracion import configuracion
 from logger import log
 
 
@@ -30,7 +30,11 @@ def my_app() -> None:
     """
     ic.configureOutput(prefix="debug | ")
 
-    log.debug("Variables de Entorno: {}", Configuracion().model_dump())
+    # ¿Cómo usar una variable de configuración cargada en los .env?
+
+    ic(configuracion.admin_email)
+
+    log.debug("Variables de Entorno: {}", configuracion)
 
     # ¿Cómo "logear" algo en cualquier módulo?
     log.debug(
