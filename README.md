@@ -119,9 +119,9 @@ Posteriormente, siga los pasos descritos a continuación:
 4. En el proyecto se usa [pre-commit](https://pre-commit.com/) para automatizar la verificación del código antes de los _commits_ y de los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
 
     ```sh
-    pre-commit install
-    pre-commit install --hook-type pre-commit
-    pre-commit install --hook-type pre-push
+    uv run pre-commit install
+    uv run pre-commit install --hook-type pre-commit
+    uv run pre-commit install --hook-type pre-push
     ```
 
 5. Consulte el archivo `src/tutorial.py` para conocer cómo usar las variables de entorno, el log y cómo hacer _debugging_ fácilmente.
