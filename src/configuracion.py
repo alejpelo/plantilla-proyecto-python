@@ -24,15 +24,20 @@ como libraría para leer los archivos con las variables de entorno.
 Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 """
 
+from pathlib import Path
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+DOTENVPUBLIC = Path(__file__).parent.parent / ".env.public"
+DOTENVPRIVATE = Path(__file__).parent.parent / ".env.private"
 
 
 class Configuracion(BaseSettings):
     """Lee y valida las variables de configuración de los archivos .env."""
 
     model_config = SettingsConfigDict(
-        env_file=(".env.public", ".env.private"),
+        env_file=(DOTENVPUBLIC, DOTENVPRIVATE),
     )
 
     # Las variables de configuración que aparecen de aquí para abajo se deben
