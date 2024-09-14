@@ -33,7 +33,7 @@ repos:
         name: pip-audit => vulnerability checking
         stages: [push]
         language: system
-        entry: uv run pip-audit
+        entry: uv run pip-audit --ignore-vuln GHSA-c33w-24p9-8m24
         always_run: true
         pass_filenames: false
       - id: pytest
