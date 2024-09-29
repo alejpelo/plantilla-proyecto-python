@@ -26,7 +26,7 @@ code_linting:
 
 code_vulnerability:
 	@printf "\033[34;1mChecking vulnerabilities => pip-audit...\033[0m\n"
-	@uv run pip-audit --ignore-vuln GHSA-c33w-24p9-8m24
+	@uv run pip-audit
 
 code_testing:
 	@printf "\033[34;1mTesting code => pytest...\033[0m\n"

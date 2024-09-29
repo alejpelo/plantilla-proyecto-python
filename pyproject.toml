@@ -1,6 +1,6 @@
 [project]
 name = "plantilla-proyecto-python"
-version = "0.9.0"
+version = "0.10.0"
 description = "Plantilla para organizar proyectos incorporando mejores prácticas"
 authors = ["Alejandro Perez Londoño <perezl.alejandro@gmail.com>"]
 readme = "README.md"
@@ -35,7 +35,7 @@ docs = [
 [tool.uv]
 dev-dependencies = [
     "mypy>=1.11.2",
-    "ruff>=0.6.5",
+    "ruff>=0.6.8",
     "pip-audit>=2.7.3",
     "pre-commit>=3.8.0",
     "icecream>=2.1.3",
