@@ -114,7 +114,7 @@ Posteriormente, siga los pasos descritos a continuación:
         clean = "uvx jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR"
         ```
 
-        Esto le indica a git que al agregar un archivo `.ipynb` al _stage_, debe crearle una copia en la que limpie la metadata y los _outputs_. De esta forma se optimiza el versionamiento de este tipo de archivos garantizando que en el equipo local del usuario se mantiene tanto la metadata como los _outputs_. 
+        Esto le indica a git que al agregar un archivo `.ipynb` al _stage_, debe crearle una copia en la que limpie la metadata y los _outputs_. De esta forma se optimiza el versionamiento de este tipo de archivos, y se garantiza que en el equipo local del usuario se mantienen tanto la metadata como los _outputs_. 
 
 4. En el proyecto se usa [pre-commit](https://pre-commit.com/) para automatizar la verificación del código antes de los _commits_ y de los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
 

@@ -28,7 +28,7 @@ Esta técnica indirecta está implementada en una herramienta ([DVC](https://dvc
 
 ## Uso
 
-Después de haber "instalado" el proyecto aplicando la mejor práctica asociada con _data version control_ (`uv sync ... --extra dvc`), que habilita la herramienta (**DVC**) par hacer versionamiento de datos y/o modelos, se debe inicializar y configurar para poderla empezar a utilizar.
+Después de haber "instalado" el proyecto aplicando la mejor práctica asociada con _data version control_ (`uv sync ... --extra dvc`), que habilita la herramienta (**DVC**) para hacer versionamiento de datos y/o modelos, se debe inicializar y configurar para poderla empezar a utilizar.
 
 ### Inicializar **DVC**
 
