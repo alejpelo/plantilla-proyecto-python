@@ -3,56 +3,56 @@ repos:
     hooks:
       - id: uv-lock-check
         name: uv => make sure the lock file is up-to-date
-        stages: [commit]
+        stages: [pre-commit]
         language: system
         entry: uv lock --locked
         always_run: true
         pass_filenames: false
       - id: mypy
         name: mypy => type checking
-        stages: [commit]
+        stages: [pre-commit]
         language: system
         entry: uv run mypy
         always_run: true
         pass_filenames: false
       - id: ruff-formatting
         name: ruff => code formatting
-        stages: [commit]
+        stages: [pre-commit]
         language: system
         entry: uv run ruff format
         always_run: true
         pass_filenames: false
       - id: ruff-linting
         name: ruff => linting
-        stages: [commit]
+        stages: [pre-commit]
         language: system
         entry: uv run ruff check .
         always_run: true
         pass_filenames: false
       - id: pip-audit
         name: pip-audit => vulnerability checking
-        stages: [push]
+        stages: [pre-push]
         language: system
         entry: uv run pip-audit --ignore-vuln GHSA-c33w-24p9-8m24
         always_run: true
         pass_filenames: false
       - id: pytest
         name: pytest => testing
-        stages: [push]
+        stages: [pre-push]
         language: system
         entry: uv run pytest --cov
         always_run: true
         pass_filenames: false
       - id: coverage
         name: coverage => testing coverage
-        stages: [push]
+        stages: [pre-push]
         language: system
         entry: uv run coverage report
         always_run: true
         pass_filenames: false
       - id: create requirements
         name: update requirements' files
-        stages: [push]
+        stages: [pre-push]
         language: system
         entry: sh write-requirements.sh
         always_run: true
