@@ -4,7 +4,9 @@ all: pre_build
 
 update_environment:
 	@printf "\033[34;1mUpdating the virtual environment => uv...\033[0m\n"
-	@uv sync --upgrade
+	@uv sync --upgrade --extra tests --extra docs --extra dvc --extra notebooks
+	@uv sync --extra tests --extra docs
+	@uv lock
 
 pre_commit: check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 

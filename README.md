@@ -74,7 +74,7 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.46.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.4.6).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.49.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.7.3).
 
 !!! warning "¡Atención!"
     El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS por defecto. Por lo tanto es necesario instalar si está utilizando este sistema operativo, adicionalmente, [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
