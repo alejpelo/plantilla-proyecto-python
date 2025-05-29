@@ -80,10 +80,11 @@ Una vez configurado **DVC** tal como se indicó anteriormente, para "versionar" 
 
 1. Agregue el archivo, a la carpeta `data/` del proyecto.
 2. Indíquele a **DVC** que debe versionar el archivo. Para esto ejecute la siguiente instrucción: `uv run dvc add data/<nombre archivo>`. No olvide reemplazar `<nombre archivo>` por el nombre del archivo, con su respectiva extensión, que agregó en el punto 1.
-3. Indíquele a Git que agregue el archivo (`.dvc`) con la metadata que identifica la versión especifica del archivo de datos y el archivo (`.gitignore`) que evita que el archivo de datos se versione con Git. Para esto, ejecute: `git add data/.gitignore data/<nombre archivo>.dvc`. No olvide reemplazar `<nombre archivo>` por el nombre del archivo, con su respectiva extensión, que agregó en el punto 1.
+3. Indíquele a Git que agregue el archivo (`.dvc`) con la metadata que identifica la versión especifica del archivo de datos. Para esto, ejecute: `git add data/<nombre archivo>.dvc`. No olvide reemplazar `<nombre archivo>` por el nombre del archivo, con su respectiva extensión, que agregó en el punto 1.
 4. Haga _commit_ en Git para dejar trazabilidad del archivo de datos por medio del archivo con la metadata. Para esto ejecute: `git commit -m "data: <mensaje>"`. No olvide reemplazar `<mensaje>` por un texto que identifique adecuadamente los datos/modelos que está versionando.
-5. Suba el archivo al _bucket_. Para esto ejecute: `uv run dvc push`.
-6. Sincronice el repositorio git local con la versión en la nube. Para esto ejecute: `git push`.
+5. Configure la omisión de los _headers_ no compatibles con Backblaze. Para esto ejecute: `export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED` y `export export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED`.
+6. Suba el archivo al _bucket_. Para esto ejecute: `uv run dvc push`.
+7. Sincronice el repositorio git local con la versión en la nube. Para esto ejecute: `git push`.
 
 !!! warning "Atención"
     Dependiendo el tamaño del archivo de datos/modelos que esté versionando, instrucción `uv run dvc push` puede tomar un tiempo considerable.
