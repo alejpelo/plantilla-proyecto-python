@@ -158,4 +158,5 @@ debug.log
 # Data y Outputs
 data/*
 !data/querys/
+!data/*.dvc
 outputs/*
