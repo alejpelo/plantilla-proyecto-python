@@ -896,7 +896,7 @@
 <li>Indíquele a <strong>DVC</strong> que debe versionar el archivo. Para esto ejecute la siguiente instrucción: <code>uv run dvc add data/&lt;nombre archivo&gt;</code>. No olvide reemplazar <code>&lt;nombre archivo&gt;</code> por el nombre del archivo, con su respectiva extensión, que agregó en el punto 1.</li>
 <li>Indíquele a Git que agregue el archivo (<code>.dvc</code>) con la metadata que identifica la versión especifica del archivo de datos. Para esto, ejecute: <code>git add data/&lt;nombre archivo&gt;.dvc</code>. No olvide reemplazar <code>&lt;nombre archivo&gt;</code> por el nombre del archivo, con su respectiva extensión, que agregó en el punto 1.</li>
 <li>Haga <em>commit</em> en Git para dejar trazabilidad del archivo de datos por medio del archivo con la metadata. Para esto ejecute: <code>git commit -m "data: &lt;mensaje&gt;"</code>. No olvide reemplazar <code>&lt;mensaje&gt;</code> por un texto que identifique adecuadamente los datos/modelos que está versionando.</li>
-<li>Configure la omisión de los <em>headers</em> no compatibles con Backblaze. Para esto ejecute: <code>export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED</code> y <code>export export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED</code>.</li>
+<li>Configure la omisión de los <em>headers</em> no compatibles con Backblaze. Para esto ejecute: <code>export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED</code> y <code>export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED</code>.</li>
 <li>Suba el archivo al <em>bucket</em>. Para esto ejecute: <code>uv run dvc push</code>.</li>
 <li>Sincronice el repositorio git local con la versión en la nube. Para esto ejecute: <code>git push</code>.</li>
 </ol>
