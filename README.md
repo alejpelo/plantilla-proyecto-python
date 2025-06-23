@@ -23,7 +23,7 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 Opcionalmente:
 
 - `dvc`: _Data version control_: [DVC](https://dvc.org/), (ver página [_Data version control_](docs/otros/dvc.md) para más detalles)
-- `notebooks`: _Jupyter notebooks_: [Jupyter kernels for Spyder and VS Code](https://github.com/spyder-ide/spyder-kernels?tab=readme-ov-file)
+- `notebooks`: _Python notebooks_: [marimo](https://marimo.io/)
 
 ## Estructura
 
@@ -40,11 +40,11 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :   Carpeta para almacenar los archivos de datos (e.g. archivos `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...).
 
-    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el `.gitignore`. 
+    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
     
     Se incluye una sub-carpeta especial (`querys/`) destinada a almacenar los _querys_ (archivos `.sql`) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.
     
-    Para hacer versionamiento de los datos y/o modelos, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](otros/dvc.md).
+    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
 
 :material-folder: `docs/`
 
@@ -52,17 +52,19 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :material-folder: `notebooks/`
 
-:   Carpeta para almacenar los cuadernos (_notebooks_. Archivos `.ipynb`) que utilice en el proyecto. Si va a utilizar esta carpeta debe usar la práctica opcional _Jupyter notebooks compatibility_ y seguir las instrucciones para hacer un adecuado versionamiento de los cuadernos.
+:   Carpeta para almacenar los cuadernos (_notebooks_ usando [marimo](https://marimo.io/)) que utilice en el proyecto.
+
+    Para gestionar (i.e. crear, editar y eliminar) cuadernos (_notebooks_), se debe hacer uso lo explicado en la práctica relacionada con [_Notebooks_](docs/otros/notebooks.md).
 
 :material-folder: `outputs/`
 
 :   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).
 
-    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el `.gitignore`.
+    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
     
-    Para hacer versionamiento de los datos que hagan parte de los resultados, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](otros/dvc.md).
+    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
 
-    Si genera informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlo. De esta manera, en cualquier otro momento es posible recrear los datos, modelos y código que permite llegar a los mismos resultados.
+    Si se generan informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento es posible recrear los datos, los modelos y el código que permite llegar a los mismos resultados.
 
 :material-folder: `src/`
 
@@ -74,12 +76,12 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.49.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.7.3).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.50.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.7.13).
 
 !!! warning "¡Atención!"
-    El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS por defecto. Por lo tanto es necesario instalar si está utilizando este sistema operativo, adicionalmente, [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
+    El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS nativamente. Por lo tanto, si está utilizando este sistema operativo, es necesario instalar adicionalmente [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
 
-    Si siguió las instrucciones descritas anteriormente, todas las funcionalidades de la plantilla debe funcionar adecuadamente tanto en WindowsOS, como en MacOS y LinuxOS. Si se le presentan errores:
+    Si siguió las instrucciones descritas anteriormente, todas las funcionalidades de la plantilla deben funcionar adecuadamente tanto en WindowsOS, como en MacOS y LinuxOS. Si se le presentan errores:
 
     1. Es necesario remover el pre-commit que exporta los archivos de librarías requeridas de `.pre-commit-config.yaml`. y no usar `make`.
     2. Agradecemos lo reporte para buscar una solución.
@@ -96,7 +98,7 @@ Posteriormente, siga los pasos descritos a continuación:
     uv sync --extra tests --extra docs
     ```
 
-    Si desea usar algunas de las librerías que proporcionan mejores prácticas opcionales, ejecute:
+    Si desea usar algunas de las librerías que proporcionan prácticas opcionales, ejecute:
 
     ```sh
     uv sync --extra tests --extra docs --extra <práctica opcional> # (1)!
@@ -106,17 +108,7 @@ Posteriormente, siga los pasos descritos a continuación:
 
     Si desea usar más de una práctica opcional, simplemente repita `--extra <práctica opcional>` las veces que necesite al final de la instrucción.
 
-    !!! tip "¡Atención!"
-        Si opta por usar la opción `notebooks`, debe agregar a su archivo de configuración de git (`gitconfig`)[^1] las siguientes instrucciones al final del mismo:
-
-        ```sh
-        [filter "strip-notebook-output"]
-        clean = "uvx jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR"
-        ```
-
-        Esto le indica a git que al agregar un archivo `.ipynb` al _stage_, debe crearle una copia en la que limpie la metadata y los _outputs_. De esta forma se optimiza el versionamiento de este tipo de archivos, y se garantiza que en el equipo local del usuario se mantienen tanto la metadata como los _outputs_. 
-
-4. En el proyecto se usa [pre-commit](https://pre-commit.com/) para automatizar la verificación del código antes de los _commits_ y de los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
+4. En el proyecto se usan [pre-commit](https://pre-commit.com/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
 
     ```sh
     uv run pre-commit install

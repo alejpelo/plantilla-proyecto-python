@@ -1,11 +1,11 @@
 [project]
 name = "plantilla-proyecto-python"
-version = "0.11.0"
-description = "Plantilla para organizar proyectos incorporando mejores prácticas"
+version = "0.12.0"
+description = "Plantilla para organizar proyectos incorporando mejores prácticas de desarrollo."
 authors = ["Alejandro Perez Londoño <perezl.alejandro@gmail.com>"]
 readme = "README.md"
 
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.13,<3.14"
 
 dependencies = [
     "pydantic-settings>=2.9.1",
@@ -14,28 +14,29 @@ dependencies = [
 
 [project.optional-dependencies]
 dvc = [
-    "dvc[s3]>=3.59.2",
+    "dvc[s3]>=3.60.1",
 ]
 notebooks = [
-    "spyder-kernels>=3.0.4",
+    "marimo[recommended]>=0.14.0",
+    "auto-mix-prep>=0.2.0",
 ]
 tests = [
-    "pytest>=8.3.5",
-    "pytest-cov>=6.1.1",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
 ]
 docs = [
     "mkdocs>=1.6.1",
     "mkdocstrings>=0.29.1",
-    "mkdocstrings-python>=1.16.10",
-    "mkdocs-autorefs>=1.4.1",
+    "mkdocstrings-python>=1.16.12",
+    "mkdocs-autorefs>=1.4.2",
     "mkdocs-material>=9.6.14",
-    "mkdocs-include-markdown-plugin>=7.1.5",
+    "mkdocs-include-markdown-plugin>=7.1.6",
 ]
 
 [tool.uv]
 dev-dependencies = [
-    "mypy>=1.15.0",
-    "ruff>=0.11.10",
+    "mypy>=1.16.1",
+    "ruff>=0.12.0",
     "pip-audit>=2.9.0",
     "pre-commit>=4.2.0",
     "icecream>=2.1.4",
@@ -68,6 +69,7 @@ warn_unreachable = true
 [tool.ruff]
 line-length = 88
 src = ["src", "test"]
+exclude = ["notebooks"]
 
 [tool.ruff.lint]
 select = [
@@ -112,3 +114,6 @@ max-complexity = 6
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.marimo.runtime]
+pythonpath = ["src"]

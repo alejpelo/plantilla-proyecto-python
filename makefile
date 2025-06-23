@@ -12,7 +12,7 @@ pre_commit: check_environment code_type_cheking code_formatting code_linting cod
 
 check_environment:
 	@printf "\033[34;1mChecking and verifying the virtual environment => uv...\033[0m\n"
-	@uv lock --locked
+	@uv lock --check
 
 code_type_cheking:
 	@printf "\033[34;1mType-cheking code => mypy...\033[0m\n"

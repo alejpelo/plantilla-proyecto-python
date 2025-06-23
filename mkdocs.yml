@@ -1,6 +1,6 @@
 site_name: Documentación
 site_description: Documentación del proyecto
-site_author: Autor...
+site_author: Alejandro Perez Londoño
 
 repo_url: https://github.com/alejpelo/plantilla-proyecto-python
 
@@ -10,6 +10,7 @@ nav:
       - Librerías adicionales: otros/librerias.md
       - Lineamientos: otros/lineamientos.md
       - Data version control: otros/dvc.md
+      - Notebooks: otros/notebooks.md
     - Tutorial: tutorial.md
     - Código:
       - Configuración: codigo/configuracion.md

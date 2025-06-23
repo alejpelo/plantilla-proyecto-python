@@ -5,7 +5,7 @@ repos:
         name: uv => make sure the lock file is up-to-date
         stages: [pre-commit]
         language: system
-        entry: uv lock --locked
+        entry: uv lock --check
         always_run: true
         pass_filenames: false
       - id: mypy
