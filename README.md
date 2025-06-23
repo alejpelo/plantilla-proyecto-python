@@ -23,7 +23,7 @@ Plantilla para organizar proyectos que usan **Python** e incorpora mejores prác
 Opcionalmente:
 
 - `dvc`: _Data version control_: [DVC](https://dvc.org/), (ver página [_Data version control_](docs/otros/dvc.md) para más detalles)
-- `notebooks`: _Python notebooks_: [marimo](https://marimo.io/)
+- `notebooks`: _Python notebooks_: [marimo](https://marimo.io/), (ver página [_Notebooks_](docs/otros/notebooks.md) para más detalles)
 
 ## Estructura
 
