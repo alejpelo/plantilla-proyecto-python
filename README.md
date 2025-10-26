@@ -6,7 +6,7 @@ Click [aquí](https://alejpelo.github.io/plantilla-proyecto-python/) para accede
 
 ## Descripción
 
-Plantilla para organizar proyectos que usan **Python** e incorpora mejores prácticas relacionadas con:
+Plantilla para organizar proyectos que usan **Python** e incorporar mejores prácticas relacionadas con:
 
 - _Version control_: [Git](https://git-scm.com/) (libro: [_Pro Git_](https://git-scm.com/book/en/v2), tutorial: [_Getting Git Right: Learn Git with Tutorials, News and Tips_](https://www.atlassian.com/git))
 - _Project management_, _Virtual environments_ y _Dependencies management_: [uv](https://docs.astral.sh/uv/)
@@ -76,10 +76,10 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.50.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.7.13).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.51.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.9.5).
 
 !!! warning "¡Atención!"
-    El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS nativamente. Por lo tanto, si está utilizando este sistema operativo, es necesario instalar adicionalmente [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
+    El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS nativamente. Por lo tanto, si está utilizando ese sistema operativo, es necesario instalar adicionalmente [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
 
     Si siguió las instrucciones descritas anteriormente, todas las funcionalidades de la plantilla deben funcionar adecuadamente tanto en WindowsOS, como en MacOS y LinuxOS. Si se le presentan errores:
 

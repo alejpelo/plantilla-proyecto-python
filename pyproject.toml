@@ -1,45 +1,45 @@
 [project]
 name = "plantilla-proyecto-python"
-version = "0.12.0"
-description = "Plantilla para organizar proyectos incorporando mejores prácticas de desarrollo."
+version = "0.13.0"
+description = "Plantilla para organizar proyectos que usan Python aplicando mejores prácticas de desarrollo."
 authors = ["Alejandro Perez Londoño <perezl.alejandro@gmail.com>"]
 readme = "README.md"
 
 requires-python = ">=3.13,<3.14"
 
 dependencies = [
-    "pydantic-settings>=2.9.1",
+    "pydantic-settings>=2.11.0",
     "loguru>=0.7.3",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "ruff>=0.14.2",
+    "pip-audit>=2.9.0",
+    "pre-commit>=4.3.0",
+    "icecream>=2.1.8",
 ]
 
 [project.optional-dependencies]
 dvc = [
-    "dvc[s3]>=3.60.1",
+    "dvc[s3]>=3.63.0",
 ]
 notebooks = [
-    "marimo[recommended]>=0.14.0",
+    "marimo[recommended]>=0.17.2",
     "auto-mix-prep>=0.2.0",
 ]
 tests = [
-    "pytest>=8.4.1",
-    "pytest-cov>=6.2.1",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
 ]
 docs = [
     "mkdocs>=1.6.1",
-    "mkdocstrings>=0.29.1",
-    "mkdocstrings-python>=1.16.12",
-    "mkdocs-autorefs>=1.4.2",
-    "mkdocs-material>=9.6.14",
-    "mkdocs-include-markdown-plugin>=7.1.6",
-]
-
-[tool.uv]
-dev-dependencies = [
-    "mypy>=1.16.1",
-    "ruff>=0.12.0",
-    "pip-audit>=2.9.0",
-    "pre-commit>=4.2.0",
-    "icecream>=2.1.4",
+    "mkdocstrings>=0.30.1",
+    "mkdocstrings-python>=1.18.2",
+    "mkdocs-autorefs>=1.4.3",
+    "mkdocs-material>=9.6.22",
+    "mkdocs-include-markdown-plugin>=7.2.0",
 ]
 
 [tool.mypy]
