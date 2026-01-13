@@ -1,15 +1,15 @@
 annotated-types==0.7.0
 colorama==0.4.6 ; sys_platform == 'win32'
-coverage==7.11.0
+coverage==7.13.1
 iniconfig==2.3.0
 loguru==0.7.3
 packaging==25.0
 pluggy==1.6.0
-pydantic==2.12.3
-pydantic-core==2.41.4
-pydantic-settings==2.11.0
+pydantic==2.12.5
+pydantic-core==2.41.5
+pydantic-settings==2.12.0
 pygments==2.19.2
-pytest==8.4.2
+pytest==9.0.2
 pytest-cov==7.0.0
 python-dotenv==1.2.1
 typing-extensions==4.15.0
