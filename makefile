@@ -1,3 +1,5 @@
+#TODO: Cambiar por Just (https://github.com/casey/just)
+
 .PHONY: all check_environment code_type_cheking code_formatting code_linting code_vulnerability code_testing code_update_requirements
 
 all: pre_build

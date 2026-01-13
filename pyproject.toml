@@ -14,10 +14,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "mypy>=1.18.2",
+    "mypy>=1.18.2",  #TODO: Cambiar a la librería de Astral
     "ruff>=0.14.2",
     "pip-audit>=2.9.0",
-    "pre-commit>=4.3.0",
+    "pre-commit>=4.3.0", #TODO: Agregar Commitizen
     "icecream>=2.1.8",
 ]
 
