@@ -42,7 +42,15 @@ El proyecto usa la siguiente estructura de carpetas y archivos:
   <figcaption>Estructura de carpetas y archivos del proyecto</figcaption>
 </figure>
 
+### Carpetas
+
 A continuación se describe el propósito de cada una de las carpetas:
+
+:material-folder: `.github/`
+
+:   Carpeta para almacenar los archivos que configuran las _GitHub Actions_. Estos archivos están escritos en formato YAML y permiten automatizar tareas como la integración continua, el despliegue continuo, la gestión de incidencias, entre otras.
+
+    En principio no es necesario que modifique estos archivos, pero si desea personalizar las acciones automatizadas del proyecto, puede hacerlo editando los archivos dentro de esta carpeta o creando nuevos archivos según sus necesidades.
 
 :material-folder: `data/`
 
@@ -82,18 +90,90 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :   Carpeta para almacenar las pruebas del proyecto (archivos  `.py`). Dentro de la carpeta se pueden crear sub-carpetas para organizar las pruebas adecuadamente. Las pruebas se deben escribir usando [pytest](https://docs.pytest.org/en/stable/).
 
+### Archivos
+
+A continuación se describe el propósito de algunos de los archivos más importantes del proyecto:
+
+:material-file: `.env.private`
+
+:   Archivo para almacenar las variables de entorno privadas del proyecto. Este archivo **NO** debe estar versionado con Git, y por defecto, está incluido en el archivo `.gitignore` del proyecto[^1].
+
+    Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo `src/tutorial.py`.
+
+:material-file: `.env.public`
+
+:   Archivo para almacenar las variables de entorno públicas del proyecto. Este archivo **SI** debe estar versionado con Git.
+
+    Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo `src/tutorial.py`.
+
+:material-file: `.gitignore`
+
+:   Archivo para especificar los archivos y carpetas que **Git** debe ignorar al momento de hacer seguimiento de los cambios en el proyecto. Este archivo es fundamental para evitar que archivos temporales, archivos de configuración local o archivos generados automáticamente se incluyan en el control de versiones.
+
+    El archivo `.gitignore` del proyecto ya incluye las configuraciones necesarias para ignorar las carpetas `data/` y `outputs/`, entre otros archivos y carpetas comunes que no deben ser versionados.
+
+:material-file: `pre-commit-config.yaml`
+
+:  Archivo para configurar los _hooks_ de [pre-commit](https://pre-commit.com/) en el proyecto. Este archivo define una serie de reglas y herramientas que se ejecutan automáticamente antes de realizar un _commit_ en Git, con el fin de asegurar la calidad del código y mantener un estándar consistente en el proyecto.
+
+    El archivo `pre-commit-config.yaml` del proyecto ya incluye configuraciones para varias herramientas útiles, como formateadores de código, linters y verificadores de seguridad.
+
+    Para más información sobre el uso de **pre-commit** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+
+:material-file: `CHANGELOG.md`
+
+:   Archivo para llevar un registro de los cambios realizados en el proyecto a lo largo del tiempo. Este archivo sigue el formato de [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y ayuda a los desarrolladores y usuarios a entender la evolución del proyecto, facilitando la identificación de nuevas características, correcciones de errores y cambios importantes entre versiones.
+
+    Este archivo se actualiza automáticamente al hacer _commits_ usando la instrucción `just bump-code-version` (o su alias `just b`). Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+
+:material-file: `justfile`
+
+:   Archivo para almacenar las tareas automatizadas del proyecto usando [**just**](https://github.com/casey/just). Este archivo contiene las instrucciones para ejecutar tareas comunes del proyecto, como instalar dependencias, ejecutar pruebas, generar documentación, entre otras.
+
+    Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+
+:material-file: `mkdocs.yml`
+
+:  Archivo para configurar la documentación del proyecto usando [MkDocs](https://www.mkdocs.org/) y [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Este archivo define la estructura, el tema, las extensiones y otras opciones relacionadas con la generación de la documentación del proyecto.
+
+    Para más información sobre el uso de **MkDocs** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+
+:material-file: `pyproject.toml`
+
+: Archivo para gestionar las dependencias y la configuración del proyecto usando [uv](https://docs.astral.sh/uv/). Este archivo define las librerías necesarias para el desarrollo y la ejecución del proyecto, así como otras configuraciones relacionadas con el entorno de desarrollo.
+
+    Para más información sobre el uso de **uv** en el proyecto, consulte [Uso](#uso) y [_Librerías adicionales_](docs/otros/librerias.md).
+
+:material-file: `README.md`
+
+: Archivo para proporcionar una descripción general del proyecto, incluyendo su propósito, características principales, instrucciones de instalación y uso, entre otros detalles relevantes. Este archivo es lo primero que los usuarios y colaboradores ven al acceder al repositorio del proyecto.
+
+    El archivo `README.md` (este archivo) del proyecto ya incluye información básica sobre la plantilla y un enlace a la documentación completa en línea.
+
+:material-file: `requeriments-dev.txt`, `requeriments-docs.txt`, `requeriments-tests.txt` y `requeriments.txt` 
+
+: Archivos para listar las dependencias del proyecto. Aunque el proyecto usa [uv](https://docs.astral.sh/uv/) para gestionar las dependencias, este archivo puede ser útil para herramientas o servicios que esperan encontrar archivos `requirements.txt` en el proyecto (e.g. _GitHub Actions_).
+
+:material-file: `uv.lock`
+
+: Archivo generado automáticamente por [uv](https://docs.astral.sh/uv/) para asegurar que las dependencias del proyecto se instalen de manera consistente en diferentes entornos. Este archivo registra las versiones exactas de las librerías instaladas en el proyecto, incluyendo sus dependencias y sub-dependencias.
+
+    No es necesario modificar este archivo manualmente, ya que se actualiza automáticamente al instalar o actualizar las dependencias del proyecto usando **uv**.
+
 ## Uso
 
 Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.52.0), [**uv**](https://docs.astral.sh/uv/) (versión >= 0.9.26) y [**just**](https://github.com/casey/just) (versión >= 1.46.0).
 
 !!! warning "¡Atención!"
-    El proyecto incluye algunas funcionalidades que requieren un _shell_ (`sh`) compatible con Unix (e.g. MacOS, LinuxOS). Al instalar Git en WindowsOS, es posible instalar adicionalmente **Git Bash** que proporciona un _shell_ compatible con Unix. Si realiza esta instalación adicional y configura su sistema para usar Git Bash como _shell_ predeterminado, tal como lo explica la documentación de la instalación de **just**, no debería tener inconvenientes al usar el proyecto en WindowsOS.
+    El proyecto incluye algunas funcionalidades que requieren un _shell_ (`sh`) compatible con Unix (e.g. MacOS, LinuxOS).
+
+    Al instalar **Git** en WindowsOS, es posible instalar adicionalmente **Git Bash**, lo que proporciona un _shell_ compatible con Unix. Si realiza esta instalación adicional y configura su sistema para usar Git Bash como _shell_ predeterminado, tal como lo explica la documentación de la instalación de **just**, no debería tener inconvenientes al usar el proyecto en WindowsOS.
 
     Si se le presentan errores, le agradecemos lo reporte para buscar soluciones.
 
 Posteriormente, siga los pasos descritos a continuación:
 
-1. Cree un nuevo repositorio a partir de esta [plantilla](https://github.com/alejpelo/plantilla-proyecto-python) (_template_) con el nombre de su nuevo proyecto. _Asegúrese de marcar la opción **Include all branches**_.
+1. Cree un nuevo repositorio a partir de esta [plantilla](https://github.com/alejpelo/plantilla-proyecto-python) (_template_) con el nombre de su nuevo proyecto. Asegúrese de marcar la opción _**Include all branches**_.
 
 2. Clone el nuevo repositorio en su equipo local.
 

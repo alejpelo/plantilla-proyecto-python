@@ -25,31 +25,44 @@ Se utiliza [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows
 Es obligatorio incluir un mensaje en cada _commit_. El mensaje debe utilizar la siguiente plantilla:
 
 ```git
-<tipo>: <asunto> (Si se aplica, este commit...)
-|<--------  Usar máximo 50 caracteres  --------->|
+<tipo>[alcance (opcional)]: <asunto> (Si se aplica, este commit...)
+(ejemplos:)
+fix: corrige error en la función de carga de datos
+feat(parser): agrega soporte para nuevos formatos de archivo
+|<--------------------  Usar máximo 75 caracteres  ---------------------->|
 
-Explique por qué se realiza el cambio.
-|<----  Trate de limitar cada línea a máximo 72 caracteres  ---->|
+(cuerpo opcional) Explique por qué se realiza el cambio y qué está cambiando.
+Si el cambio es grande, use viñetas para organizar la información.
+(ejemplo:)
+- Descripción del cambio 1
+|<--------  Trate de limitar cada línea a máximo 75 caracteres  --------->|
 
-Descripción: Provea links o claves a cualquier ticket, artículo u
-otro recurso relevante para el commit
-Ejemplo: Issue #23
+(pie de página opcional)
+Descripción: Provea links o claves a cualquier ticket, artículo u otro
+recurso relevante para el commit
+Indique si el commit produce un BREAKING CHANGE
+(ejemplo:)
+Closes: #23
+BREAKING CHANGE: Se cambia la forma en que se maneja ...
+|<--------  Trate de limitar cada línea a máximo 75 caracteres  --------->|
 
----- FIN DEL COMMIT ----
+----------------------------- FIN DEL COMMIT ------------------------------
 
-<tipo> puede ser: 
-    feat     nueva característica
-    data     versionamiento de datos
-    fix      corrección de error
-    style    formato (e.g. agregar comas que faltaban); no se cambia el código
-    docs     cambios a la documentación
-    test     añadir o ajustar tests; no se cambia el código de producción
-    chore    cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
+<tipo> puede ser:
+    fix             corrección de error
+    feat            nueva característica
+    improvement     mejora de una característica existente sin agregar nueva funcionalidad o corregir errores
+    refactor        ajusta o mejora del código; no se cambia la funcionalidad
+    data            versionamiento de datos
+    style           formato (e.g. agregar comas que faltaban); no se cambia el código
+    docs            cambios a la documentación
+    test            añadir o ajustar tests; no se cambia el código de producción
+    chore           cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
 
 ---------------
 
 Recuerde...
-    Empezar con mayúscula la línea del asunto
+    Empezar con minúscula la línea del asunto. Tanto el <tipo> como el <asunto>
     Usar el modo imperativo en la línea del asunto
     No terminar la línea del asunto con punto
     Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
