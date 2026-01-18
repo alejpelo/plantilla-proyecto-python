@@ -1,3 +1,9 @@
+## v0.15.0 (2026-01-18)
+
+### Feat
+
+- agrega tareas en just para facilitar el flujo de trabajo al desarrollar el proyecto
+
 ## v0.14.2 (2026-01-17)
 
 ### Fix
