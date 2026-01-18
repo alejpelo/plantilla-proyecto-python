@@ -13,7 +13,7 @@ El versionamiento de datos y modelos es una técnica que permite hacerle trazabi
 
 Git no está diseñado para versionar archivos de gran tamaño o archivos binarios. Su uso está optimizado para versionar archivos de texto de poco peso (archivos con código fuente). Por lo tanto, para versionar archivos de datos/modelos junto con el código, se debe utilizar una técnica indirecta.
 
-Esta técnica indirecta está implementada en una herramienta ([DVC](https://dvc.org/doc/user-guide)) que se instala en el proyecto al hacer uso de la opción `uv sync ... --extra dvc`.
+Esta técnica indirecta está implementada en una herramienta ([DVC](https://dvc.org/doc/user-guide)) que se instala en el proyecto al hacer uso de la opción `just set-dev-env "--extra dvc"`.
 
 **DVC** funciona 1) generando archivos de texto livianos con metadatos sobre los archivos pesados que se agregan a Git para identificar una versión específica de estos archivos y así poderlos recrear en cualquier momento y 2) almacenando de forma óptima estos archivos por fuera del proyecto. Para almacenar las versiones de estos archivos de forma óptima se utilizan repositorios (_buckets_) en la nube que ofrecen gran capacidad a precios competitivos.
 
@@ -28,7 +28,7 @@ Esta técnica indirecta está implementada en una herramienta ([DVC](https://dvc
 
 ## Uso
 
-Después de haber "instalado" el proyecto aplicando la mejor práctica asociada con _data version control_ (`uv sync ... --extra dvc`), que habilita la herramienta (**DVC**) para hacer versionamiento de datos y/o modelos, se debe inicializar y configurar para poderla empezar a utilizar.
+Después de haber "instalado" el proyecto aplicando la mejor práctica asociada con _data version control_ (`just set-dev-env "--extra dvc"`), que habilita la herramienta (**DVC**) para hacer versionamiento de datos y/o modelos, se debe inicializar y configurar para poderla empezar a utilizar.
 
 ### Inicializar **DVC**
 

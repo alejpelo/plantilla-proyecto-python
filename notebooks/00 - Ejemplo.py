@@ -1,54 +1,58 @@
 import marimo
 
-__generated_with = "0.14.0"
+__generated_with = "0.19.4"
 app = marimo.App(width="medium")
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""# -- _CUADERNO DE MUESTRA [EJEMPLO]_ --""")
+    mo.md(r"""
+    # -- _CUADERNO DE MUESTRA [EJEMPLO]_ --
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     #Título
 
     El título del cuaderno debe ser coherente con el nombre del archivo. Además tenga presente que las extenciones de los cuadernos de marimo son `.py`. Por ejemplo:
 
     `01 - Exploración de Datos.py`
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
+    Versión del código (_commit tag_) para recrear datos y resultados: `"v$version"`
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
     ### Autores
 
     Autor 1, email, afiliación
 
     Autor 2, email, afiliación
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Vínculos
 
     <table class="tfo-notebook-buttons" align="left">
@@ -61,32 +65,27 @@ def _(mo):
     </table>
 
     [No olvide actualizar los hipervínculos de los botones...]
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Visión General
 
     [Incluya uno o dos párrafos explicando qué muestra este cuaderno, a quién podría interesarle y qué se necesita saber antes de comenzar.]
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Configuración
 
     [Importe todas las librerías en una sección de configuración. Realice cualquier configuración (e.g. el _logger_) en esta sección.]
-    """
-    )
+    """)
     return
 
 
@@ -99,14 +98,12 @@ def _():
 def _():
     from configuracion import configuracion
     from logger import log
-
     return configuracion, log
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Recursos
 
     [Describa los recursos (artículos, páginas web, documentación, videos, etc.) que sirvan para ambientar y sustentar lo que se presenta en este cuaderno.]
@@ -116,20 +113,18 @@ def _(mo):
     * [Polars](https://pola.rs/)
     * [Plotnine](https://plotnine.org/)
     * [Google developer documentation style guide](https://developers.google.com/style/highlights)
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Guía de estilo para el cuaderno
 
     [Esta sección se puede borrar. Únicamente se presenta para dejar documentadas las prácticas recomendadas para estructurar el cuederno.]
 
-    - Como práctica recomendada por **marimo**, se debe empezar siempre con una celda que contenga: `import marimo as mo` 
+    - Como práctica recomendada por **marimo**, se debe empezar siempre con una celda que contenga: `import marimo as mo`
     - Usar un encabezado H1 para el título.
     - Incluir la barra de botones inmediatamente después de los Autores.
     - Incluye una sección de visión general antes de cualquier código.
@@ -137,15 +132,13 @@ def _(mo):
     - Mantener las celdas de código y texto lo más breves posible.
     - Separar las celdas de texto con encabezados.
     - Dividir las celdas de código entre "construcción" y "ejecución", y entre "mostrar un resultado" y "mostrar otro resultado".
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Guía de estilo para el código
 
     [Esta sección se puede borrar. Únicamente se presenta para dejar documentadas las prácticas recomendadas para estructurar el código dentro del cuaderno.]
@@ -155,8 +148,7 @@ def _(mo):
     - Mantenga los ejemplos breves. Use conjuntos de datos pequeños o fragmentos reducidos de ellos.
     - Si define una función, ejecútela y muestre lo que hace antes de usarla dentro de otra función.
     - Demuestre partes pequeñas antes de combinarlas en algo más complejo, como en el siguiente ejemplo:
-    """
-    )
+    """)
     return
 
 
@@ -188,7 +180,9 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(r"""Run the model on a single batch of data, and inspect the output:""")
+    mo.md(r"""
+    Run the model on a single batch of data, and inspect the output:
+    """)
     return
 
 
@@ -205,7 +199,9 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(r"""Compile the model for training:""")
+    mo.md(r"""
+    Compile the model for training:
+    """)
     return
 
 
@@ -219,8 +215,7 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Guía de estilo para textos
 
     [Esta sección se puede borrar. Únicamente se presenta para dejar documentadas las prácticas recomendadas para estructurar el texto dentro del cuaderno.]
@@ -229,28 +224,27 @@ def _(mo):
     - Use mayúsculas solo al inicio en títulos y encabezados.
     - Utilice títulos y encabezados cortos: "Descargar los datos", "Construir el modelo", "Entrenar el modelo".
     - Siga la Guía de estilo para documentación de desarrolladores de Google ([Google developer documentation style guide](https://developers.google.com/style/highlights)).
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""### Ejemplo de uso de LaTeX""")
+    mo.md(r"""
+    ### Ejemplo de uso de LaTeX
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     La función exponencial $f(x) = e^x$ puede ser representada de la siguiente forma:
 
     \[
         f(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots.
     \]
-    """
-    )
+    """)
     return
 
 

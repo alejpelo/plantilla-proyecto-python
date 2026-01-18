@@ -155,6 +155,9 @@ debug.log
 .idea
 .vscode
 
+# Marimo
+notebooks/__marimo__/
+
 # Data y Outputs
 data/*
 !data/querys/

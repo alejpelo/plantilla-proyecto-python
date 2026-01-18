@@ -1,0 +1,30 @@
+name: CI - Deploy Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install just
+        uses: extractions/setup-just@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: "pyproject.toml"
+
+      - name: Install the project
+        run: uv sync -q --all-groups --extra docs
+
+      - name: Publish docs
+        run: just publish-docs

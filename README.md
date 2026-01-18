@@ -10,10 +10,10 @@ Plantilla para organizar proyectos que usan **Python** e incorporar mejores prá
 
 - _Version control_: [Git](https://git-scm.com/) (libro: [_Pro Git_](https://git-scm.com/book/en/v2), tutorial: [_Getting Git Right: Learn Git with Tutorials, News and Tips_](https://www.atlassian.com/git))
 - _Project management_, _Virtual environments_ y _Dependencies management_: [uv](https://docs.astral.sh/uv/)
-- _Static typing_: [mypy](https://mypy-lang.org/)
-- _Code formatting_, _Linting_ y _Style enforcement_: [Ruff](https://beta.ruff.rs/docs/)
+- _Static typing_: [Ty](https://docs.astral.sh/ty/)
+- _Code formatting_, _Linting_ y _Style enforcement_: [Ruff](https://docs.astral.sh/ruff/)
 - _Package vulnerability analysis_: [pip-audit](https://pypi.org/project/pip-audit/)
-- _Pre-Commit hooks_: [pre-commit](https://pre-commit.com/)
+- _Commit management_: [pre-commit](https://pre-commit.com/), [Commitizen] (https://commitizen-tools.github.io/commitizen/)
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 - _Environmental variables_ y _`.env` files_: [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
@@ -22,8 +22,16 @@ Plantilla para organizar proyectos que usan **Python** e incorporar mejores prá
 
 Opcionalmente:
 
+- `nb`: _Python notebooks_: [marimo](https://marimo.io/), (ver página [_Notebooks_](docs/otros/notebooks.md) para más detalles)
 - `dvc`: _Data version control_: [DVC](https://dvc.org/), (ver página [_Data version control_](docs/otros/dvc.md) para más detalles)
-- `notebooks`: _Python notebooks_: [marimo](https://marimo.io/), (ver página [_Notebooks_](docs/otros/notebooks.md) para más detalles)
+
+!!! warning "¡Atención!"
+    Es conocido que [DVC](https://dvc.org/) puede presentar problemas de compatibilidad cuando se usa en WindowsOS. Se recomienda revisar la [documentación oficial de DVC](https://doc.dvc.org/), particularmente las siguientes páginas:
+
+    - [Installation on Windows](https://doc.dvc.org/install/windows)
+    - [How to Run DVC on Windows](https://doc.dvc.org/user-guide/how-to/run-dvc-on-windows)
+
+    Si va a usar esa práctica opcional, es preferible usar MacOS o LinuxOS para evitar inconvenientes.
 
 ## Estructura
 
@@ -38,13 +46,13 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :material-folder: `data/`
 
-:   Carpeta para almacenar los archivos de datos (e.g. archivos `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...).
+:   Carpeta para almacenar los archivos de datos (e.g. archivos `.txt`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...).
 
     Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
     
     Se incluye una sub-carpeta especial (`querys/`) destinada a almacenar los _querys_ (archivos `.sql`) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.
     
-    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
+    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
 
 :material-folder: `docs/`
 
@@ -58,11 +66,11 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :material-folder: `outputs/`
 
-:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).
+:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.txt`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).
 
     Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
     
-    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y por lo tanto se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
+    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
 
     Si se generan informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento es posible recrear los datos, los modelos y el código que permite llegar a los mismos resultados.
 
@@ -76,15 +84,12 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.51.0) y [**uv**](https://docs.astral.sh/uv/) (versión >= 0.9.5).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.52.0), [**uv**](https://docs.astral.sh/uv/) (versión >= 0.9.26) y [**just**](https://github.com/casey/just) (versión >= 1.46.0).
 
 !!! warning "¡Atención!"
-    El proyecto tiene un `makefile` y un archivo _shell_ (`write-requirements.sh`) que no corren en WindowsOS nativamente. Por lo tanto, si está utilizando ese sistema operativo, es necesario instalar adicionalmente [Make](https://gnuwin32.sourceforge.net/packages/make.htm). (Tutorial: [How to setup/install GNU make on Windows](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)).
+    El proyecto incluye algunas funcionalidades que requieren un _shell_ (`sh`) compatible con Unix (e.g. MacOS, LinuxOS). Al instalar Git en WindowsOS, es posible instalar adicionalmente **Git Bash** que proporciona un _shell_ compatible con Unix. Si realiza esta instalación adicional y configura su sistema para usar Git Bash como _shell_ predeterminado, tal como lo explica la documentación de la instalación de **just**, no debería tener inconvenientes al usar el proyecto en WindowsOS.
 
-    Si siguió las instrucciones descritas anteriormente, todas las funcionalidades de la plantilla deben funcionar adecuadamente tanto en WindowsOS, como en MacOS y LinuxOS. Si se le presentan errores:
-
-    1. Es necesario remover el pre-commit que exporta los archivos de librarías requeridas de `.pre-commit-config.yaml`. y no usar `make`.
-    2. Agradecemos lo reporte para buscar una solución.
+    Si se le presentan errores, le agradecemos lo reporte para buscar soluciones.
 
 Posteriormente, siga los pasos descritos a continuación:
 
@@ -95,33 +100,31 @@ Posteriormente, siga los pasos descritos a continuación:
 3. Instale el proyecto, ejecutando:
 
     ```sh
-    uv sync --extra tests --extra docs
+    just set-dev-env
     ```
 
     Si desea usar algunas de las librerías que proporcionan prácticas opcionales, ejecute:
 
     ```sh
-    uv sync --extra tests --extra docs --extra <práctica opcional> # (1)!
+    just set-dev-env <práctica opcional> # (1)!
     ```
 
-    1. Debe reemplazar `<práctica opcional>` por el código de la práctica opcional. Por ejemplo: `... --extra dvc`.
+    1. Debe reemplazar `<práctica opcional>` por el código de la práctica opcional. Por ejemplo: `"--extra dvc"` o `"--extra nb"`.
 
-    Si desea usar más de una práctica opcional, simplemente repita `--extra <práctica opcional>` las veces que necesite al final de la instrucción.
+    Si desea usar más de una práctica opcional, simplemente repita `<práctica opcional>`, separado por un espacio, las veces que necesite al final de la instrucción.
 
-4. En el proyecto se usan [pre-commit](https://pre-commit.com/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurarla usando las siguientes instrucciones:
+4. En el proyecto se usan [pre-commit](https://pre-commit.com/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:
 
     ```sh
-    uv run pre-commit install
-    uv run pre-commit install --hook-type pre-commit
-    uv run pre-commit install --hook-type pre-push
+    just install-pre-commit-hooks
     ```
 
 5. Consulte el archivo `src/tutorial.py` para conocer cómo usar las variables de entorno, el log y cómo hacer _debugging_ fácilmente.
 
-6. Consulte el archivo `docs/tutorial.md` para conocer las capacidades instaladas para documentar el proyecto. Para trabajar en la documentación, ejecute:
+6. Consulte el archivo `docs/tutorial.md` para conocer las capacidades instaladas para documentar el proyecto. Para visualizar en limpio la documentación, ejecute:
 
     ```sh
-    uv run mkdocs serve
+    just serve-docs
     ```
 
     Esto le permitirá ver en el explorador la versión final de la documentación y hará que esta se actualice en línea en la medida que realice cambios.

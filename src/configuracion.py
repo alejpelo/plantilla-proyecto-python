@@ -52,4 +52,4 @@ class Configuracion(BaseSettings):
     secret_access_key: str = Field(alias="SECRET_ACCESS_KEY", min_length=20)
 
 
-configuracion = Configuracion()
+configuracion = Configuracion()  # type: ignore

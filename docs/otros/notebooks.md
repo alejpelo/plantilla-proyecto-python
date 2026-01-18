@@ -13,7 +13,7 @@ Los cuadernos (_notebooks_) son archivos `.py` con una estructura específica, q
 
 Para entender el funcionamiento de los cuadernos, se sugiere visitar la página de [**marimo**](https://marimo.io/), donde se explica cómo funcionan y cómo se pueden utilizar.
 
-También se puede hacer uso de los tutoriales que provee **marimo**. Para esto, después de activar el uso de la práctica opcional (i.e. `uv sync ... --extra notebooks`), ejecute:
+También se puede hacer uso de los tutoriales que provee **marimo**. Para esto, después de activar la opción `nb` (i.e. `just set-dev-env "--extra nb"`), ejecute:
 
 ```sh
 marimo tutorial intro
@@ -21,7 +21,7 @@ marimo tutorial intro
 
 ## Usar [marimo](https://marimo.io/)
 
-Después de haber "instalado" el proyecto aplicando la práctica asociada con _notebooks_ (i.e. `uv sync ... --extra notebooks`), que habilita la herramienta (**marimo**) para crear y gestionar cuadernos, ejecute:
+Después de haber "instalado" el proyecto usando la opción que habilita los _notebooks_ (i.e. `just set-dev-env "--extra nb"`), que habilita la herramienta (**marimo**) para crear y gestionar cuadernos, ejecute:
 
 ```sh
 marimo edit

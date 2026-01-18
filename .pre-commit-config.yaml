@@ -1,59 +1,22 @@
 repos:
   - repo: local
     hooks:
-      - id: uv-lock-check
-        name: uv => make sure the lock file is up-to-date
+      - id: pre-commit-checks
+        name: pre-commit-checks => run all pre-commit checks
         stages: [pre-commit]
         language: system
-        entry: uv lock --check
+        entry: just run-pre-commit-checks
         always_run: true
         pass_filenames: false
-      - id: mypy
-        name: mypy => type checking
-        stages: [pre-commit]
-        language: system
-        entry: uv run mypy
-        always_run: true
-        pass_filenames: false
-      - id: ruff-formatting
-        name: ruff => code formatting
-        stages: [pre-commit]
-        language: system
-        entry: uv run ruff format
-        always_run: true
-        pass_filenames: false
-      - id: ruff-linting
-        name: ruff => linting
-        stages: [pre-commit]
-        language: system
-        entry: uv run ruff check .
-        always_run: true
-        pass_filenames: false
-      - id: pip-audit
-        name: pip-audit => vulnerability checking
+      - id: pre-push-checks
+        name: pre-push-checks => run all pre-push checks
         stages: [pre-push]
         language: system
-        entry: uv run pip-audit --ignore-vuln GHSA-c33w-24p9-8m24
+        entry: just run-pre-push-checks
         always_run: true
         pass_filenames: false
-      - id: pytest
-        name: pytest => testing
-        stages: [pre-push]
-        language: system
-        entry: uv run pytest --cov
-        always_run: true
-        pass_filenames: false
-      - id: coverage
-        name: coverage => testing coverage
-        stages: [pre-push]
-        language: system
-        entry: uv run coverage report
-        always_run: true
-        pass_filenames: false
-      - id: create requirements
-        name: update requirements' files
-        stages: [pre-push]
-        language: system
-        entry: sh write-requirements.sh
-        always_run: true
-        pass_filenames: false
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.11.6
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

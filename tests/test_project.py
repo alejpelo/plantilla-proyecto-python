@@ -9,4 +9,4 @@ from src import __version__
 
 def test_version_proyecto():
     """Prueba la versión del proyecto."""
-    assert __version__ == "0.13.0"
+    assert __version__ == "v$version"
