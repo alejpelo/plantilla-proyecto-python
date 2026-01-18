@@ -68,6 +68,8 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
     !!! warning "¡Atención!"
         Para que [Commitizen](https://commitizen-tools.github.io/commitizen/) pueda actualizar la versión correctamente, es necesario que los mensajes de los _commits_ sigan las convenciones establecidas. Por lo tanto, es importante que siempre use la instrucción `just commit-code` para hacer los _commits_ y siga las indicaciones que están descritas en [Lineamientos contribución](./lineamientos.md#mensaje-commits), en la sección de los mensajes de los _commits_.
 
+        Además debe asegurarse que todos los archivos `.py` (incluyendo los cuadernos - _notebooks_) que tengan la versión del proyecto, estén incluídos en la lista `version_files` de la herramienta **Commitizen** (`[tool.commitizen]`) que se encuentra al final en el archivo `pyproject.toml`.
+
 El archivo `justfile` contiene más instrucciones que pueden ser útiles durante el desarrollo. Puede ver la lista completa de instrucciones disponibles ejecutando:
 
 ```bash
