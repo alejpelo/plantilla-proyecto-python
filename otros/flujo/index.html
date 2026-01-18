@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../lineamientos/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../dvc/">
+        <link rel="next" href="../librerias/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Notebooks - Documentación</title>
+        <title>Flujo de trabajo - Documentación</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notebooks" class="md-skip">
+        <a href="#flujo-de-trabajo-al-desarrollar" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notebooks
+              Flujo de trabajo
             
           </span>
         </div>
@@ -392,10 +392,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../flujo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -411,6 +420,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -476,37 +486,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Notebooks
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../notebooks/" class="md-nav__link">
         
   
   
@@ -522,59 +505,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#que-son" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Qué son?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-funcionan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Cómo funcionan?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usar-marimo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usar marimo
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -807,47 +737,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#que-son" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Qué son?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-funcionan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Cómo funcionan?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usar-marimo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usar marimo
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -866,24 +755,71 @@
   
 
 
-<h1 id="notebooks">Notebooks</h1>
-<h2 id="que-son">¿Qué son?</h2>
-<figure>
-<p><img alt="notebooks" src="../../assets/notebooks.png" width="80%" />
-  </p>
-<figcaption>Cuadernos (notebooks) modernos</figcaption>
-</figure>
-<p>Los cuadernos (<em>notebooks</em>) son archivos <code>.py</code> con una estructura específica, que se crean usando <a href="https://marimo.io/"><strong>marimo</strong></a>. Esto permite que sean archivos en los que se combina texto (incluyendo LaTeX), código y gráficos de forma muy sencilla; y por lo tanto son muy útiles para documentar el proceso de análisis de datos y/o entrenamiento de modelos. Los cuadernos son una herramienta muy útil para la exploración de datos, la creación de prototipos y la documentación de resultados. También son muy útiles para explicar el proceso (los diferentes pasos y el racional de cada uno de ellos) llevado a cabo para llegar a un resultado o a una conclusión.</p>
-<h2 id="como-funcionan">¿Cómo funcionan?</h2>
-<p>Para entender el funcionamiento de los cuadernos, se sugiere visitar la página de <a href="https://marimo.io/"><strong>marimo</strong></a>, donde se explica cómo funcionan y cómo se pueden utilizar.</p>
-<p>También se puede hacer uso de los tutoriales que provee <strong>marimo</strong>. Para esto, después de activar la opción <code>nb</code> (i.e. <code>just set-dev-env "--extra nb"</code>), ejecute:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>marimo<span class="w"> </span>tutorial<span class="w"> </span>intro
+<h1 id="flujo-de-trabajo-al-desarrollar">Flujo de trabajo al desarrollar</h1>
+<p>En el proyecto se implementan funcionalidades que facilitan el desarrollo. Estas promueven la colaboración, el control de versiones, la integración continua y el despliegue continuo pero requieren que los desarrolladores sigan un flujo de trabajo específico y realicen ciertas tareas de manera rutinaria.</p>
+<p>La herramienta principal para ejecutar estas tareas de forma sencilla es <a href="https://github.com/casey/just"><strong>just</strong></a>, que se indica como prerrequisito en la sección <a href="../../#uso">Uso</a> de la introducción.</p>
+<p>A continuación se describe el flujo de trabajo recomendado para trabajar en proyecto de manera efectiva:</p>
+<ol>
+<li>
+<p>Es recomendable que de manera periódica (e.g., al iniciar su jornada de trabajo, o al finalizarla), ejecute la instrucción:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>just<span class="w"> </span>update-code<span class="w"> </span><span class="c1"># (1)!</span>
 </span></code></pre></div>
-<h2 id="usar-marimo">Usar <a href="https://marimo.io/">marimo</a></h2>
-<p>Después de haber "instalado" el proyecto usando la opción que habilita los <em>notebooks</em> (i.e. <code>just set-dev-env "--extra nb"</code>), que habilita la herramienta (<strong>marimo</strong>) para crear y gestionar cuadernos, ejecute:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>marimo<span class="w"> </span>edit
+<ol>
+<li>También puede usar la versión abreviada: <code>just u</code>.</li>
+</ol>
+<p>que se encargará de actualizar su rama local con los últimos cambios del repositorio remoto.</p>
+</li>
+<li>
+<p>Antes de iniciar cualquier desarrollo nuevo, debe crear una nueva rama (<em>branch</em>) a partir de la rama <code>dev</code> o <code>main</code>, usando la instrucción (se recomienda consultar la sección<a href="../lineamientos/">Lineamientos contribución</a> para obtener más información y detalles sobre la estructura de las ramas (_branches)):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>just<span class="w"> </span>create-branch<span class="w"> </span>&lt;nombre-nueva-rama&gt;<span class="w"> </span>&lt;nombre-rama-original&gt;<span class="w"> </span><span class="c1"># (1)!</span>
 </span></code></pre></div>
-<p>Esto abrirá una ventana en su navegador web con la interfaz de <strong>marimo</strong> para gestionar cuadernos. Desde allí podrá crear nuevos cuadernos, abrir los existentes y editarlos.</p>
+<ol>
+<li>También puede usar la versión abreviada: <code>just b &lt;nombre-nueva-rama&gt; &lt;nombre-rama-original&gt;</code>.</li>
+</ol>
+<p>Por ejemplo, para crear una nueva rama llamada <code>feature/nueva-funcionalidad</code> a partir de la rama <code>dev</code>, debe ejecutar: <code>just create-branch "feature/nueva-funcionalidad" "dev"</code>.</p>
+</li>
+<li>
+<p>En la medida en que vaya produciendo, o modificando archivos, (e.g., código, cuadernos, datos, documentación, etc.), debe ir haciendo el respectivo versionamiento. Para esto, además de agregar los archivos nuevos o modificados al área de preparación (<em>staging area</em>), bien sea usando la interfaz de su editor de código, o usando la instrucción:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>add<span class="w"> </span>&lt;archivo1&gt;<span class="w"> </span>&lt;archivo2&gt;<span class="w"> </span>...
+</span></code></pre></div>
+<p>debe realizar el <em>commit</em> correspondiente con un mensaje descriptivo de los cambios realizados, usando la instrucción:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>just<span class="w"> </span>commit-code<span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
+<ol>
+<li>También puede usar la versión abreviada: <code>just c</code>.</li>
+</ol>
+<p>que le permitirá escribir el mensaje de <em>commit</em> en la terminal, siguiendo las convenciones establecidas para estos mensajes.</p>
+<div class="admonition tip">
+<p class="admonition-title">¡Tip!</p>
+<p>Si necesita escribir varias líneas (renglones) en alguna de las respuestas que le solicita la terminal al ejecutar <code>just commit-code</code>, debe escribir el carácter <code>|</code> (i.e. <em>pipe</em>) y seguir escribiendo luego de este. NO use <code>Enter</code> o alguna combinación con esta tecla porque lo llevará a la siguiente pregunta.</p>
+</div>
+</li>
+<li>
+<p>Una vez haya realizado los <em>commits</em> correspondientes de los cambios realizados, y desee sincronizarlos con el repositorio remoto, debe ejecutar la siguiente instrucción:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>just<span class="w"> </span>push-code<span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
+<ol>
+<li>También puede usar la versión abreviada: <code>just p</code>.</li>
+</ol>
+<p>que se encargará de hacer el <em>push</em> de los cambios al repositorio remoto, y de actualizar su rama local con los últimos cambios del repositorio remoto.</p>
+</li>
+<li>
+<p>Cuando desee integrar los cambios realizados en la rama <code>main</code> o <code>dev</code>, y esto vaya a representar una nueva versión del proyecto, debe actualizar la versión y propagar este cambio al repositorio remoto. Para esto, una vez haya realizado todos los <em>commits</em> que integrarán la nueva versión, debe ejecutar la siguiente instrucción:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>just<span class="w"> </span>bump-code-version<span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
+<ol>
+<li>También puede usar la versión abreviada: <code>just bump</code>.</li>
+</ol>
+<p>Esta instrucción se encargará de actualizar la versión en los archivos correspondientes, hacer el <em>commit</em> de estos cambios, crear la etiqueta (<em>tag</em>) correspondiente en Git, y hacer el <em>push</em> de estos cambios y la etiqueta al repositorio remoto.</p>
+<div class="admonition warning">
+<p class="admonition-title">¡Atención!</p>
+<p>Para que <a href="https://commitizen-tools.github.io/commitizen/">Commitizen</a> pueda actualizar la versión correctamente, es necesario que los mensajes de los <em>commits</em> sigan las convenciones establecidas. Por lo tanto, es importante que siempre use la instrucción <code>just commit-code</code> para hacer los <em>commits</em> y siga las indicaciones que están descritas en <a href="../lineamientos/#mensaje-commits">Lineamientos contribución</a>, en la sección de los mensajes de los <em>commits</em>.</p>
+</div>
+</li>
+</ol>
+<p>El archivo <code>justfile</code> contiene más instrucciones que pueden ser útiles durante el desarrollo. Puede ver la lista completa de instrucciones disponibles ejecutando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>just
+</span></code></pre></div>
 
 
 
