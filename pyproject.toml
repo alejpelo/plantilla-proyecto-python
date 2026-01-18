@@ -121,9 +121,9 @@ version_provider = "uv"
 update_changelog_on_bump = true
 major_version_zero = true
 version_files = [
-    "notebooks/**/*.py:__version__",
+    "notebooks/00 - Ejemplo.py:__version__",
     "src/__init__.py:__version__",
-    "tests/**/*.py:__version__",
+    "tests/test_version.py:__version__",
 ]
 
 [tool.marimo.runtime]
