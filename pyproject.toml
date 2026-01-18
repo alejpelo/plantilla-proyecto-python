@@ -118,13 +118,13 @@ name = "cz_conventional_commits"
 tag_format = "v$version"
 version_scheme = "semver2"
 version_provider = "uv"
-version_files = [
-    "notebooks/**/*.py",
-    "src/**/*.py",
-    "tests/**/*.py",
-]
 update_changelog_on_bump = true
 major_version_zero = true
+version_files = [
+    "notebooks/**/*.py:__version__",
+    "src/__init__.py:__version__",
+    "tests/**/*.py:__version__",
+]
 
 [tool.marimo.runtime]
 pythonpath = ["src"]

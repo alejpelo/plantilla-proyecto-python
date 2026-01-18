@@ -31,9 +31,17 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
-    mo.md(r"""
-    Versión del código (_commit tag_) para recrear datos y resultados: `"v$version"`
+def _():
+    __version__ = "0.14.0"
+    return (__version__,)
+
+
+@app.cell
+def _(__version__, mo):
+    mo.md(rf"""
+    #### Versíon
+
+    Este cuaderno ha sido generado con el código que se identifica con el _git tag_: v{__version__}
     """)
     return
 
@@ -91,13 +99,10 @@ def _(mo):
 
 @app.cell
 def _():
-    return
-
-
-@app.cell
-def _():
     from configuracion import configuracion
     from logger import log
+
+    configuracion
     return configuracion, log
 
 
