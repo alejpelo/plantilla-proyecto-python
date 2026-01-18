@@ -209,6 +209,8 @@ Posteriormente, siga los pasos descritos a continuación:
 
     Esto le permitirá ver en el explorador la versión final de la documentación y hará que esta se actualice en línea en la medida que realice cambios.
 
+7. Consulte la sección sobre [_Flujo de trabajo_](docs/otros/flujo.md) para conocer las recomendaciones para hacer un desarrollo ordenado y eficiente usando la plantilla.
+
 **¡Eso es todo!, puede empezar a trabajar en su nuevo proyecto.**
 
 [^1]: Este archivo se encuentra en la siguiente ruta: `~/gitconfig`.

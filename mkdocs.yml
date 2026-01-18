@@ -7,10 +7,11 @@ repo_url: https://github.com/alejpelo/plantilla-proyecto-python
 nav:
     - Home:
       - Introducción: index.md
+      - Flujo de trabajo: otros/flujo.md
       - Librerías adicionales: otros/librerias.md
-      - Lineamientos: otros/lineamientos.md
-      - Data version control: otros/dvc.md
+      - Lineamientos contribución: otros/lineamientos.md
       - Notebooks: otros/notebooks.md
+      - Data version control: otros/dvc.md
     - Tutorial: tutorial.md
     - Código:
       - Configuración: codigo/configuracion.md

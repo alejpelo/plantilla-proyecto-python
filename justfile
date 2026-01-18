@@ -285,7 +285,9 @@ check-vulnerabilities:
 alias pc := run-pre-commit-checks
 # Run pre-commit hooks
 [group('Pre-Commit/Pre-Push Checks')]
-run-pre-commit-checks: check-env type-check-code lint-code format-code update-reqs
+run-pre-commit-checks:
+  @printf "{{BOLD + BLUE}}Running pre-COMMIT checks => just...{{NORMAL}}\n"
+  @just check-env type-check-code lint-code format-code update-reqs
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -293,7 +295,68 @@ run-pre-commit-checks: check-env type-check-code lint-code format-code update-re
 alias pp := run-pre-push-checks
 # Run pre-push hooks
 [group('Pre-Commit/Pre-Push Checks')]
-run-pre-push-checks: run-pre-commit-checks run-tests check-vulnerabilities
+run-pre-push-checks:
+  @printf "{{BOLD + BLUE}}Running pre-PUSH checks => just...{{NORMAL}}\n"
+  @just run-pre-commit-checks run-tests check-vulnerabilities
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias u := update-code
+# Updates code from remote repository
+[group('Commit and Code Version Management')]
+update-code:
+  @printf "{{BOLD + BLUE}}Updating code => git...{{NORMAL}}\n"
+  @git fetch --all --tags
+  @git pull
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias b := create-branch
+# Creates a new branch
+[group('Commit and Code Version Management')]
+create-branch NEW_BRANCH_NAME ORIGIN_BRANCH="dev":
+  @printf "{{BOLD + BLUE}}Creating new branch => git...{{NORMAL}}\n"
+  @git checkout {{ORIGIN_BRANCH}}  # (e.g. main, dev)
+  @git pull origin {{ORIGIN_BRANCH}}  # (e.g. fix/issue-123, feature/new-feature)
+  @git checkout -b {{NEW_BRANCH_NAME}}
+  @git push --set-upstream origin {{NEW_BRANCH_NAME}}
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias c := commit-code
+# Makes commits with commitizen
+[group('Commit and Code Version Management')]
+commit-code:
+  @printf "{{BOLD + BLUE}}Commiting code => commitizen...{{NORMAL}}\n"
+  @just run-pre-commit-checks
+  @uv run cz commit
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias p := push-code
+# Pushes commits to the remote repository
+[group('Commit and Code Version Management')]
+push-code:
+  @printf "{{BOLD + BLUE}}Pushing code to remote => git...{{NORMAL}}\n"
+  @git push
+  @git push origin --tags
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alias bump := bump-code-version
+# Bumps the project version
+[group('Commit and Code Version Management')]
+bump-code-version:
+  @printf "{{BOLD + BLUE}}Bumping project version => commitizen & git...{{NORMAL}}\n"
+  @just update-code
+  @just run-pre-push-checks
+  @uv run cz bump
+  @just push-code
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
