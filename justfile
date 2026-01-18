@@ -285,7 +285,7 @@ check-vulnerabilities:
 alias pc := run-pre-commit-checks
 # Run pre-commit hooks
 [group('Pre-Commit/Pre-Push Checks')]
-run-pre-commit-checks: check-env type-check-code lint-code format-code
+run-pre-commit-checks: check-env type-check-code lint-code format-code update-reqs
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -293,7 +293,7 @@ run-pre-commit-checks: check-env type-check-code lint-code format-code
 alias pp := run-pre-push-checks
 # Run pre-push hooks
 [group('Pre-Commit/Pre-Push Checks')]
-run-pre-push-checks: run-pre-commit-checks run-tests update-reqs check-vulnerabilities
+run-pre-push-checks: run-pre-commit-checks run-tests check-vulnerabilities
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
