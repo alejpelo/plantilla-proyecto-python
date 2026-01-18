@@ -1,3 +1,9 @@
+## v0.14.2 (2026-01-17)
+
+### Fix
+
+- ajusta lista de archivos .py a los que se les debe actualizar la version
+
 ## v0.14.1 (2026-01-17)
 
 ### Fix
