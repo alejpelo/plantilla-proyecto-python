@@ -1,3 +1,9 @@
+## v0.14.1 (2026-01-17)
+
+### Fix
+
+- ajusta configuración de commitizen para que ajuste versión en .py
+
 ## v0.14.0 (2026-01-17)
 
 ### Feat
