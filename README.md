@@ -196,7 +196,7 @@ Posteriormente, siga los pasos descritos a continuación:
 4. En el proyecto se usan [pre-commit](https://pre-commit.com/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:
 
     ```sh
-    just install-pre-commit-hooks
+    just install-hooks
     ```
 
 5. Consulte el archivo `src/tutorial.py` para conocer cómo usar las variables de entorno, el log y cómo hacer _debugging_ fácilmente.
