@@ -18,7 +18,7 @@ dev = [
     "ty>=0.0.12",
     "ruff>=0.14.13",
     "pip-audit>=2.10.0",
-    "pre-commit>=4.5.1",
+    "prek>=0.3.1",
     "commitizen>=4.11.6",
 ]
 tests = [
@@ -114,7 +114,7 @@ max-complexity = 6
 convention = "google"
 
 [tool.commitizen]
-name = "cz_conventional_commits"
+name = "cz_customize"
 tag_format = "v$version"
 version_scheme = "semver2"
 version_provider = "uv"
@@ -124,6 +124,29 @@ version_files = [
     "notebooks/00 - Ejemplo.py:__version__",
     "src/__init__.py:__version__",
     "tests/test_version.py:__version__",
+]
+
+[tool.commitizen.customize]
+message_template = "{type}{scope}: {subject}"
+schema = "<type>(<scope>): <subject>"
+schema_pattern = "(feat|fix|data|refactor|chore|docs|style|perf|test|build|ci|revert)(\\([a-zA-Z0-9_-]+\\))?: .+"
+
+bump_pattern = "^(feat|fix|data)"
+bump_map = { fix = "patch", feat = "minor", data = "minor" }
+
+commit_types = [
+  { type = "fix", description = "A bug fix" },
+  { type = "feat", description = "A new feature" },
+  { type = "data", description = "Update or add data files" },
+  { type = "refactor", description = "Code refactoring" },
+  { type = "chore", description = "Other non-source changes" },
+  { type = "docs", description = "Documentation changes" },
+  { type = "style", description = "Formatting changes" },
+  { type = "perf", description = "Performance improvements" },
+  { type = "test", description = "Tests" },
+  { type = "build", description = "Build system changes" },
+  { type = "ci", description = "CI configuration changes" },
+  { type = "revert", description = "Revert a previous commit" },
 ]
 
 [tool.marimo.runtime]

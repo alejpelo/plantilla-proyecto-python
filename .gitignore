@@ -161,5 +161,6 @@ notebooks/__marimo__/
 # Data y Outputs
 data/*
 !data/querys/
+!data/querys/**
 !data/*.dvc
 outputs/*

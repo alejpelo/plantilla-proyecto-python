@@ -36,9 +36,8 @@ set-dev-env *EXTRAS:
 
 # Installs pre-commit hooks
 [group('Initial Setup')]
-install-hooks:
-  @uv run pre-commit install
-  @uv run pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+install-prek-hooks:
+  @uv run prek install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -131,7 +130,7 @@ format-code:
 
 # Runs tests with coverage
 [group('Code Management')]
-run-tests:
+test-code:
   @printf "{{BOLD + BLUE}}Testing code => pytest...{{NORMAL}}\n"
   @uv run pytest --cov
   @uv run coverage report
@@ -297,7 +296,7 @@ alias pp := run-pre-push-checks
 [group('Pre-Commit/Pre-Push Checks')]
 run-pre-push-checks:
   @printf "{{BOLD + BLUE}}Running pre-PUSH checks => just...{{NORMAL}}\n"
-  @just run-pre-commit-checks run-tests check-vulnerabilities
+  @just run-pre-commit-checks test-code check-vulnerabilities
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------

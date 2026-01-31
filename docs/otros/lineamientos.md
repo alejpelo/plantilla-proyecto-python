@@ -1,6 +1,6 @@
 # Lineamientos para contribuir a un proyecto
 
-Se deben seguir los siguientes lineamientos para para contribuir al desarrollo de un proyecto. Esto garantiza que la trazabilidad y el versionamiento sean robustos.
+Se deben seguir los siguientes lineamientos para contribuir al desarrollo de un proyecto. Esto garantiza que la trazabilidad y el versionamiento sean robustos.
 
 ## Git _Workflow_
 
@@ -22,7 +22,7 @@ Se utiliza [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows
 
 ## Mensaje _Commits_
 
-Es obligatorio incluir un mensaje en cada _commit_. El mensaje debe utilizar la siguiente plantilla:
+Es **obligatorio** incluir un mensaje en cada _commit_. El mensaje debe utilizar la siguiente plantilla:
 
 ```git
 <tipo>[alcance (opcional)]: <asunto> (Si se aplica, este commit...)
@@ -49,15 +49,18 @@ BREAKING CHANGE: Se cambia la forma en que se maneja ...
 ----------------------------- FIN DEL COMMIT ------------------------------
 
 <tipo> puede ser:
-    fix             corrección de error
-    feat            nueva característica
-    improvement     mejora de una característica existente sin agregar nueva funcionalidad o corregir errores
-    refactor        ajusta o mejora del código; no se cambia la funcionalidad
+    fix             corrección de error o errores
+    feat            nueva característica o funcionalidad
     data            versionamiento de datos
-    style           formato (e.g. agregar comas que faltaban); no se cambia el código
+    refactor        ajusta o mejora del código; no se cambia funcionalidad
+    chore           cambia configuración CI/CD, pre-commits (prek), etc.; no se cambia el código de producción
     docs            cambios a la documentación
+    style           formato (e.g. agregar comas que faltaban); no se cambia el código
+    perf            mejora rendimiento
     test            añadir o ajustar tests; no se cambia el código de producción
-    chore           cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
+    build           cambios en los procesos para build el código
+    ci              cambios en los procesos de continuos integration
+    revert          revierte un commit previo
 
 ---------------
 

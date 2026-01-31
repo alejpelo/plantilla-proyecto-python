@@ -13,7 +13,7 @@ Plantilla para organizar proyectos que usan **Python** e incorporar mejores prá
 - _Static typing_: [Ty](https://docs.astral.sh/ty/)
 - _Code formatting_, _Linting_ y _Style enforcement_: [Ruff](https://docs.astral.sh/ruff/)
 - _Package vulnerability analysis_: [pip-audit](https://pypi.org/project/pip-audit/)
-- _Commit management_: [pre-commit](https://pre-commit.com/), [Commitizen] (https://commitizen-tools.github.io/commitizen/)
+- _Commit management_: [prek](https://prek.j178.dev/), [Commitizen](https://commitizen-tools.github.io/commitizen/)
 - _Documentation_: [MkDocs](https://www.mkdocs.org/), [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 - _Environmental variables_ y _`.env` files_: [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 - _Logging_: [Loguru](https://github.com/Delgan/loguru)
@@ -31,7 +31,7 @@ Opcionalmente:
     - [Installation on Windows](https://doc.dvc.org/install/windows)
     - [How to Run DVC on Windows](https://doc.dvc.org/user-guide/how-to/run-dvc-on-windows)
 
-    Si va a usar esa práctica opcional, es preferible usar MacOS o LinuxOS para evitar inconvenientes.
+    Si va a utilizar esta práctica opcional, es preferible usar MacOS o LinuxOS para evitar inconvenientes.
 
 ## Estructura
 
@@ -56,11 +56,11 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :   Carpeta para almacenar los archivos de datos (e.g. archivos `.txt`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (_raw_), pre-procesados, procesados, ...).
 
-    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
+    Esta carpeta **NO** debe estar versionada con **Git**, y por defecto, está incluida en el archivo `.gitignore` del proyecto.
     
-    Se incluye una sub-carpeta especial (`querys/`) destinada a almacenar los _querys_ (archivos `.sql`) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.
+    Se incluye una sub-carpeta especial (`querys/`) destinada a almacenar los _querys_ (e.g. archivos `.sql`, `.graphql` `.gql`) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en **Git**, y por defecto, el `.gitignore` del proyecto está configurado para que así sea.
     
-    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
+    Para hacer versionamiento de los archivos de datos y/o modelos del proyecto, que sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la opción relacionada con [_Data version control_](docs/otros/dvc.md).
 
 :material-folder: `docs/`
 
@@ -70,25 +70,23 @@ A continuación se describe el propósito de cada una de las carpetas:
 
 :   Carpeta para almacenar los cuadernos (_notebooks_ usando [marimo](https://marimo.io/)) que utilice en el proyecto.
 
-    Para gestionar (i.e. crear, editar y eliminar) cuadernos (_notebooks_), se debe hacer uso lo explicado en la práctica relacionada con [_Notebooks_](docs/otros/notebooks.md).
+    Para gestionar (i.e. crear, editar y eliminar) cuadernos (_notebooks_), se debe hacer uso lo explicado en la opción relacionada con [_Notebooks_](docs/otros/notebooks.md).
 
 :material-folder: `outputs/`
 
-:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.txt`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).
+:   Carpeta para almacenar los archivos de resultados (e.g. archivos `.pdf`, `.png`, `.txt`, `.csv`, `.parquet`, `.xlsx`, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados, ...).
 
-    Esta carpeta **NO** debe estar versionada con Git, y por defecto, está incluida en el archivo `.gitignore` del proyecto[^1].
-    
-    Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con [_Data version control_](docs/otros/dvc.md).
+    Esta carpeta **NO** debe estar versionada con **Git**, y por defecto, está incluida en el archivo `.gitignore` del proyecto.
 
-    Si se generan informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento es posible recrear los datos, los modelos y el código que permite llegar a los mismos resultados.
+    Si se generan informes, se recomienda que en ellos incluya el _tag_ que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento, será posible recrear los datos, los modelos y el código que permiten llegar a los mismos resultados.
 
 :material-folder: `src/`
 
-:   Carpeta para almacenar el código (archivos  `.py`). Dentro de la carpeta se pueden crear sub-carpetas para organizar el código adecuadamente.
+:   Carpeta para almacenar el código (i.e. archivos  `.py`). Dentro de la carpeta se pueden crear sub-carpetas para organizar el código adecuadamente.
 
 :material-folder: `tests/`
 
-:   Carpeta para almacenar las pruebas del proyecto (archivos  `.py`). Dentro de la carpeta se pueden crear sub-carpetas para organizar las pruebas adecuadamente. Las pruebas se deben escribir usando [pytest](https://docs.pytest.org/en/stable/).
+:   Carpeta para almacenar las pruebas del proyecto (i.e. archivos  `.py`). Dentro de la carpeta se pueden crear sub-carpetas para organizar las pruebas adecuadamente. Las pruebas se deben escribir usando [pytest](https://docs.pytest.org/en/stable/).
 
 ### Archivos
 
@@ -96,13 +94,13 @@ A continuación se describe el propósito de algunos de los archivos más import
 
 :material-file: `.env.private`
 
-:   Archivo para almacenar las variables de entorno privadas del proyecto. Este archivo **NO** debe estar versionado con Git, y por defecto, está incluido en el archivo `.gitignore` del proyecto[^1].
+:   Archivo para almacenar las variables de entorno privadas del proyecto. Este archivo **NO** debe estar versionado con **Git**, y por defecto, está incluido en el archivo `.gitignore` del proyecto.
 
     Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo `src/tutorial.py`.
 
 :material-file: `.env.public`
 
-:   Archivo para almacenar las variables de entorno públicas del proyecto. Este archivo **SI** debe estar versionado con Git.
+:   Archivo para almacenar las variables de entorno públicas del proyecto. Este archivo **SI** debe estar versionado con **Git**.
 
     Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo `src/tutorial.py`.
 
@@ -114,29 +112,29 @@ A continuación se describe el propósito de algunos de los archivos más import
 
 :material-file: `pre-commit-config.yaml`
 
-:  Archivo para configurar los _hooks_ de [pre-commit](https://pre-commit.com/) en el proyecto. Este archivo define una serie de reglas y herramientas que se ejecutan automáticamente antes de realizar un _commit_ en Git, con el fin de asegurar la calidad del código y mantener un estándar consistente en el proyecto.
+:  Archivo para configurar los _hooks_ de [prek](https://prek.j178.dev/) en el proyecto. Este archivo define una serie de reglas y herramientas que se ejecutan automáticamente antes de realizar un _commit_ en **Git**, con el fin de asegurar la calidad del código y mantener un estándar consistente en el proyecto.
 
-    El archivo `pre-commit-config.yaml` del proyecto ya incluye configuraciones para varias herramientas útiles, como formateadores de código, linters y verificadores de seguridad.
+    El archivo `pre-commit-config.yaml` del proyecto ya incluye configuraciones para varias herramientas útiles, tales como: "formateadores" de código, linters y verificadores de seguridad.
 
-    Para más información sobre el uso de **pre-commit** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+    Para más información sobre el uso de **pre-commit** en el proyecto, consulte [Uso](#uso) y [Flujo de trabajo](docs/otros/flujo.md).
 
 :material-file: `CHANGELOG.md`
 
 :   Archivo para llevar un registro de los cambios realizados en el proyecto a lo largo del tiempo. Este archivo sigue el formato de [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y ayuda a los desarrolladores y usuarios a entender la evolución del proyecto, facilitando la identificación de nuevas características, correcciones de errores y cambios importantes entre versiones.
 
-    Este archivo se actualiza automáticamente al hacer _commits_ usando la instrucción `just bump-code-version` (o su alias `just b`). Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+    Este archivo se actualiza automáticamente al hacer _commits_ usando la instrucción `just bump-code-version` (o su alias `just b`). Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [Flujo de trabajo](docs/otros/flujo.md).
 
 :material-file: `justfile`
 
 :   Archivo para almacenar las tareas automatizadas del proyecto usando [**just**](https://github.com/casey/just). Este archivo contiene las instrucciones para ejecutar tareas comunes del proyecto, como instalar dependencias, ejecutar pruebas, generar documentación, entre otras.
 
-    Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+    Para más información sobre el uso de **just** en el proyecto, consulte [Uso](#uso) y [Flujo de trabajo](docs/otros/flujo.md).
 
 :material-file: `mkdocs.yml`
 
 :  Archivo para configurar la documentación del proyecto usando [MkDocs](https://www.mkdocs.org/) y [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Este archivo define la estructura, el tema, las extensiones y otras opciones relacionadas con la generación de la documentación del proyecto.
 
-    Para más información sobre el uso de **MkDocs** en el proyecto, consulte [Uso](#uso) y [_Flujo de trabajo_](docs/otros/flujo.md).
+    Para más información sobre el uso de **MkDocs** en el proyecto, consulte [Uso](#uso) y [Flujo de trabajo](docs/otros/flujo.md).
 
 :material-file: `pyproject.toml`
 
@@ -148,11 +146,11 @@ A continuación se describe el propósito de algunos de los archivos más import
 
 : Archivo para proporcionar una descripción general del proyecto, incluyendo su propósito, características principales, instrucciones de instalación y uso, entre otros detalles relevantes. Este archivo es lo primero que los usuarios y colaboradores ven al acceder al repositorio del proyecto.
 
-    El archivo `README.md` (este archivo) del proyecto ya incluye información básica sobre la plantilla y un enlace a la documentación completa en línea.
+    El archivo `README.md` del proyecto (i.e. este archivo) ya incluye información básica sobre la plantilla y un enlace a la documentación completa en línea.
 
 :material-file: `requeriments-dev.txt`, `requeriments-docs.txt`, `requeriments-tests.txt` y `requeriments.txt` 
 
-: Archivos para listar las dependencias del proyecto. Aunque el proyecto usa [uv](https://docs.astral.sh/uv/) para gestionar las dependencias, este archivo puede ser útil para herramientas o servicios que esperan encontrar archivos `requirements.txt` en el proyecto (e.g. _GitHub Actions_).
+: Archivos para listar las dependencias del proyecto. Aunque el proyecto usa [uv](https://docs.astral.sh/uv/) para gestionar las dependencias, estos archivos pueden ser útiles para herramientas o servicios que esperan encontrar archivos `requirements.txt` en el proyecto (e.g. _GitHub Actions_).
 
 :material-file: `uv.lock`
 
@@ -193,10 +191,10 @@ Posteriormente, siga los pasos descritos a continuación:
 
     Si desea usar más de una práctica opcional, simplemente repita `<práctica opcional>`, separado por un espacio, las veces que necesite al final de la instrucción.
 
-4. En el proyecto se usan [pre-commit](https://pre-commit.com/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:
+4. En el proyecto se usan [prek](https://prek.j178.dev/) _hooks_ para automatizar la verificación del código antes de los _commits_ y los _pushs_. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:
 
     ```sh
-    just install-hooks
+    just install-prek-hooks
     ```
 
 5. Consulte el archivo `src/tutorial.py` para conocer cómo usar las variables de entorno, el log y cómo hacer _debugging_ fácilmente.
@@ -209,10 +207,8 @@ Posteriormente, siga los pasos descritos a continuación:
 
     Esto le permitirá ver en el explorador la versión final de la documentación y hará que esta se actualice en línea en la medida que realice cambios.
 
-7. Consulte la sección sobre [_Flujo de trabajo_](docs/otros/flujo.md) para conocer las recomendaciones para hacer un desarrollo ordenado y eficiente usando la plantilla.
+7. Consulte la sección sobre [Flujo de trabajo](docs/otros/flujo.md) para conocer las recomendaciones para hacer un desarrollo ordenado y eficiente usando la plantilla.
 
 **¡Eso es todo!, puede empezar a trabajar en su nuevo proyecto.**
-
-[^1]: Este archivo se encuentra en la siguiente ruta: `~/gitconfig`.
 
 <!--docs-end-->
