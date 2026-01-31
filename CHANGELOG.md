@@ -1,3 +1,15 @@
+## v0.16.0 (2026-01-31)
+
+
+- chore: crea commit tipo bump
+- feat: cambia pre-commit por prek
+- - mejora documentación
+- ajusta .gitignore
+- docs: mejora explicaciones de flujo de trabajo y data version control
+- docs: mejora redacción de flujo de trabajo
+- docs: corrige instrucciones para instalar el proyecto
+- docs: agrega información sobre el versionamiento de .py con Commitizen
+
 ## v0.15.0 (2026-01-18)
 
 ### Feat

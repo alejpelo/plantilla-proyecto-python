@@ -32,7 +32,7 @@ def _(mo):
 
 @app.cell
 def _():
-    __version__ = "0.15.0"
+    __version__ = "0.16.0"
     return (__version__,)
 
 
