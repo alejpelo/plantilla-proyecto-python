@@ -16,7 +16,7 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
 
     que se encargará de actualizar su rama local con los últimos cambios del repositorio remoto.
 
-2. Antes de iniciar cualquier desarrollo nuevo, debe crear una nueva rama (_branch_) a partir de la rama `dev` o `main`, usando la instrucción (se recomienda consultar la sección[Lineamientos contribución](./lineamientos.md) para obtener más información y detalles sobre la estructura de las ramas (_branches)):
+2. Antes de iniciar cualquier desarrollo nuevo, debe crear una nueva rama (_branch_) a partir de la rama `dev` o `main`, usando la instrucción (se recomienda consultar la sección [Lineamientos contribución](./lineamientos.md) para obtener más información y detalles sobre la estructura de las ramas (_branches_)):
 
     ```bash
     just create-branch <nombre-nueva-rama> <nombre-rama-original> # (1)!
@@ -26,7 +26,20 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
 
     Por ejemplo, para crear una nueva rama llamada `feature/nueva-funcionalidad` a partir de la rama `dev`, debe ejecutar: `just create-branch "feature/nueva-funcionalidad" "dev"`.
 
-3. En la medida en que vaya produciendo, o modificando archivos, (e.g., código, cuadernos, datos, documentación, etc.), debe ir haciendo el respectivo versionamiento. Para esto, además de agregar los archivos nuevos o modificados al área de preparación (_staging area_), bien sea usando la interfaz de su editor de código, o usando la instrucción:
+3. En la nueva rama (_branch_), empiece a realizar ajustes o adiciones en el código y/o los datos. Recuerde que si desea versionar los datos, la recomendación es seguir las instrucciones indicadas en página [_Data version control_](dvc.md).
+
+    !!! tip "¡Pro Tip!"
+        Puede correr los _checks_ que se ejecutan automáticamente al realizar un _commit_, ejecutando la siguiente instrucción:
+
+        ```bash
+        just run-pre-commit-checks # (1)!
+        ```
+
+        1. También puede usar la versión abreviada: `just pc`.
+
+        Esto le permitirá detectar potenciales conflictos antes de proceder con el _commit_.
+
+4. En la medida en que vaya produciendo, o modificando archivos, (e.g., código, cuadernos, datos, documentación, etc.), debe ir haciendo el respectivo versionamiento. Para esto, además de agregar los archivos nuevos o modificados al área de preparación (_staging area_), bien sea usando la interfaz de su editor de código, o usando la instrucción:
 
     ```bash
     git add <archivo1> <archivo2> ...
@@ -45,7 +58,7 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
     !!! tip "¡Tip!"
         Si necesita escribir varias líneas (renglones) en alguna de las respuestas que le solicita la terminal al ejecutar `just commit-code`, debe escribir el carácter `|` (i.e. _pipe_) y seguir escribiendo luego de este. NO use `Enter` o alguna combinación con esta tecla porque lo llevará a la siguiente pregunta.
 
-4. Una vez haya realizado los _commits_ correspondientes de los cambios realizados, y desee sincronizarlos con el repositorio remoto, debe ejecutar la siguiente instrucción:
+5. Una vez haya realizado los _commits_ correspondientes de los cambios realizados, y desee sincronizarlos con el repositorio remoto, debe ejecutar la siguiente instrucción:
 
     ```bash
     just push-code # (1)!
@@ -55,7 +68,18 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
 
     que se encargará de hacer el _push_ de los cambios al repositorio remoto, y de actualizar su rama local con los últimos cambios del repositorio remoto.
 
-5. Cuando desee integrar los cambios realizados en la rama `main` o `dev`, y esto vaya a representar una nueva versión del proyecto, debe actualizar la versión y propagar este cambio al repositorio remoto. Para esto, una vez haya realizado todos los _commits_ que integrarán la nueva versión, debe ejecutar la siguiente instrucción:
+    !!! tip "¡Pro Tip!"
+        Puede correr los _checks_ que se ejecutan automáticamente al realizar un _push_, ejecutando la siguiente instrucción:
+
+        ```bash
+        just run-pre-push-checks # (1)!
+        ```
+
+        1. También puede usar la versión abreviada: `just pp`.
+
+        Esto le permitirá detectar potenciales conflictos antes de proceder con el _push_.
+
+6. Cuando desee integrar los cambios realizados en la rama `main` o `dev`, y esto vaya a representar una nueva versión del proyecto, debe actualizar la versión y propagar este cambio al repositorio remoto. Para esto, una vez haya realizado todos los _commits_ que integrarán la nueva versión, debe ejecutar la siguiente instrucción:
 
     ```bash
     just bump-code-version # (1)!
@@ -68,7 +92,7 @@ A continuación se describe el flujo de trabajo recomendado para trabajar en pro
     !!! warning "¡Atención!"
         Para que [Commitizen](https://commitizen-tools.github.io/commitizen/) pueda actualizar la versión correctamente, es necesario que los mensajes de los _commits_ sigan las convenciones establecidas. Por lo tanto, es importante que siempre use la instrucción `just commit-code` para hacer los _commits_ y siga las indicaciones que están descritas en [Lineamientos contribución](./lineamientos.md#mensaje-commits), en la sección de los mensajes de los _commits_.
 
-        Además debe asegurarse que todos los archivos `.py` (incluyendo los cuadernos - _notebooks_) que tengan la versión del proyecto, estén incluídos en la lista `version_files` de la herramienta **Commitizen** (`[tool.commitizen]`) que se encuentra al final en el archivo `pyproject.toml`.
+        Además, debe asegurarse que todos los archivos `.py` (incluyendo los cuadernos - _notebooks_) que contengan la versión del proyecto, estén incluidos en la lista `version_files` de la herramienta **Commitizen** (`[tool.commitizen]`) que se encuentra al final del archivo `pyproject.toml`.
 
 El archivo `justfile` contiene más instrucciones que pueden ser útiles durante el desarrollo. Puede ver la lista completa de instrucciones disponibles ejecutando:
 
