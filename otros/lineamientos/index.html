@@ -867,7 +867,7 @@
 
 
 <h1 id="lineamientos-para-contribuir-a-un-proyecto">Lineamientos para contribuir a un proyecto</h1>
-<p>Se deben seguir los siguientes lineamientos para para contribuir al desarrollo de un proyecto. Esto garantiza que la trazabilidad y el versionamiento sean robustos.</p>
+<p>Se deben seguir los siguientes lineamientos para contribuir al desarrollo de un proyecto. Esto garantiza que la trazabilidad y el versionamiento sean robustos.</p>
 <h2 id="git-workflow">Git <em>Workflow</em></h2>
 <p>Se utiliza <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow</a> con la siguiente estructura de <em>branches</em>:</p>
 <ul>
@@ -892,7 +892,7 @@
 </li>
 </ul>
 <h2 id="mensaje-commits">Mensaje <em>Commits</em></h2>
-<p>Es obligatorio incluir un mensaje en cada <em>commit</em>. El mensaje debe utilizar la siguiente plantilla:</p>
+<p>Es <strong>obligatorio</strong> incluir un mensaje en cada <em>commit</em>. El mensaje debe utilizar la siguiente plantilla:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;tipo&gt;[alcance (opcional)]: &lt;asunto&gt; (Si se aplica, este commit...)
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(ejemplos:)
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>fix: corrige error en la función de carga de datos
@@ -917,25 +917,28 @@
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>----------------------------- FIN DEL COMMIT ------------------------------
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>&lt;tipo&gt; puede ser:
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    fix             corrección de error
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    feat            nueva característica
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    improvement     mejora de una característica existente sin agregar nueva funcionalidad o corregir errores
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    refactor        ajusta o mejora del código; no se cambia la funcionalidad
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    data            versionamiento de datos
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    style           formato (e.g. agregar comas que faltaban); no se cambia el código
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    docs            cambios a la documentación
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    test            añadir o ajustar tests; no se cambia el código de producción
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    chore           cambia configuración CI/CD, pre-commits, etc.; no se cambia el código de producción
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>---------------
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>Recuerde...
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    Empezar con minúscula la línea del asunto. Tanto el &lt;tipo&gt; como el &lt;asunto&gt;
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    Usar el modo imperativo en la línea del asunto
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    No terminar la línea del asunto con punto
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    Usar el cuerpo del commit para explicar el qué y el por qué, no el cómo
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    Puede usar múltiple líneas con &quot;-&quot; para viñetas en el cuerpo del commit
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    fix             corrección de error o errores
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    feat            nueva característica o funcionalidad
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    data            versionamiento de datos
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    refactor        ajusta o mejora del código; no se cambia funcionalidad
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    chore           cambia configuración CI/CD, pre-commits (prek), etc.; no se cambia el código de producción
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    docs            cambios a la documentación
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    style           formato (e.g. agregar comas que faltaban); no se cambia el código
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    perf            mejora rendimiento
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    test            añadir o ajustar tests; no se cambia el código de producción
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    build           cambios en los procesos para build el código
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    ci              cambios en los procesos de continuos integration
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    revert          revierte un commit previo
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>---------------
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>Recuerde...
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    Empezar con minúscula la línea del asunto. Tanto el &lt;tipo&gt; como el &lt;asunto&gt;
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    Usar el modo imperativo en la línea del asunto
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    No terminar la línea del asunto con punto
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    Separar la línea del asunto del cuerpo del commit (descripción) con una línea en blanco
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    Usar el cuerpo del commit para explicar el qué y el por qué, no el cómo
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    Puede usar múltiple líneas con &quot;-&quot; para viñetas en el cuerpo del commit
 </span></code></pre></div>
 <h2 id="etiquetas-git-tags">Etiquetas (Git <em>tags</em>)</h2>
 <p>Se usa <a href="http://semver.org/">SemVer</a> como lineamiento para administrar y denotar el versionamiento. Para nombrar las etiquetas (<strong><em>tags</em></strong>) se debe usar la forma <code>v0.0.0</code>.</p>

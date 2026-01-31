@@ -929,7 +929,7 @@
 <li><em>Static typing</em>: <a href="https://docs.astral.sh/ty/">Ty</a></li>
 <li><em>Code formatting</em>, <em>Linting</em> y <em>Style enforcement</em>: <a href="https://docs.astral.sh/ruff/">Ruff</a></li>
 <li><em>Package vulnerability analysis</em>: <a href="https://pypi.org/project/pip-audit/">pip-audit</a></li>
-<li><em>Commit management</em>: <a href="https://pre-commit.com/">pre-commit</a>, [Commitizen] (https://commitizen-tools.github.io/commitizen/)</li>
+<li><em>Commit management</em>: <a href="https://prek.j178.dev/">prek</a>, <a href="https://commitizen-tools.github.io/commitizen/">Commitizen</a></li>
 <li><em>Documentation</em>: <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>, <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google docstrings</a></li>
 <li><em>Environmental variables</em> y <em><code>.env</code> files</em>: <a href="https://docs.pydantic.dev/latest/concepts/pydantic_settings/">Pydantic-Settings</a></li>
 <li><em>Logging</em>: <a href="https://github.com/Delgan/loguru">Loguru</a></li>
@@ -948,7 +948,7 @@
 <li><a href="https://doc.dvc.org/install/windows">Installation on Windows</a></li>
 <li><a href="https://doc.dvc.org/user-guide/how-to/run-dvc-on-windows">How to Run DVC on Windows</a></li>
 </ul>
-<p>Si va a usar esa práctica opcional, es preferible usar MacOS o LinuxOS para evitar inconvenientes.</p>
+<p>Si va a utilizar esta práctica opcional, es preferible usar MacOS o LinuxOS para evitar inconvenientes.</p>
 </div>
 <h2 id="estructura">Estructura</h2>
 <p>El proyecto usa la siguiente estructura de carpetas y archivos:</p>
@@ -968,9 +968,9 @@
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>data/</code></dt>
 <dd>
 <p>Carpeta para almacenar los archivos de datos (e.g. archivos <code>.txt</code>, <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar los datos en distintos estados (e.g. crudos (<em>raw</em>), pre-procesados, procesados, ...).</p>
-<p>Esta carpeta <strong>NO</strong> debe estar versionada con Git, y por defecto, está incluida en el archivo <code>.gitignore</code> del proyecto<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Se incluye una sub-carpeta especial (<code>querys/</code>) destinada a almacenar los <em>querys</em> (archivos <code>.sql</code>) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en Git, y por defecto, está configurada para que así sea.</p>
-<p>Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con <a href="otros/dvc/"><em>Data version control</em></a>.</p>
+<p>Esta carpeta <strong>NO</strong> debe estar versionada con <strong>Git</strong>, y por defecto, está incluida en el archivo <code>.gitignore</code> del proyecto.</p>
+<p>Se incluye una sub-carpeta especial (<code>querys/</code>) destinada a almacenar los <em>querys</em> (e.g. archivos <code>.sql</code>, <code>.graphql</code> <code>.gql</code>) que se utilizan para generar los datos. Esta sub-carpeta si se debe versionar en <strong>Git</strong>, y por defecto, el <code>.gitignore</code> del proyecto está configurado para que así sea.</p>
+<p>Para hacer versionamiento de los archivos de datos y/o modelos del proyecto, que sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la opción relacionada con <a href="otros/dvc/"><em>Data version control</em></a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>docs/</code></dt>
 <dd>
@@ -979,22 +979,21 @@
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>notebooks/</code></dt>
 <dd>
 <p>Carpeta para almacenar los cuadernos (<em>notebooks</em> usando <a href="https://marimo.io/">marimo</a>) que utilice en el proyecto.</p>
-<p>Para gestionar (i.e. crear, editar y eliminar) cuadernos (<em>notebooks</em>), se debe hacer uso lo explicado en la práctica relacionada con <a href="otros/notebooks/"><em>Notebooks</em></a>.</p>
+<p>Para gestionar (i.e. crear, editar y eliminar) cuadernos (<em>notebooks</em>), se debe hacer uso lo explicado en la opción relacionada con <a href="otros/notebooks/"><em>Notebooks</em></a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>outputs/</code></dt>
 <dd>
-<p>Carpeta para almacenar los archivos de resultados (e.g. archivos <code>.pdf</code>, <code>.png</code>, <code>.txt</code>, <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados ...).</p>
-<p>Esta carpeta <strong>NO</strong> debe estar versionada con Git, y por defecto, está incluida en el archivo <code>.gitignore</code> del proyecto<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p>Para hacer versionamiento de los datos que hagan parte del proyecto y sean necesarios para asegurar la reproducibilidad del mismo, y se almacenen dentro de esta carpeta, se debe hacer uso lo explicado en la práctica relacionada con <a href="otros/dvc/"><em>Data version control</em></a>.</p>
-<p>Si se generan informes, se recomienda que en ellos incluya el <em>tag</em> que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento es posible recrear los datos, los modelos y el código que permite llegar a los mismos resultados.</p>
+<p>Carpeta para almacenar los archivos de resultados (e.g. archivos <code>.pdf</code>, <code>.png</code>, <code>.txt</code>, <code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>, ...). Dentro de la carpeta se pueden crear sub-carpetas para almacenar distintos tipos de resultados (e.g. informes, gráficos, resultados, ...).</p>
+<p>Esta carpeta <strong>NO</strong> debe estar versionada con <strong>Git</strong>, y por defecto, está incluida en el archivo <code>.gitignore</code> del proyecto.</p>
+<p>Si se generan informes, se recomienda que en ellos incluya el <em>tag</em> que identifica la versión del proyecto que permite reproducirlos. De esta manera, en cualquier otro momento, será posible recrear los datos, los modelos y el código que permiten llegar a los mismos resultados.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>src/</code></dt>
 <dd>
-<p>Carpeta para almacenar el código (archivos  <code>.py</code>). Dentro de la carpeta se pueden crear sub-carpetas para organizar el código adecuadamente.</p>
+<p>Carpeta para almacenar el código (i.e. archivos  <code>.py</code>). Dentro de la carpeta se pueden crear sub-carpetas para organizar el código adecuadamente.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></span> <code>tests/</code></dt>
 <dd>
-<p>Carpeta para almacenar las pruebas del proyecto (archivos  <code>.py</code>). Dentro de la carpeta se pueden crear sub-carpetas para organizar las pruebas adecuadamente. Las pruebas se deben escribir usando <a href="https://docs.pytest.org/en/stable/">pytest</a>.</p>
+<p>Carpeta para almacenar las pruebas del proyecto (i.e. archivos  <code>.py</code>). Dentro de la carpeta se pueden crear sub-carpetas para organizar las pruebas adecuadamente. Las pruebas se deben escribir usando <a href="https://docs.pytest.org/en/stable/">pytest</a>.</p>
 </dd>
 </dl>
 <h3 id="archivos">Archivos</h3>
@@ -1002,12 +1001,12 @@
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>.env.private</code></dt>
 <dd>
-<p>Archivo para almacenar las variables de entorno privadas del proyecto. Este archivo <strong>NO</strong> debe estar versionado con Git, y por defecto, está incluido en el archivo <code>.gitignore</code> del proyecto<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Archivo para almacenar las variables de entorno privadas del proyecto. Este archivo <strong>NO</strong> debe estar versionado con <strong>Git</strong>, y por defecto, está incluido en el archivo <code>.gitignore</code> del proyecto.</p>
 <p>Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo <code>src/tutorial.py</code>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>.env.public</code></dt>
 <dd>
-<p>Archivo para almacenar las variables de entorno públicas del proyecto. Este archivo <strong>SI</strong> debe estar versionado con Git.</p>
+<p>Archivo para almacenar las variables de entorno públicas del proyecto. Este archivo <strong>SI</strong> debe estar versionado con <strong>Git</strong>.</p>
 <p>Para más información sobre el uso de variables de entorno en el proyecto, consulte el archivo <code>src/tutorial.py</code>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>.gitignore</code></dt>
@@ -1017,24 +1016,24 @@
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>pre-commit-config.yaml</code></dt>
 <dd>
-<p>Archivo para configurar los <em>hooks</em> de <a href="https://pre-commit.com/">pre-commit</a> en el proyecto. Este archivo define una serie de reglas y herramientas que se ejecutan automáticamente antes de realizar un <em>commit</em> en Git, con el fin de asegurar la calidad del código y mantener un estándar consistente en el proyecto.</p>
-<p>El archivo <code>pre-commit-config.yaml</code> del proyecto ya incluye configuraciones para varias herramientas útiles, como formateadores de código, linters y verificadores de seguridad.</p>
-<p>Para más información sobre el uso de <strong>pre-commit</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/"><em>Flujo de trabajo</em></a>.</p>
+<p>Archivo para configurar los <em>hooks</em> de <a href="https://prek.j178.dev/">prek</a> en el proyecto. Este archivo define una serie de reglas y herramientas que se ejecutan automáticamente antes de realizar un <em>commit</em> en <strong>Git</strong>, con el fin de asegurar la calidad del código y mantener un estándar consistente en el proyecto.</p>
+<p>El archivo <code>pre-commit-config.yaml</code> del proyecto ya incluye configuraciones para varias herramientas útiles, tales como: "formateadores" de código, linters y verificadores de seguridad.</p>
+<p>Para más información sobre el uso de <strong>pre-commit</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/">Flujo de trabajo</a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>CHANGELOG.md</code></dt>
 <dd>
 <p>Archivo para llevar un registro de los cambios realizados en el proyecto a lo largo del tiempo. Este archivo sigue el formato de <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> y ayuda a los desarrolladores y usuarios a entender la evolución del proyecto, facilitando la identificación de nuevas características, correcciones de errores y cambios importantes entre versiones.</p>
-<p>Este archivo se actualiza automáticamente al hacer <em>commits</em> usando la instrucción <code>just bump-code-version</code> (o su alias <code>just b</code>). Para más información sobre el uso de <strong>just</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/"><em>Flujo de trabajo</em></a>.</p>
+<p>Este archivo se actualiza automáticamente al hacer <em>commits</em> usando la instrucción <code>just bump-code-version</code> (o su alias <code>just b</code>). Para más información sobre el uso de <strong>just</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/">Flujo de trabajo</a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>justfile</code></dt>
 <dd>
 <p>Archivo para almacenar las tareas automatizadas del proyecto usando <a href="https://github.com/casey/just"><strong>just</strong></a>. Este archivo contiene las instrucciones para ejecutar tareas comunes del proyecto, como instalar dependencias, ejecutar pruebas, generar documentación, entre otras.</p>
-<p>Para más información sobre el uso de <strong>just</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/"><em>Flujo de trabajo</em></a>.</p>
+<p>Para más información sobre el uso de <strong>just</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/">Flujo de trabajo</a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>mkdocs.yml</code></dt>
 <dd>
 <p>Archivo para configurar la documentación del proyecto usando <a href="https://www.mkdocs.org/">MkDocs</a> y <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>. Este archivo define la estructura, el tema, las extensiones y otras opciones relacionadas con la generación de la documentación del proyecto.</p>
-<p>Para más información sobre el uso de <strong>MkDocs</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/"><em>Flujo de trabajo</em></a>.</p>
+<p>Para más información sobre el uso de <strong>MkDocs</strong> en el proyecto, consulte <a href="#uso">Uso</a> y <a href="otros/flujo/">Flujo de trabajo</a>.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>pyproject.toml</code></dt>
 <dd>
@@ -1044,11 +1043,11 @@
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>README.md</code></dt>
 <dd>
 <p>Archivo para proporcionar una descripción general del proyecto, incluyendo su propósito, características principales, instrucciones de instalación y uso, entre otros detalles relevantes. Este archivo es lo primero que los usuarios y colaboradores ven al acceder al repositorio del proyecto.</p>
-<p>El archivo <code>README.md</code> (este archivo) del proyecto ya incluye información básica sobre la plantilla y un enlace a la documentación completa en línea.</p>
+<p>El archivo <code>README.md</code> del proyecto (i.e. este archivo) ya incluye información básica sobre la plantilla y un enlace a la documentación completa en línea.</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>requeriments-dev.txt</code>, <code>requeriments-docs.txt</code>, <code>requeriments-tests.txt</code> y <code>requeriments.txt</code> </dt>
 <dd>
-<p>Archivos para listar las dependencias del proyecto. Aunque el proyecto usa <a href="https://docs.astral.sh/uv/">uv</a> para gestionar las dependencias, este archivo puede ser útil para herramientas o servicios que esperan encontrar archivos <code>requirements.txt</code> en el proyecto (e.g. <em>GitHub Actions</em>).</p>
+<p>Archivos para listar las dependencias del proyecto. Aunque el proyecto usa <a href="https://docs.astral.sh/uv/">uv</a> para gestionar las dependencias, estos archivos pueden ser útiles para herramientas o servicios que esperan encontrar archivos <code>requirements.txt</code> en el proyecto (e.g. <em>GitHub Actions</em>).</p>
 </dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span> <code>uv.lock</code></dt>
 <dd>
@@ -1085,8 +1084,8 @@
 <p>Si desea usar más de una práctica opcional, simplemente repita <code>&lt;práctica opcional&gt;</code>, separado por un espacio, las veces que necesite al final de la instrucción.</p>
 </li>
 <li>
-<p>En el proyecto se usan <a href="https://pre-commit.com/">pre-commit</a> <em>hooks</em> para automatizar la verificación del código antes de los <em>commits</em> y los <em>pushs</em>. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>just<span class="w"> </span>install-pre-commit-hooks
+<p>En el proyecto se usan <a href="https://prek.j178.dev/">prek</a> <em>hooks</em> para automatizar la verificación del código antes de los <em>commits</em> y los <em>pushs</em>. La librería ya está incluida en las dependencias necesarias para contribuir al proyecto, sin embargo, es necesario configurar la herramienta usando las siguientes instrucciones:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>just<span class="w"> </span>install-prek-hooks
 </span></code></pre></div>
 </li>
 <li>
@@ -1099,18 +1098,10 @@
 <p>Esto le permitirá ver en el explorador la versión final de la documentación y hará que esta se actualice en línea en la medida que realice cambios.</p>
 </li>
 <li>
-<p>Consulte la sección sobre <a href="otros/flujo/"><em>Flujo de trabajo</em></a> para conocer las recomendaciones para hacer un desarrollo ordenado y eficiente usando la plantilla.</p>
+<p>Consulte la sección sobre <a href="otros/flujo/">Flujo de trabajo</a> para conocer las recomendaciones para hacer un desarrollo ordenado y eficiente usando la plantilla.</p>
 </li>
 </ol>
 <p><strong>¡Eso es todo!, puede empezar a trabajar en su nuevo proyecto.</strong></p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Este archivo se encuentra en la siguiente ruta: <code>~/gitconfig</code>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 
