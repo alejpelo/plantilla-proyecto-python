@@ -129,7 +129,7 @@ version_files = [
 [tool.commitizen.customize]
 message_template = "{type}{scope}: {subject}"
 schema = "<type>(<scope>): <subject>"
-schema_pattern = "(feat|fix|data|refactor|chore|docs|style|perf|test|build|ci|revert)(\\([a-zA-Z0-9_-]+\\))?: .+"
+schema_pattern = "(feat|fix|data|refactor|chore|docs|style|perf|test|build|ci|revert|bump)(\\([a-zA-Z0-9_-]+\\))?: .+"
 
 bump_pattern = "^(feat|fix|data)"
 bump_map = { fix = "patch", feat = "minor", data = "minor" }
@@ -147,6 +147,7 @@ commit_types = [
   { type = "build", description = "Build system changes" },
   { type = "ci", description = "CI configuration changes" },
   { type = "revert", description = "Revert a previous commit" },
+  { type = "bump", description = "Bump version" },
 ]
 
 [tool.marimo.runtime]
