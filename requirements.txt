@@ -2,7 +2,7 @@ annotated-types==0.7.0
 asttokens==3.0.1
 colorama==0.4.6
 executing==2.2.1
-icecream==2.1.9
+icecream==2.1.10
 loguru==0.7.3
 pydantic==2.12.5
 pydantic-core==2.41.5

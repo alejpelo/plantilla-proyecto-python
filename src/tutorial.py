@@ -15,8 +15,8 @@ Author: [Alejandro Perez Londoño](mailto:perezl.alejandro@gmail.com)
 
 from icecream import ic
 
-from configuracion import configuracion
-from logger import log
+from configuracion import configuracion  # type: ignore
+from logger import log  # type: ignore
 
 
 # ¿Cómo usar los archivos de configuración?
