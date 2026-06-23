@@ -8,38 +8,38 @@ readme = "README.md"
 requires-python = ">=3.14,<3.15"
 
 dependencies = [
-    "pydantic-settings>=2.12.0",
+    "pydantic-settings>=2.14.2",
     "loguru>=0.7.3",
-    "icecream>=2.1.10",
+    "icecream>=2.2.0",
 ]
 
 [dependency-groups]
 dev = [
-    "ty>=0.0.16",
-    "ruff>=0.15.0",
-    "pip-audit>=2.10.0",
-    "prek>=0.3.2",
-    "commitizen>=4.13.7",
+    "ty>=0.0.51",
+    "ruff>=0.15.18",
+    "pip-audit>=2.10.1",
+    "prek>=0.4.5",
+    "commitizen>=4.16.4",
 ]
 tests = [
-    "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
 ]
 docs = [
     "mkdocs>=1.6.1",
-    "mkdocstrings>=1.0.3",
-    "mkdocstrings-python>=2.0.2",
+    "mkdocstrings>=1.0.4",
+    "mkdocstrings-python>=2.0.5",
     "mkdocs-autorefs>=1.4.4",
-    "mkdocs-material>=9.7.1",
-    "mkdocs-include-markdown-plugin>=7.2.1",
+    "mkdocs-material>=9.7.6",
+    "mkdocs-include-markdown-plugin>=7.3.0",
 ]
 
 [project.optional-dependencies]
 dvc = [
-    "dvc[s3]>=3.66.1",
+    "dvc[s3]>=3.67.1",
 ]
 nb = [
-    "marimo[recommended]>=0.19.9",
+    "marimo[recommended]>=0.23.10",
     "auto-mix-prep>=0.2.0",
 ]
 

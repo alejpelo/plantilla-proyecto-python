@@ -1,8 +1,8 @@
 colorama==0.4.6 ; sys_platform == 'win32'
-coverage==7.13.4
+coverage==7.14.3
 iniconfig==2.3.0
-packaging==26.0
+packaging==26.2
 pluggy==1.6.0
-pygments==2.19.2
-pytest==9.0.2
-pytest-cov==7.0.0
+pygments==2.20.0
+pytest==9.1.1
+pytest-cov==7.1.0

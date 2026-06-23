@@ -160,7 +160,7 @@ A continuación se describe el propósito de algunos de los archivos más import
 
 ## Uso
 
-Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.52.0), [**uv**](https://docs.astral.sh/uv/) (versión >= 0.10.0) y [**just**](https://github.com/casey/just) (versión >= 1.46.0).
+Para instalar la plantilla y empezarla a usar en un nuevo proyecto, debe tener instalado previamente en su equipo, [**Git**](https://git-scm.com/) (versión >= 2.54.0), [**uv**](https://docs.astral.sh/uv/) (versión >= 0.11.0) y [**just**](https://github.com/casey/just) (versión >= 1.53.0).
 
 !!! warning "¡Atención!"
     El proyecto incluye algunas funcionalidades que requieren un _shell_ (`sh`) compatible con Unix (e.g. MacOS, LinuxOS).
